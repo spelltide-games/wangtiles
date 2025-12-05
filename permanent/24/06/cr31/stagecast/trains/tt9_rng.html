@@ -1,0 +1,458 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Random Number Generator</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_rng.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Random Number Generator</h2>
+				<p>We can combine a shift right function with an XOR logic gate to create a train track layout capable of generating a pseudo random number sequence. Here is a typical circuit diagram of a 5-stage Linear Feedback Shift Register. By convention, the stages are labelled from left to right.</p>
+				<table cellpadding="0" cellspacing="0" class="array">
+					<caption>
+					5-bit Linear Feedback Shift Register
+					</caption>
+					<tr>
+						<td><img src="art/prng.png" alt="5 bit linear feedback shift register" width="612" height="210"></td>
+					</tr>
+				</table>
+				<p>The XOR logic gate uses taps from stages 1 and 4 which gives a maximal 31 state cycle. We need a 6-stage shift register because the output from the XOR logic gate needs to be stored in an 'extra' position, until it can be shifted right. The circuit must never enter 00000 to avoid a lock-up state.</p>
+				<p>The circuit comprises an <a href="tt2_func_gates.html#XOR">XOR Logic Gate</a> above a <a href="tt2_func_shift.html#shift_r">Shift Right</a> function below.<br>
+					No need to clear points, just run!</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="rng_bg">
+					<caption>
+					Pseudo Random Number Generator Layout
+					</caption>
+					<tr>
+						<td><img src="grab/tt9/prng.png" width="608" height="480" alt="random number generator layout" onclick="swit('rng_999')">
+							<div class="sprites">
+								<textarea id="rng_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="rng_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="rng_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="rng_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="rng_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="rng_4" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="rng_5" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="rng_6" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="rng_7" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="rng_8" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="rng_9" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="rng_10" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="rng_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="rng_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/points.lbi" --><table cellpadding="0" cellspacing="0" class="ji">
+	<tr>
+		<td><img src="extra/7y_0.gif" alt="lazy point" width="32" height="32"></td>
+		<td>Lazy points switch between upper <strong>0</strong> or lower <strong>1</strong> branch lines<br>
+			Trains arriving on a branch line switch the point to that line</td>
+	</tr>
+	<tr>
+		<td><img src="track/11a.gif" alt="sprung point" width="32" height="32"></td>
+		<td>Sprung points allow branch line trains to join the main line<br>
+			All main line trains go straight ahead and never 'branch off'</td>
+	</tr>
+</table><!-- #EndLibraryItem --><h3>Operation</h3>
+				<ol>
+					<li>Start train running from station.</li>
+					<li>The <strong>n</strong> register cycles through a sequence of pseudo random numbers. It can be read each time the train passes through the station. Each number follows this maximal 31 step sequence:</li>
+				</ol>
+				<table cellpadding="0" cellspacing="0" class="tab">
+					<tr class="tabtop">
+						<td>Step</td>
+						<td>x16</td>
+						<td><strong>&nbsp;</strong>x8</td>
+						<td><strong>&nbsp;</strong>x4</td>
+						<td><strong>&nbsp;</strong>x2</td>
+						<td><strong>&nbsp;</strong>x1</td>
+						<td>Value</td>
+					</tr>
+					<tr>
+						<td>1<br>
+							2<br>
+							3<br>
+							4<br>
+							5<br>
+							6<br>
+							7<br>
+							8<br>
+							9<br>
+							10<br>
+							11<br>
+							12<br>
+							13<br>
+							14<br>
+							15<br>
+							16<br>
+							17<br>
+							18<br>
+							19<br>
+							20<br>
+							21<br>
+							22<br>
+							23<br>
+							24<br>
+							25<br>
+							26<br>
+							27<br>
+							28<br>
+							29<br>
+							30<br>
+							31<br></td>
+						<td>1<br>
+							0<br>
+							1<br>
+							0<br>
+							1<br>
+							1<br>
+							1<br>
+							0<br>
+							1<br>
+							1<br>
+							0<br>
+							0<br>
+							0<br>
+							1<br>
+							1<br>
+							1<br>
+							1<br>
+							1<br>
+							0<br>
+							0<br>
+							1<br>
+							1<br>
+							0<br>
+							1<br>
+							0<br>
+							0<br>
+							1<br>
+							0<br>
+							0<br>
+							0<br>
+							0<br></td>
+						<td>0<br>
+							1<br>
+							0<br>
+							1<br>
+							0<br>
+							1<br>
+							1<br>
+							1<br>
+							0<br>
+							1<br>
+							1<br>
+							0<br>
+							0<br>
+							0<br>
+							1<br>
+							1<br>
+							1<br>
+							1<br>
+							1<br>
+							0<br>
+							0<br>
+							1<br>
+							1<br>
+							0<br>
+							1<br>
+							0<br>
+							0<br>
+							1<br>
+							0<br>
+							0<br>
+							0<br></td>
+						<td>0<br>
+							0<br>
+							1<br>
+							0<br>
+							1<br>
+							0<br>
+							1<br>
+							1<br>
+							1<br>
+							0<br>
+							1<br>
+							1<br>
+							0<br>
+							0<br>
+							0<br>
+							1<br>
+							1<br>
+							1<br>
+							1<br>
+							1<br>
+							0<br>
+							0<br>
+							1<br>
+							1<br>
+							0<br>
+							1<br>
+							0<br>
+							0<br>
+							1<br>
+							0<br>
+							0<br></td>
+						<td>0<br>
+							0<br>
+							0<br>
+							1<br>
+							0<br>
+							1<br>
+							0<br>
+							1<br>
+							1<br>
+							1<br>
+							0<br>
+							1<br>
+							1<br>
+							0<br>
+							0<br>
+							0<br>
+							1<br>
+							1<br>
+							1<br>
+							1<br>
+							1<br>
+							0<br>
+							0<br>
+							1<br>
+							1<br>
+							0<br>
+							1<br>
+							0<br>
+							0<br>
+							1<br>
+							0<br></td>
+						<td>0<br>
+							0<br>
+							0<br>
+							0<br>
+							1<br>
+							0<br>
+							1<br>
+							0<br>
+							1<br>
+							1<br>
+							1<br>
+							0<br>
+							1<br>
+							1<br>
+							0<br>
+							0<br>
+							0<br>
+							1<br>
+							1<br>
+							1<br>
+							1<br>
+							1<br>
+							0<br>
+							0<br>
+							1<br>
+							1<br>
+							0<br>
+							1<br>
+							0<br>
+							0<br>
+							1<br></td>
+						<td>16<br>
+							8<br>
+							20<br>
+							10<br>
+							21<br>
+							26<br>
+							29<br>
+							14<br>
+							23<br>
+							27<br>
+							13<br>
+							6<br>
+							3<br>
+							9<br>
+							24<br>
+							28<br>
+							30<br>
+							31<br>
+							15<br>
+							7<br>
+							19<br>
+							25<br>
+							12<br>
+							22<br>
+							11<br>
+							5<br>
+							18<br>
+							9<br>
+							4<br>
+							2<br>
+							1<br></td>
+					</tr>
+				</table>
+				<p><br>
+					Column <strong>x1</strong> shows the platform the train arrives on. If you were waiting at the station and didn't know which step of the above cycle the circuit was in, you wouldn't be able to predict on which platform the next train would arrive. It would be pseudo random.</p>
+				<p>The train stating position ensures that either the <strong>x8</strong> or the <strong>XOR</strong> lazy point is set to a <strong>1</strong> and so the shift register avoids the all zero lock-up state.</p>
+				<p>Other 2 tap maximal length Linear Feedback Shift Registers are:</p>
+				<table cellpadding="0" cellspacing="0" class="tab">
+					<tr class="tabtop">
+						<td>No &nbsp;of bits</td>
+						<td>Length of loop</td>
+						<td>Tap positions</td>
+					</tr>
+					<tr>
+						<td>5<br>
+							6<br>
+							7<br>
+							9<br>
+							10<br>
+							11<br>
+							15<br>
+							17<br>
+							18<br>
+							20<br>
+							21<br>
+							22<br>
+							23<br>
+							25</td>
+						<td>31<br>
+							63<br>
+							127<br>
+							511<br>
+							1,023<br>
+							2,047<br>
+							32,767<br>
+							131,071<br>
+							262,143<br>
+							1,048,575<br>
+							2,097,151<br>
+							4,194,303<br>
+							8,388,607<br>
+							16,777,215 <br></td>
+						<td>1 &amp; 4<br>
+							0 &amp; 5<br>
+							0 &amp; 6<br>
+							3 &amp; 8<br>
+							2 &amp; 9<br>
+							1 &amp; 10<br>
+							0 &amp; 14<br>
+							2 &amp; 16<br>
+							6 &amp; 17<br>
+							2 &amp; 19<br>
+							1 &amp; 20<br>
+							0 &amp; 21<br>
+							2 &amp; 22<br>
+							0	&amp;	23<br></td>
+					</tr>
+				</table>
+				<p><br>
+				Extending from 5 to 25 bits, increases the time for each step by 5, but increases the complete cycle by half a million times. If the train runs at the same speed, then it will pass the station every 2.5 minutes, instead of every half minute, but the cycle repeat time will increase from 15.5 minutes to 80 years.</p>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

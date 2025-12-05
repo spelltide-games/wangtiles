@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><!-- #BeginTemplate "/Templates/main.dwt" --><!-- DW6 -->
+<head>
+<!-- #BeginEditable "doctitle" -->
+<title>Info | Tile Set Art</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../scast/textsims.css" type="text/css">
+<script src="../js/js.js" type="text/JavaScript"></script>
+<!-- #BeginEditable "Meta" -->
+<meta name="description" content="Stagecast puzzles, games, animation and sims">
+<meta name="keywords" content="Stagecast, Creator, sims, worlds, computer, programming, coding, object orientated, stand alone">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<div id="tank">
+<div id="head"> <img src="../art/icons/wec2.gif" alt="Wec Man" width="32" height="32"> <img src="../art/scast.png" width="432" height="52" alt="StageCast"></div><!-- #BeginLibraryItem "/Library/Tabs.lbi" --><ul id="tabs">
+	<li><a href="../scast/index.html">Home</a></li>
+	<li><a href="../../logojs/logo.html">Logo</a></li>
+	<li><a href="sims.html">Sims</a></li>
+	<li><a href="../wang/stage.html">Stage</a></li>
+	<li><a href="../wang/tiles_e.html">Tiles</a></li>
+    <li><a href="../trains/tt0_intro.html">Trains</a></li>
+	<li><a href="../wang/intro.html">Wang</a></li>
+</ul>
+<!-- #EndLibraryItem --><div id="cent">
+		<table class="lout" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="main"><!-- #BeginEditable "contents" -->
+					<h1><img src="../art/icons/dual.gif" width="32" height="32" alt="Dual Paths">Tileset Art</h1>
+					<p>Artwork created by a matrix of matching tiles. Comprises the image used on each tile and the algorithm that determines the placement of tiles. </p>
+					<p>Tiles are usually square, but can also be triangular or hexagonal. Sometimes, tiles can be rotated, but not flipped as they are only printed or glazed on one side. Square Stagecast tilesets cannot be rotated or flipped.</p>
+					<p><img src="../art/pixel/warren.jpg" alt="warren street" width="298" height="239" align="right"></p>
+					<p>Warren Street tube station has a good example of tileset artwork. The mosaic was created in 1967 by Alan Fletcher, who chose a maze design for passengers to while away the time until the next train.</p>
+					<p>The same maze design is repeated around the station, so the tiles are not used to create different maze layouts. It is only an image made up of geometrical tiles. See <a href="../scast/warren.html">Warren Street</a> sim.</p>
+					<p>If all tiles can be matched with each other then the tiles can simply be placed randomly. The placement algorithm can prevent clumping of similar tiles, which makes the pattern look more pleasing and random to the human eye. Commercial software is available to create random distribution layouts for kitchen floors and wall tiles. A minimum of six different tiles is usually needed.</p>
+					<p>Other tilesets have more limited matching. The simplest has  two different edges, which can switch appearance randomly until all sides match. These kind of geometric tiles are called Truchet tiles. </p>
+					<p><a href="../scast/truchet.html">Truchet Tiles</a> sim shows patterns formed by  geometric Truchet type tiles.</p>
+					<p>Slightly more complex tileset has 4 tiles.<br>
+						<img src="../art/4sqs.gif" width="100" height="32" alt="tiles"><br>
+						Each side only matches with 2 others. They are used in <a href="../scast/lattice.html">Lattice 1</a> sim. The tiles switch randomly until all sides match.</p>
+					<p>The tileset below has two types of edge, 'track' and 'no track'. This gives 2^4 or 16 combinations.</p>
+					<table class="sq" cellspacing="0" cellpadding="0">
+						<tr>
+							<td><img src="../art/edge/trench/6.gif" alt="6" width="32" height="32"></td>
+							<td><img src="../art/edge/trench/14.gif" alt="14" width="32" height="32"></td>
+							<td><img src="../art/edge/trench/8.gif" alt="8" width="32" height="32"></td>
+							<td><img src="../art/edge/trench/4.gif" alt="4" width="32" height="32"></td>
+						</tr>
+						<tr>
+							<td><img src="../art/edge/trench/1.gif" width="32" height="32" alt="1"></td>
+							<td><img src="../art/edge/trench/7.gif" width="32" height="32" alt="7"></td>
+							<td><img src="../art/edge/trench/12.gif" width="32" height="32" alt="12"></td>
+							<td><img src="../art/edge/trench/5.gif" width="32" height="32" alt="5"></td>
+						</tr>
+						<tr>
+							<td><img src="../art/edge/trench/2.gif" width="32" height="32" alt="2"></td>
+							<td><img src="../art/edge/trench/15.gif" width="32" height="32" alt="15"></td>
+							<td><img src="../art/edge/trench/11.gif" width="32" height="32" alt="11"></td>
+							<td><img src="../art/edge/trench/13.gif" width="32" height="32" alt="13"></td>
+						</tr>
+						<tr>
+							<td><img src="../art/edge/trench/0.gif" width="32" height="32" alt="0"></td>
+							<td><img src="../art/edge/trench/3.gif" width="32" height="32" alt="3"></td>
+							<td><img src="../art/edge/trench/10.gif" width="32" height="32" alt="8"></td>
+							<td><img src="../art/edge/trench/9.gif" width="32" height="32" alt="1"></td>
+						</tr>
+					</table>
+					<p>Each tile can only match with half of the other tiles, so a sub-set of 8 possible tiles for each edge. The   algorithm must correctly match each tile with  4 adjacent neighbors.</p>
+					<p>A good way of producing a pleasing random layout is to create a maze or labyrinth of tracks. A simple maze algorithm also ensures all tracks are connected. So a  character placed on the tiles can wander randomly and reach all areas.</p>
+					<p>Another possible method of construction is to place a chequer pattern of random tiles and then 'fill in the gaps' with a tile correctly matching on all 4 sides. Not all tracks will connect.</p>
+					<p>The most common usage for tile art is in computer games. A grid of matching tiles provides an efficient method for generating play areas. The players possible actions are determined by which tile his character is currently standing on.</p>
+					<p><img src="../art/pixel/game.gif" alt="game" width="415" height="362"></p>
+				<!-- #EndEditable --></td>
+				<td class="rite"><p class="contents">cr31</p><!-- #BeginLibraryItem "/Library/MainMenu.lbi" --><div id="menu">
+<p>Main</p>
+<ul>
+	<li><a href="sims.html"><script type="text/javascript"> bp("");</script> SCast Sims</a></li>
+	<li><a href="../wang/stage.html"><script type="text/javascript"> bp("");</script> Stage Array</a></li>
+	<li><a href="../trains/tt0_intro.html"><script type="text/javascript"> bp("");</script> Train Tracks</a></li>
+	<li><a href="../wang/intro.html"><script type="text/javascript"> bp("");</script> Wang Tiles</a></li>
+</ul>
+<p>Info</p>
+<ul>
+	<li><a href="../wang/glossary.html"><script type="text/javascript"> bp("");</script> Glossary</a></li>
+	<li><a href="pixelart.html"><script type="text/javascript"> bp("");</script> Pixel art</a></li>
+    <li><a href="tileart.html"><script type="text/javascript"> bp("");</script> Tileset art</a></li>
+	<li><a href="info.html"><script type="text/javascript"> bp("");</script> Web links</a></li>
+	<li><a href="test.html"><script type="text/javascript"> bp("");</script> Tutorials</a></li>
+</ul>
+</div>
+<!-- #EndLibraryItem --></td>
+			</tr>
+		</table>
+	</div>
+	<p class="foot">&nbsp;</p>
+</div>
+</body>
+<!-- #EndTemplate --></html>

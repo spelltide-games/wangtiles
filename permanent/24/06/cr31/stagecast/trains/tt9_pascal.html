@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Pascals Triangle</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_pascal.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Pascal's Triangle</h2>
+				<p>This circuit distributes trains following the entries of Pascal's Triangle. Read more at <a href="https://en.wikipedia.org/wiki/Pascal's_triangle">Wikipedia</a> on Pascal's Triangle and binomial expansion.</p>
+				<p>The circuit uses ten compact flip-flops. The platform numbers indicate the number of trains visiting each platform for each 16 train cycle.	A	platform	is	never visited twice in succession.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="t_bg">
+					<caption>
+						Pascal's Triangle
+					</caption>
+							<tr>
+								<td><img src="grab/tt9/pascal.png" alt="Pascals triangle" width="576" height="448" onclick="swit('t_999')">
+									<div class="sprites">
+										<textarea id="t_tens1" readonly></textarea>
+										<textarea id="t_tens2" readonly></textarea>
+										<textarea id="t_tens3" readonly></textarea>
+										<textarea id="t_tens4" readonly></textarea>
+										<img src="loco/5s.gif" alt="" width="32" height="32" id="t_0" onclick="swit(this.id)">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_1">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_2" onclick="swit(this.id)">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_3">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_4">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_5" onclick="swit(this.id)">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_6">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_7">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_8" onclick="swit(this.id)">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_9">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_10">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_11" onclick="swit(this.id)">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_12">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_13">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_14" onclick="swit(this.id)">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_15">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_16">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_17" onclick="swit(this.id)">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_18">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_19">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_20" onclick="swit(this.id)">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_21">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_22">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_23" onclick="swit(this.id)">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_24">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_25">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_26" onclick="swit(this.id)">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_27">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_28">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_29" onclick="swit(this.id)">
+										<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_30">
+										<img src="loco/0.gif" alt="" width="32" height="32" id="t_loco">
+										<img src="loco/over.gif" alt="" width="36" height="36" id="t_over">
+									</div></td>
+							</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/points.lbi" --><table cellpadding="0" cellspacing="0" class="ji">
+	<tr>
+		<td><img src="extra/7y_0.gif" alt="lazy point" width="32" height="32"></td>
+		<td>Lazy points switch between upper <strong>0</strong> or lower <strong>1</strong> branch lines<br>
+			Trains arriving on a branch line switch the point to that line</td>
+	</tr>
+	<tr>
+		<td><img src="track/11a.gif" alt="sprung point" width="32" height="32"></td>
+		<td>Sprung points allow branch line trains to join the main line<br>
+			All main line trains go straight ahead and never 'branch off'</td>
+	</tr>
+</table><!-- #EndLibraryItem -->The tens readouts convert each level of the triangle as if it were a binary number.<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

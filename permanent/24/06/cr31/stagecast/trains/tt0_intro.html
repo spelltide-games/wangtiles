@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Train and Track</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_intro.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Train and Track </h2>
+				<p>We've all at some time enjoyed playing with a model train layout. Straight and curved track pieces are joined together to create loops and sidings. The train is set running and enters a predetermined route, obediently following the track we've laid. Without any dead-ends, it will run around the layout forever.</p>
+				<p>Points switch the train between different sections of track. They alter the trains course and choose which route it traverses. The points act like binary switches, with two positions, <strong>0</strong> or <strong>1</strong>. </p>
+				<p>This raises a few questions which these pages will answer:</p>
+				<strong>1/</strong> What is the best method for designing computational layouts? Computer programs carefully avoid complex tangles of code because it makes fault finding (debugging) tricky. Likewise, we want to avoid great layouts of tangled spaghetti.
+
+				<p>We'll solve this by building sublayouts as <a href="tt1_subs.html">subroutines</a>. </p>
+				<p><strong>2/</strong> Can layouts be built that actually do some kind of logical computation? They at least need to be able to count and add. </p>
+<p>We'll construct a few compact, self contained layouts, like an <a href="tt9_follower.html">Input Follower</a> and a <a href="tt9_rng.html">Random Number Generator</a>.</p>
+				<p><strong>3/</strong> Can we use layouts to construct some kind of general train track computer, capable of programmable logical computation? We will need to employ a modular approach to keep designs manageable.</p>
+				<p>We'll build and program a Train Track <a href="tt3_univ.html">Computer</a>. </p>
+				<p><strong>4/</strong> Can we use these design techniques to create more interesting layouts? For instance, 'display' type layouts where the train completes long uninterrupted runs without human intervention. </p>
+<p>Some 'maximum run' designs are explored as <a href="tt8_auto_run.html">Auto Switching Layouts</a>.				</p>
+<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td width="32">&nbsp;</td>
+						<td><h3>Alan Turing</h3>
+							<p>Alan Turing, the famous British computer scientist helped develop a <em>theoretical</em> model for a general purpose computer, called a Turing Machine. Layouts can be infinite in size, so not a practical solution for many computational train track problems. 
+						</p>
+							<p>In their paper <a href="http://www.monochrom.at/turingtrainterminal/Chalcraft.pdf">Train Sets</a>, Chalcraft and Greene describe a method of building a Turing Machine using train track points and sections of track. They set out many key terms and definitions which I've followed on these pages.</p>
+						<p>See <a href="tt7_turing.html">Turing Machines</a> for working layouts.</p></td>
+						<td><div class="picap">
+								<br>
+								<img src="art/Alan_Turing.jpg" width="112" height="140" alt="Alan Turing">
+								<br>
+								Alan Turing</div></td>
+					</tr>
+				</table>
+				<p>So to begin, lets get a train and lay some track...</p>
+				<h3>Train				</h3>
+				<p>A single train engine will run along the track computing as it goes. The train only moves forwards, it never reverses. </p>
+				<p>The train is non-intelligent. It cannot store data or information. 
+					It cannot mark or count the tracks or somehow work out its position. It is a simple source of power, driving relentlessly forward. </p>
+				<p>If the train returns to its start siding, it halts as it hits the buffers and the calculation is complete.</p>
+				<h3>Track</h3>
+				<p>There are two basic types of track, straight and curved:</p>
+				<p><strong>Straight</strong>
+					<img src="track/10.gif" alt="straight" width="32" height="32" align="middle">
+					<img src="track/5.gif" alt="straight" width="32" height="32" align="middle">
+					including cross-overs
+					<img src="track/15.gif" alt="cross over" width="32" height="32" align="middle">
+				</p>
+				<p>There is only one train, so bridges are not needed as there cannot be a collision between trains. Layouts with no bridges (only cross-overs) are called 'planar'.</p>
+				<p><strong>Curved</strong>
+					<img src="track/3.gif" alt="curve" width="32" height="32" align="middle">
+					<img src="track/6.gif" alt="curve" width="32" height="32" align="middle">
+					<img src="track/9.gif" alt="curve" width="32" height="32" align="middle">
+					<img src="track/12.gif" alt="curve" width="32" height="32" align="middle">
+				and (rarely used) dual curves
+					<img src="track/15b.gif" alt="curve" width="32" height="32" align="middle">
+					<img src="track/15a.gif" alt="curve" width="32" height="32" align="middle">
+				</p>
+				<p>So far, we can create a simple loop:</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="a_bg">
+					<caption>
+					Simple Loop
+					</caption>
+					<tr>
+						<td><img src="grab/tt1/loop.png" width="192" height="96" alt="simple loop" onclick="swit('a_999')">
+							<div class="sprites">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="a_0" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="a_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="a_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive2.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click start circle to reset train</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>Not much computing happening here. To do more, we need to be able to interact with the layout using <a href="tt1_points.html">points</a>, Lazy and Sprung, which we'll look at next.</p>
+<h3>Duplo</h3>
+<p>Layouts can be constructed with real pieces of track. Indeed some have been built with Duplo track sections. Complex layouts will need a lot of track, and a large floor area. Duplo layouts use a hexagonal geometry. (See <a href="tt8_duplo_lout.html">Duplo pages</a>).</p>
+				<p>Layouts on these pages are depicted with a square tile geometry. The sharp 90 degree curves are unrealistic, but do produce compact designs. Both geometries, along with other train track standards, are topologically equivalent. This means any of the layouts can be built using many track systems, although some will require more room than others.</p>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

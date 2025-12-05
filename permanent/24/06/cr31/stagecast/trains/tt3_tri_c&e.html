@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Clear &amp; Error Line</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_clear.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Clear &amp; Error Line</h2>
+				<p>So far, computer layouts hane no no mechanism to clear all registers at the start of a program. This is important for consistent and correct results in a practical layout.</p>
+				<h3>Register Clear</h3>
+				<p>This function sets all lazy points to <strong>0</strong> thus resetting linked data register points to '000'. The engine exits on the same track.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="e_bg">
+					<caption>
+					Function to clear (set to <strong>0</strong>) register <strong>S</strong>
+					</caption>
+					<tr>
+						<td><img src="grab/tt2b/clear.png" alt="clear" width="576" height="96" onclick="swit('e_999')">
+							<div class="sprites">
+								<textarea id="e_tens1" readonly></textarea>
+								<img src="loco/8le.gif" alt="" width="32" height="32" id="e_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_3" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="e_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="e_over">
+							</div></td>
+					</tr>
+				</table>
+				<p>However, we don't want to waste valuable MUX lines with Clear functions which are used only once per computation. Likewise, we don't want to reserve many MUX lines for returning overflow errors. </p>
+				<p>An efficient solution is to combine the two requirements into a single dedicated line. This 'Clear &amp; Error' line runs vertically beside every function. It links all functions needing an initial clear instruction and also all functions which may need to return an overflow error.</p>
+				<h3>Clear &amp; Error Line</h3>
+				<p>This vertical track allows a descending 'clear' instruction to be passed into each function in turn before returning to the main program area. However, once the main program is running, any 'errors' produced by a function, are passed unhindered up the line to the 'error' siding where the train stops.</p>
+				<p>Here is a Counter function with a Clear and Error line. The circuit on the right allows a descending train to be passed into functions as necessary. A simple loop at the bottom returns the train back along the same track. </p>
+				<table cellpadding="0" cellspacing="0" class="array">
+					<caption>
+					Counter function with 'overflow error' return
+					</caption>
+					<tr>
+						<td><img src="grab/tt3ce/count&e.png" alt="counter with overflow error" width="608" height="128"></td>
+					</tr>
+				</table>
+				<table cellpadding="0" cellspacing="0" class="array">
+					<caption>
+					Clear function with 'clear' input
+					line
+					</caption>
+					<tr>
+						<td><img src="grab/tt3ce/clear&c.png" alt="clear" width="608" height="96"></td>
+					</tr>
+				</table>
+				<table cellpadding="0" cellspacing="0" class="array">
+					<caption>
+					Final 'clear and error' line return loop
+					</caption>
+					<tr>
+						<td><img src="grab/tt3ce/return.png" alt="return loop" width="608" height="64"></td>
+					</tr>
+				</table>
+				<p>Just one final bit of circuitry. We have to separate a returning Clear instruction from any later returning Error instructions. A Clear &amp; Error circuit is needed.</p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><p>From the Halt siding, the train passes through the lower lazy point and switches the double linked point to <strong>0</strong>. It then passes down the Clear &amp; Error line. </p>
+							<p>Once registers are cleared, the train returns and is directed to the upper lazy point, where it switches the double linked point to <strong>1</strong>, before proceeding to the main program loop. </p></td>
+						<td><table cellpadding="0" cellspacing="0" class="array">
+								<caption>
+								Clear &amp; Error circuit
+								</caption>
+								<tr>
+									<td><img src="grab/tt3ce/c&e.png" alt="clear &amp; error circuit" width="224" height="166"></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table>
+				<p>Any further train returning via the 'Clear &amp; Error' line is an overflow error and is correctly directed to the 'Error' siding. </p>
+				<p>Just in case you are impatient and use the web page 'reload' button to reset all points, a manual 'bypass' switch is provided. This prevents the train from clearing registers at start up. Any overflow errors are returned as normal.</p>
+				<p>The bypass switch also allows the n<sup>th</sup> term to be raised and the calculation continued after the train has halted. Or the Sum register to be manually cleared to find the Sum over a range of terms.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="t_bg">
+							<tr>
+								<td><img src="grab/tri_ce.png" alt="triangular number series calculator" width="832" height="1120" onclick="swit('t_999')">
+									<div class="sprites">
+										<img src="loco/10s.gif" alt="" width="32" height="32" id="t_0" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_1" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_2" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_3" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_4" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_5" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_6" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_7" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_8" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_9" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_10" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_11" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_12" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_13" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_14" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_15" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_16" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_17" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_18" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_19" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_20" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_21" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_22" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_23" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_24" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_25" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_26" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_27" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_28" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_29" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_30" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_31" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_32" onclick="swit(this.id)">
+										<img src="point_/13r_1.gif" alt="" width="32" height="32" id="t_33" onclick="swit(this.id)">
+										<img src="point_/13r_1.gif" alt="" width="32" height="32" id="t_34" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_35" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_36" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_37" onclick="swit(this.id)">
+										<img src="loco/4.gif" alt="" width="32" height="32" id="t_loco">
+										<img src="loco/over.gif" alt="" width="36" height="36" id="t_over">
+									</div></td>
+							</tr>
+						</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/points.lbi" --><table cellpadding="0" cellspacing="0" class="ji">
+	<tr>
+		<td><img src="extra/7y_0.gif" alt="lazy point" width="32" height="32"></td>
+		<td>Lazy points switch between upper <strong>0</strong> or lower <strong>1</strong> branch lines<br>
+			Trains arriving on a branch line switch the point to that line</td>
+	</tr>
+	<tr>
+		<td><img src="track/11a.gif" alt="sprung point" width="32" height="32"></td>
+		<td>Sprung points allow branch line trains to join the main line<br>
+			All main line trains go straight ahead and never 'branch off'</td>
+	</tr>
+</table><!-- #EndLibraryItem --><p><strong>How it works</strong><br>
+					The train will traverse the layout without intervention. Each return to the main program loop will yield the next triangular number in the lower sum Register <strong>S</strong>. </p>
+				<p> Eventually, when the Count equals the requested n<sup>th</sup> term, the comparator circuit will return the train to the 'halt' siding where the train will stop as it hits the buffers. The n<sup>th</sup> triangular number can be read in the lower Sum <strong>S</strong> register. This layout will produce an overflow error for the 6<sup>th</sup> and 7<sup>th</sup> terms.</p>
+				<p>One problem with the <a href="tt2_func_linked.html#ne">Not Equal</a> function is if the Count is higher than <strong>n</strong> then the layout does not detect an error has occoured and carries on calculating. Therefore, it is better to use the <a href="tt2_func_linked.html#comp">Comparator</a> function. This will halt the train if Count is greater than or equal to n.</p>
+				<p>Also, the Clear and Count Up functions can be combined into one <a href="tt2_func_compo.html#cuc">Count and Clear</a> function.</p>
+				<h3>Modular Functions</h3>
+				<p>Multiplex circuitry and a 'Clear &amp; Error' line may seem over complex for a circuit to produce the first few triangular numbers. However, such circuits are necessary as layouts increase in size and complexity. Also, the modular arrangement of functions enables easy circuit expansion and allows more functions to be easily added enabling different programs to be run.</p>
+				<p>Increasing the register size by adding more stages will allow larger numbers to be computed. Each register can be extended indefinitely to the left. Not all registers need to be the same size. For instance, an 8-stage <strong>S</strong> register would allow the 255<sup>th</sup> triangular number of 32,640 to be computed.		</p>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

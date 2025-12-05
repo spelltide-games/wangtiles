@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+    background-color: #aaa; 
+	background-image: url(../art/bg/tile11.gif);
+    margin: 30px;
+    margin-top: 10px;
+}
+#zone {
+	position: relative;
+    width: 608px;
+    height: 416px;
+	margin: 0 auto;
+    border: 1px black solid;
+    /*overflow: hidden;*/
+    background-color: #666666;
+    cursor: pointer;
+}
+#area {
+    position: relative;
+	width: 576px;
+    height: 384px;
+	border: 1px black solid;
+    left: 15px;
+    top: 15px;
+	background-color: #aaaaaa;
+	background-image: url(../art/js/tilebg.png);
+}
+#area img {
+	vertical-align: bottom;
+}
+#over, #down {
+    position: absolute;
+    left: -32px;
+    top: -32px;
+}
+
+#stageTitle, #stageInfo {
+    width: 70%; 
+	background-color: transparent;
+	/*overflow: auto;*/
+	display: block;
+	margin: 0 auto;
+	text-align: center;  
+	color: #fff; font-size: 14px;
+	font-family: Verdana, Geneva, sans-serif;
+	/*border: 1px black solid;*/
+}

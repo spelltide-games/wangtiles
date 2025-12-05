@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Functions using linked lazy points</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_coop.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Compound Functions</h2>
+				<p>Single functions can be combined to create more complex 'compound' functions. These are especially useful when building a <a href="tt8_duplo_comp.html">Duplo computer</a>, as the program 'software' can be programmed to combine standard library functions together by visiting each function in turn.</p>
+<p>The train enters each function from the right. This allows registers to be extended to the left to accommodate larger numbers.</p>
+<h3><a name="add"></a>Adder (copy + add)</h3>
+				<p>This circuit adds two registers <strong>A</strong> and <strong>B</strong> together. The sum appears in register <strong>S</strong>. The train exits on the same line when the calculation is complete. Data in registers <strong>A</strong> and <strong>B</strong> is not altered (over written). </p>
+				<table cellspacing="0" cellpadding="0" class="play" id="a_bg">
+					<caption>
+					Adder (A+B) function
+					</caption>
+					<tr>
+						<td><img src="grab/tt2c/adder.png" width="608" height="384" alt="adder" onclick="swit('a_999')">
+							<div class="sprites">
+								<textarea id="a_tens1" readonly></textarea>
+								<textarea id="a_tens2" readonly></textarea>
+								<textarea id="a_tens3" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="a_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_4" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_5" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_6" onclick="swit(this.id)">
+								<img src="point_/13s_1.gif" alt="" width="32" height="32" id="a_7">
+								<img src="point_/13s_1.gif" alt="" width="32" height="32" id="a_8">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="a_9" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="a_10">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="a_11" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="a_12">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="a_13" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="a_14">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="a_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="a_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p><strong>How it works</strong><br>
+					The circuit comprises a lower <a href="tt2_func_single.html#copy">Copy</a> function with an upper <a href="tt2_func_single.html#add">Accumulator</a> function. <br>
+					Register <strong>B</strong> is copied into register <strong>S</strong>, and then register <strong>A</strong> is added to register <strong>S</strong>. The train returns along the top of the circuit or exits along the bottom line if an overflow error occurs.</p>
+				<p>If register <strong>S</strong> has at least one more stage than either register <strong>A</strong> or <strong>B</strong> then an overflow error line is not needed. Also, there is no need to clear register <strong>S</strong> as as it is overwritten by the initial copy function.</p>
+				<h3><a name="2c"></a>Negator (2's complement)</h3>
+				<p>Two's complement is a method of representing negative binary numbers. See <a href="tt9_subtract.html">2'c Comp</a> for subtraction methods using Invert and Increment functions. This circuit generates the 2's complement directly.</p>
+				<p>To convert a number, first invert each lazy point and then add 1. We achieve this by using an Inverter function followed by a Count Up (increment) function like this:</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="m_bg">
+					<caption>
+					Negator (2's complement)
+					of <strong>A</strong>
+					</caption>
+					<tr>
+						<td><img src="grab/tt2c/complement.png" alt="2's complement" width="544" height="256" onclick="swit('m_999')">
+							<div class="sprites">
+							<textarea id="m_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="m_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="m_1" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="m_2">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="m_3" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="m_4">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="m_5" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="m_6">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="m_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="m_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p><strong>How it works</strong><br>
+					The upper <a href="tt2_func_single.html#inv">Invertor</a> negates the binary number by flipping each lazy point in turn. The train passes to the lower <a href="tt2_func_single.html#inc">Incrementor</a> which adds 1.
+				There is no overflow error line. </p>
+<h2>Header Circuits</h2>
+<p>A small header circuit can be added to some functions to combine more than one function. This makes them more efficient,and saves layout space.</p>
+<h3><a name="copybi"></a>Copy (bi-directional)</h3>
+				<p>A small header circuit of four sprung points allows the Copy function to be used in either direction, to copy <strong>A</strong> to <strong>B</strong> or <strong>B</strong> to <strong>A</strong>. In either case, the train is returned back along the correct track.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="i_bg">
+					<caption>
+						Copy data from register <strong>A</strong> to <strong>B</strong>
+						or <strong>B</strong> to <strong>A</strong>
+					</caption>
+					<tr>
+						<td><img src="grab/tt2c/copy_bi.png" alt="copy bi-directional" width="640" height="160" onclick="swit('i_999')">
+							<div class="sprites">
+							<textarea id="i_tens1" readonly></textarea>
+							<textarea id="i_tens2" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="i_0" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="i_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="i_2" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="i_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="i_4" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="i_5" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="i_6" onclick="swit(this.id)">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="i_7" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="i_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="i_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><h3><a name="cuc"></a>Count Up (increment) &amp; Clear</h3>
+				<p>A counter function often needs to be paired with a Clear function so that it can be reset at the start of a calculation. This is wasteful as the Clear function is used just once. Both functions are combined into one bi-directional function by adding a double linked point header circuit. This correctly routes 'Clear', 'Count' and 'Overflow Error' trains.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="ff_bg">
+					<caption>
+					Count Up and Clear
+					function
+					</caption>
+					<tr>
+						<td><img src="grab/tt2c/count_cl.png" alt="count &amp; clear" width="640" height="160" onclick="swit('ff_999')">
+							<div class="sprites">
+							<textarea id="ff_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="ff_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ff_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ff_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ff_3" onclick="swit(this.id)">
+								<img src="point_/13s_1.gif" alt="" width="32" height="32" id="ff_4" onclick="swit(this.id)">
+								<img src="point_/13s_1.gif" alt="" width="32" height="32" id="ff_5" onclick="swit(this.id)">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="ff_6" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="ff_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="ff_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p><strong>How it works</strong><br>
+					The upper line increments the counter. The lower line clears (resets) the counter. In both cases, the train returns back along its input track. An overflow error produces an output on the middle track. 
+		</p>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

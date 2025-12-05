@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Hamming Weight</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_ham.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Hamming Weight</h2>
+				<p>The Hamming Weight of a binary number is simply a count of the number of 1's it contains. So the Hamming Weight of 100001 is 2 and 1101 is 3. It is named after Richard Hamming and is used in several logic disciplines including cryptography. Read more at <a href="https://en.wikipedia.org/wiki/Hamming_weight">Wikipedia</a>.</p>
+<p>The circuit comprises a central <a href="tt2_func_single.html#latch">Latch</a> register with linked <a href="tt2_func_single.html#clear">Clear</a> and a lower <a href="tt2_func_single.html#inc">Count Up</a> function.</p>
+				<h3>Linked Functions</h3>
+				<p>Note that the Latch and the Clear functions are linked together. Linking points in different functions allows more than one function to act on a single register. In this circuit, the Latch and Counter are cleared by the train before computation begins.				</p>
+				<h3>Operation</h3>
+				<ol>
+					<li>Set upper <strong>n</strong> register to test number (0 to 127).</li>
+					<li>Start train from the station.</li>
+					<li> The <strong>L</strong>atch and <strong>S</strong>um registers are cleared before calculation begins.</li>
+					<li>When the train returns to platform 1 and halts, the Hamming Weight is shown in lower <strong>S</strong>um register<strong>.</strong></li>
+					<li>If the train returns to platform 0, then an overflow error has occoured.</li>
+				</ol>
+				<p>This layout illustrates how registers can be automatically cleared by the train before commencing a calculation. This technique can be applied to any computational layout and is important for accurate and repeatable calculations. However, it does take up time and web page space, so some layouts have to be cleared by clicking the train in its start position.<br>
+				</p>
+				<p>The Latch register allows the train to 'pick up where it left off' and return to the last <strong>1</strong> that was read out to the Counter.</p>
+					<table cellpadding="0" cellspacing="0" class="play" id="ham_bg">
+						<caption>
+							Layout to calculate Hamming Weight
+						</caption>
+						<tr>
+							<td><img src="grab/tt9/ham.png" alt="Hamming number function" width="736" height="352" onclick="swit('ham_999')">
+								<div class="sprites">
+									<textarea name="ham_tens" readonly id="ham_tens1"></textarea>
+									<textarea name="ham_tens" readonly id="ham_tens2"></textarea>
+									<img src="loco/10s.gif" alt="" width="32" height="32" id="ham_0" onclick="swit(this.id)">
+									<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ham_1" onclick="swit(this.id)">
+									<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ham_2" onclick="swit(this.id)">
+									<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ham_3" onclick="swit(this.id)">
+									<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ham_4" onclick="swit(this.id)">
+									<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ham_5" onclick="swit(this.id)">
+									<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ham_6" onclick="swit(this.id)">
+									<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ham_7" onclick="swit(this.id)">
+									<img src="point_/7s_1.gif" alt="" width="32" height="32" id="ham_8" onclick="swit(this.id)">
+									<img src="point_/7s_1.gif" alt="" width="32" height="32" id="ham_9" onclick="swit(this.id)">
+									<img src="point_/7s_1.gif" alt="" width="32" height="32" id="ham_10" onclick="swit(this.id)">
+									<img src="point_/7s_1.gif" alt="" width="32" height="32" id="ham_11" onclick="swit(this.id)">
+									<img src="point_/7s_1.gif" alt="" width="32" height="32" id="ham_12" onclick="swit(this.id)">
+									<img src="point_/7s_1.gif" alt="" width="32" height="32" id="ham_13" onclick="swit(this.id)">
+									<img src="point_/7s_1.gif" alt="" width="32" height="32" id="ham_14" onclick="swit(this.id)">
+									<img src="point_/7s_1.gif" alt="" width="32" height="32" id="ham_15" onclick="swit(this.id)">
+									<img src="point_/7s_1.gif" alt="" width="32" height="32" id="ham_16" onclick="swit(this.id)">
+									<img src="point_/7s_1.gif" alt="" width="32" height="32" id="ham_17" onclick="swit(this.id)">
+									<img src="point_/7s_1.gif" alt="" width="32" height="32" id="ham_18" onclick="swit(this.id)">
+									<img src="point_/7s_1.gif" alt="" width="32" height="32" id="ham_19" onclick="swit(this.id)">
+									<img src="point_/7s_1.gif" alt="" width="32" height="32" id="ham_20" onclick="swit(this.id)">
+									<img src="point_/7s_1.gif" alt="" width="32" height="32" id="ham_21" onclick="swit(this.id)">
+									<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ham_22" onclick="swit(this.id)">
+									<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ham_23" onclick="swit(this.id)">
+									<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ham_24" onclick="swit(this.id)">
+									<img src="loco/4.gif" alt="" width="32" height="32" id="ham_loco">
+									<img src="loco/over.gif" alt="" width="36" height="36" id="ham_over">
+								</div></td>
+						</tr>
+					</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><br>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

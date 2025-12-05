@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Multiplier Circuit</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_multiplier.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Multiplier Circuit </h2>
+				<p>This circuit multiplies two binary numbers in registers <strong>A</strong> and <strong>B</strong> and outputs the result in register <strong>S</strong>. It uses a Shift Left and an Accumulator function to add successive multiples of 2. See Multiplier Basics at <a href="http://en.wikipedia.org/wiki/Binary_multiplier#Multiplication_basics">Wikipedia</a> on how to multiply binary numbers. </p>
+				<p>The multiplier proceeds like this. First, the Clear &amp; Error line:<br>
+				</p>
+				<ol>
+					<li> Sets latches to <strong>1</strong> for all leading zeros of register <strong>A</strong> and <strong>0</strong> thereafter.</li>
+					<li>Copies register <strong>B</strong> into register <strong>B</strong> and sets x16 bit to <strong>0</strong>.</li>
+					<li>Clears the output Sum <strong>S</strong> register. </li>
+				</ol>
+				<p>Then the main program loop cycles through these 4 steps:</p>
+				<ol>
+					<li>Read out the next data bit of register <strong>A</strong>. <br>
+						(This also sets the next latch, -if all latches are <strong>1</strong> then halt).</li>
+					<li>If the data bit is a <strong>1</strong> then add register <strong>B</strong> to Sum register <strong>S</strong>.</li>
+					<li>Check the latch register, (this does not set any latches). If all latches are set to <strong>1</strong> then halt.</li>
+					<li>Rotate register <strong>B</strong> to the left (ie multiply by 2).</li>
+				</ol>
+				<p>The main problem is preventing unnecessary shift lefts of register <strong>B</strong>. This not only wastes time, but the final shift left can create an overflow error. Hence the 'Leading Zero' function which checks for leading zeros in register <strong>A</strong> and halts the computation if all latches are set to <strong>1</strong>.</p>
+				<p>We require 6 functions stacked in this order to make linking points easier:</p>
+				<ol>
+					<li><a href="tt2_func_linked.html#lzl">Leading Zero Latch</a> function</li>
+					<li><a href="tt2_func_linked.html#read">Sequential Read</a> function</li>
+					<li><a href="tt2_func_single.html#copy">Copy function</a> (and set x16=0)</li>
+					<li><a href="tt2_func_shift.html#shift_l">Shift Left</a> function</li>
+					<li><a href="tt2_func_single.html#add">Accumulator</a> function</li>
+					<li><a href="tt2_func_single.html#clear">Clear</a> function (to reset <strong>S</strong>)</li>
+				</ol>
+				<p>In the multiplier, the first two functions are combined. So if the latches are set to 11000 from the leading zero function, then when each digit in register <strong>A</strong> is read in turn, the latches will be set to 11001, 11011 and 11111. The latches are checked before each shift left, so the last setting of all 1's will halt the calculation before a final shift left occurs.</p>
+				<h3>Multiplier Layout </h3>
+				<p>Enter the two numbers to be multiplied into registers <strong>A</strong> and <strong>B</strong>. Read the computed output from register <strong>S</strong>.</p>
+				<div class="wideleft">
+						<table cellpadding="0" cellspacing="0" class="play" id="t_bg">
+							<tr>
+								<td><img src="grab/mult.png" alt="multiplier circuit" width="1056" height="1472" onclick="swit('t_999')">
+									<div class="sprites">
+										<img src="loco/10s.gif" alt="" width="32" height="32" id="t_0" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_1" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_2" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_3" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_4" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_5" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_6" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_7" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_8" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_9" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_10" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_11" onclick="swit(this.id)">
+										<img src="point_/7t_1.gif" alt="" width="32" height="32" id="t_12" onclick="swit(this.id)">
+										<img src="point_/13y_1.gif" alt="" width="32" height="32" id="t_13" onclick="swit(this.id)">
+										<img src="point_/13y_1.gif" alt="" width="32" height="32" id="t_14" onclick="swit(this.id)">
+										<img src="point_/13y_1.gif" alt="" width="32" height="32" id="t_15" onclick="swit(this.id)">
+										<img src="point_/13y_1.gif" alt="" width="32" height="32" id="t_16" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_17" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_18" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_19" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_20" onclick="swit(this.id)">
+										<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_21" onclick="swit(this.id)">
+										<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_22" onclick="swit(this.id)">
+										<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_23" onclick="swit(this.id)">
+										<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_24" onclick="swit(this.id)">
+										<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_25" onclick="swit(this.id)">
+										<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_26" onclick="swit(this.id)">
+										<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_27" onclick="swit(this.id)">
+										<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_28" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_29" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_30" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_31" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_32" onclick="swit(this.id)">
+										<img src="point_/13y_1.gif" alt="" width="32" height="32" id="t_33" onclick="swit(this.id)">
+										<img src="point_/13y_1.gif" alt="" width="32" height="32" id="t_34" onclick="swit(this.id)">
+										<img src="point_/13y_1.gif" alt="" width="32" height="32" id="t_35" onclick="swit(this.id)">
+										<img src="point_/13y_1.gif" alt="" width="32" height="32" id="t_36" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_37" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_38" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_39" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_40" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_41" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_42" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_43" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_44" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_45" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_46" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_47" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_48" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_49" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_50" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_51" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_52" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_53" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_54" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_55" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_56" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_57" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_58" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_59" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_60" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_61" onclick="swit(this.id)">
+										<img src="point_/13r_1.gif" alt="" width="32" height="32" id="t_62" onclick="swit(this.id)">
+										<img src="point_/13r_1.gif" alt="" width="32" height="32" id="t_63" onclick="swit(this.id)">
+										<img src="point_/13r_1.gif" alt="" width="32" height="32" id="t_64" onclick="swit(this.id)">
+										<img src="point_/13r_1.gif" alt="" width="32" height="32" id="t_65" onclick="swit(this.id)">
+										<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_66" onclick="swit(this.id)">
+										<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_67" onclick="swit(this.id)">
+										<img src="loco/4.gif" alt="" width="32" height="32" id="t_loco">
+										<img src="loco/over.gif" alt="" width="36" height="36" id="t_over">
+									</div></td>
+							</tr>
+						</table>
+					</div><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/points.lbi" --><table cellpadding="0" cellspacing="0" class="ji">
+	<tr>
+		<td><img src="extra/7y_0.gif" alt="lazy point" width="32" height="32"></td>
+		<td>Lazy points switch between upper <strong>0</strong> or lower <strong>1</strong> branch lines<br>
+			Trains arriving on a branch line switch the point to that line</td>
+	</tr>
+	<tr>
+		<td><img src="track/11a.gif" alt="sprung point" width="32" height="32"></td>
+		<td>Sprung points allow branch line trains to join the main line<br>
+			All main line trains go straight ahead and never 'branch off'</td>
+	</tr>
+</table><!-- #EndLibraryItem --><p><strong>Notes</strong> </p>
+				<ol>
+					<li>Multiplication is commutative, so AxB = BxA. A quicker calculation is obtained if the shorter number is entered into the <strong>A</strong> register, as there are fewer shift lefts to be carried out.</li>
+					<li>If <strong>A</strong>=0, the calculation completes quickly. If <strong>B</strong>=0, then a series of shift lefts and additions are carried out on <strong>B</strong>, eventually giving the answer of <strong>0</strong>. An extra function could be added, connected to the Clear &amp; Error line, to halt if <strong>B</strong>=0.</li>
+					<li>Both <strong>A</strong> and <strong>B</strong> are 4 bits long and the output register 5 bits long. This limits <strong>A</strong> and <strong>B</strong> to 7 and the output to 31. All registers can be increased by extending to the left. Usually, the output register is larger than the input registers. </li>
+					<li>Register <strong>B</strong> is copied into register <strong>B</strong>. This preserves the value of input <strong>B</strong> and allows any extra bits due to a larger output register to be set to <strong>0</strong>.</li>
+					<li>There is no bypass switch as a Clear is needed before each calculation.</li>
+					<li>The lower Clear &amp; Error line return loop is truncated to save a couple of horizontal lines.</li>
+					<li>The overflow error line from the adder is returned via the clear <strong>S</strong> register function to save one horizontal line.</li>
+					<li>The halt return lines from the 'Leading Zero Latch' and the 'Parallel to Serial Converter' functions are combined to save space and also a Mux line.</li>
+					<li>The shift left function fills the least significant bit with <strong>0</strong>. Also, if the most significant bit is a <strong>1</strong>, then a halt output stops the calculation immediately before a rotate left is carried out.</li>
+				</ol>
+				<p>If the input registers <strong>A</strong> and <strong>B</strong> are linked together by extending the vertical link lines down from register <strong>A</strong> to register <strong>B</strong>, then the circuit acts as a 'square' maths function producing <strong>A</strong> x <strong>A</strong>.</p>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

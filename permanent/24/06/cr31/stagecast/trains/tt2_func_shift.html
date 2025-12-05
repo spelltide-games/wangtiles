@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Register shift and rotate functions</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_shift.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Functions: Shift &amp; Rotate Registers</h2>
+				<p>These functions perform logical shift or rotate, either left or right, on data register <strong>A</strong>. In some layouts the lazy points are drawn close together so more stages can be shown.<br>
+				</p>
+				<h3><a name="shift_r"></a>Shift Right (/2)</h3>
+				<p>This 6-stage circuit shifts data one stage to the right. The least significant bit 'x1' is lost, so if the register represents a binary number then it is halved (divided by 2), with no fractional part. When all stages have been copied, the most significant bit 'x32' is set to <strong>0</strong>.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="a_bg">
+					<caption>
+					Shift Right
+					</caption>
+					<tr>
+						<td><img src="grab/tt2s/shift_rt.png" alt="shift right" width="608" height="320" onclick="swit('a_999')">
+							<div class="sprites">
+								<textarea id="a_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="a_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_4" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_5" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_6" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="a_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="a_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>This circuit is used in the <a href="tt9_rng.html">Random Number Generator</a>. A compact (but wider) version of this circuit is used in the <a href="tt9_aver.html">Average Function</a>. </p>
+<table cellpadding="0" cellspacing="0" class="play" id="aa_bg">
+	<caption>
+		Shift Right
+	</caption>
+	<tr>
+		<td><img src="grab/tt2s/shift_rt_.png" alt="shift right" width="512" height="192" onclick="swit('aa_999')">
+			<div class="sprites">
+				<textarea id="aa_tens1" readonly></textarea>
+				<img src="loco/10s.gif" alt="" width="32" height="32" id="aa_0" onclick="swit(this.id)">
+				<img src="point_/7y_1.gif" alt="" width="32" height="32" id="aa_1" onclick="swit(this.id)">
+				<img src="point_/7y_1.gif" alt="" width="32" height="32" id="aa_2" onclick="swit(this.id)">
+				<img src="point_/7y_1.gif" alt="" width="32" height="32" id="aa_3" onclick="swit(this.id)">
+				<img src="point_/7y_1.gif" alt="" width="32" height="32" id="aa_4" onclick="swit(this.id)">
+				<img src="loco/12.gif" alt="" width="32" height="32" id="aa_loco">
+				<img src="loco/over.gif" alt="" width="36" height="36" id="aa_over">
+			</div></td>
+	</tr>
+</table>
+<h3><a name="rot_r"></a>Rotate Right</h3>
+				<p>This 5-stage circuit rotates data one stage to the right in the same manner as the shift right circuit above. The difference is that the least significant bit 'x1' is not lost. It is stored in an extra lazy point and read into the most significant bit 'x16' position when all stages have been shifted.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="b_bg">
+					<caption>
+					Rotate Right
+					</caption>
+					<tr>
+						<td><img src="grab/tt2s/rotate_rt.png" alt="rotate right" width="608" height="352" onclick="swit('b_999')">
+							<div class="sprites">
+								<textarea id="b_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="b_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="b_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="b_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="b_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="b_4" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="b_5" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="b_6">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="b_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="b_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><h3><a name="shift_l"></a>Shift Left (x2)</h3>
+				<p>This 6-stage circuit shifts data one stage to the left. The most significant bit 'x32' is lost. When all stages have been copied, the least significant bit 'x1' is set to <strong>0</strong>. If the register represents a binary number (with a leading <strong>0</strong>) then it is multiplied by 2.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="c_bg">
+					<caption>
+					Shift Left
+					</caption>
+					<tr>
+						<td><img src="grab/tt2s/shift_lt.png" alt="shift left" width="608" height="320" onclick="swit('c_999')">
+							<div class="sprites">
+								<textarea id="c_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="c_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_4" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_5" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_6" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="c_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="c_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>A compact (but wider) version of this circuit is used in the <a href="tt9_multi_shift.html">Multiplier</a> circuit.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="cc_bg">
+					<caption>
+						Shift Left
+					</caption>
+					<tr>
+						<td><img src="grab/tt2s/shift_lt_.png" alt="shift left" width="512" height="192" onclick="swit('cc_999')">
+							<div class="sprites">
+								<textarea id="cc_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="cc_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="cc_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="cc_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="cc_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="cc_4" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="cc_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="cc_over">
+						</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>This circuit uses single lazy points to hold the value from each stage before transferring it to the next. This allows all stages to be the same and the train works from LSB to MSB. Not used in any other layout.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="ccc_bg">
+					<caption>
+						Shift Left (LSB to MSB)
+					</caption>
+					<tr>
+						<td><img src="grab/tt2s/sleft.png" alt="shift left modular" width="640" height="256" onclick="swit('ccc_999')">
+							<div class="sprites">
+								<textarea id="ccc_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="ccc_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ccc_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ccc_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ccc_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ccc_4" onclick="swit(this.id)">
+								<img src="point_/13s_1.gif" alt="" width="32" height="32" id="ccc_5">
+								<img src="point_/13s_1.gif" alt="" width="32" height="32" id="ccc_6">
+								<img src="point_/13s_1.gif" alt="" width="32" height="32" id="ccc_7">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="ccc_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="ccc_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><h3><a name="rot_l"></a>Rotate Left</h3>
+				<p>This 5-stage circuit rotates data one stage to the left. The most significant bit 'x16' is not lost. It is stored in an extra lazy point and read into the least significant bit 'x1' position when all stages have been shifted.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="d_bg">
+					<caption>
+					Rotate Left
+					</caption>
+					<tr>
+						<td><img src="grab/tt2s/rotate_lt.png" alt="rotate left" width="608" height="384" onclick="swit('d_999')">
+							<div class="sprites">
+								<textarea id="d_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="d_0" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="d_1">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="d_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="d_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="d_4" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="d_5" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="d_6" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="d_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="d_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><br>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

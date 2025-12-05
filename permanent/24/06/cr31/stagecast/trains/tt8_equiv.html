@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Equivalent Circuits</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_equiv.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Equivalent Circuits </h2>
+				<p>In electronics, different types of logic gate can be constructed using just one type of gate -usually NAND gates. In a similar manner, we can use lazy points to build sprung points, flip-flops and cross-overs.</p>
+				<p>We cannot use sprung points to build a lazy point as sprung points leave a circuit unchanged, whereas lazy points change the state of a circuit.</p>
+				<p>This also allows the construction of <a href="tt9_lout.html">inverted and bypassed</a> lazy points. </p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><h3>Sprung Point</h3>
+							<p>A sprung point can be built from two lazy points linked together. The points must start in the <strong>0</strong> position, else the train could leave the track. They do not need to be reset as the train cannot leave the points in the <strong>1</strong> position. </p>
+							<p>The circuit shown is the equivalent of a sprung point in this orientation:
+	<img src="track/14b.gif" alt="curve" width="32" height="32" align="top">
+							</p>
+						<p>This allows the 'old' style of <a href="tt8_duplo_lout.html">Duplo points</a> to be built from two 'new' Duplo points linked together.</p></td>
+						<td><table cellpadding="0" cellspacing="0" class="array">
+								<caption>
+								Sprung Point
+								</caption>
+								<tr>
+									<td><img src="grab/tt7/sprung.png" alt="sprung point" width="192" height="192"></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table>
+				<h3><a name="flip"></a>Flip-flop</h3>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><p>A flip-flop can be built from three lazy points linked together. For convenience, the central lazy point is drawn reflected. The points can be drawn more compactly without the short vertical track between lazy points. See <a href="tt2_func_flipflop.html">Flip-flop functions</a>.</p>
+<p>Trains are not allowed to arrive on an output line, as they could fall off the track. </p>
+<p>If necessary, the circuit could be modified to prevent this by joining the two open branch lines:</p>
+<ul>
+	<li> to the main input line</li>
+	<li>to each other</li>
+	<li>to the output lines</li>
+</ul></td>
+						<td><table cellpadding="0" cellspacing="0" class="array">
+								<caption>
+								Flip-flop
+								</caption>
+								<tr>
+									<td><img src="grab/tt7/flipflopex.png" alt="flip flop point" width="96" height="224"></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table>
+				<h3><a name="distrib"></a>Distributor</h3>
+				<p>In their paper <a href="http://www.monochrom.at/turingtrainterminal/Chalcraft.pdf">Train Sets</a>, Chalcraft and Greene describe a flip-flop circuit, which they name a 'Distributor'. Their Turing machine uses only unlinked (single) lazy points, so cannot include the flip-flop circuit with three linked lazy points shown above. Instead, their distributor function sends the train to an additional stage each time it is used. In theory, it needs to be infinite in size.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="d_bg">
+					<caption>
+						Distributor
+					</caption>
+					<tr>
+						<td><img src="grab/tt2f/dis.png" alt="ones complement function" width="544" height="160" onclick="swit('d_999')">
+							<div class="sprites">
+								<img src="loco/8le.gif" alt="" width="32" height="32" id="d_0" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="d_1">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="d_2">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="d_3">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="d_4">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="d_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="d_over">
+						</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive2.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click start circle to reset train</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>The distributor is similar to a <a href="tt2_func_single.html#latch">Sequential Latch</a>. Instead of returning back along the same track, the train is returned on alternate tracks <strong>0</strong> and <strong>1</strong>.	The circuit is extended to the left as necessay.</p>
+				<p>All lazy points are reset to <strong>0</strong> before use (unlike the Chalcraft Greene design where they are reset to alternate <strong>0</strong> and <strong>1</strong>'s). The cross-overs can be eliminated by placing the lower return track above the latches.</p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><h3>Flip-flop 2</h3>
+							<p>A flip-flop can also be built from two lazy points linked together and a single sprung point. This is the layout used in many of these pages.</p>
+						<p>The sprung point needs to be replaced with an equivalent lazy point layout. Therefore each flip-flop requires four lazy points.</p>
+						<p> This is one more than the first flip-flop, but the circuit has the advantage that trains cannot leave the track if they arrive on one of the output lines. </p></td>
+						<td><table cellpadding="0" cellspacing="0" class="array">
+								<caption>
+								Flip-flop
+								</caption>
+								<tr>
+									<td><img src="grab/tt7/flip-flop.png" alt="flip flop point" width="128" height="192"></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table>
+				<br>
+				<table cellpadding="0" cellspacing="0" class="play" id="f_bg">
+					<caption>
+						Flip-flop 2
+					</caption>
+					<tr>
+						<td><img src="grab/tt7/flipflopex2.png" alt="flip-flop point2" width="384" height="192" onclick="swit('f_999')">
+							<div class="sprites">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="f_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_4" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="f_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="f_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive2.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click start circle to reset train</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><br>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td width="50%"><h3>Lazy Point Cross-over</h3>
+							<p>Two lazy points, linked together can emulate a cross-over. The circuit shown is equivalent to a single cross-over:
+								<img src="track/15.gif" alt="curve" width="32" height="32" align="middle">
+							</p>
+							<p>Trains arriving on one side are routed to the opposite side, so connecting N-S vertically and E-W horizontally. </p>
+							<p>The outer track with its 4 lazy points allows the central cross-over circuit to be tested.</p></td>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="a_bg">
+							<caption>
+								Linked Lazy Point Cross-over
+								</caption>
+							<tr>
+								<td><img src="grab/tt7/crossover.png" alt="cross-over (lazy)" width="288" height="288" onclick="swit('a_999')">
+									<div class="sprites">
+										<img src="loco/10s.gif" alt="" width="32" height="32" id="a_0" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_1" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_2" onclick="swit(this.id)">
+										<img src="loco/5s.gif" alt="" width="32" height="32" id="a_3" onclick="swit(this.id)">
+										<img src="loco/10s.gif" alt="" width="32" height="32" id="a_4" onclick="swit(this.id)">
+										<img src="loco/5s.gif" alt="" width="32" height="32" id="a_5" onclick="swit(this.id)">
+										<img src="loco/12.gif" alt="" width="32" height="32" id="a_loco">
+										<img src="loco/over.gif" alt="" width="36" height="36" id="a_over">
+									</div></td>
+							</tr>
+						</table></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive2.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click start circle to reset train</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><h3>Sprung Point Cross-overs</h3>
+				<p>We can also construct cross-overs from sprung points. Each of these designs require 12 sprung points. Trains arriving on one side are routed to the opposite side, so connecting N-S vertically and E-W horizontally.							</p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="b_bg">
+								<caption>
+								12 Sprung Point Cross-over 1
+								</caption>
+								<tr>
+									<td><img src="grab/tt7/xover2.png" alt="cross-over (sprung1)" width="288" height="288" onclick="swit('b_999')">
+										<div class="sprites">
+											<img src="loco/10s.gif" alt="" width="32" height="32" id="b_0" onclick="swit(this.id)">
+											<img src="loco/5s.gif" alt="" width="32" height="32" id="b_1" onclick="swit(this.id)">
+										<img src="loco/10s.gif" alt="" width="32" height="32" id="b_2" onclick="swit(this.id)">
+										<img src="loco/5s.gif" alt="" width="32" height="32" id="b_3" onclick="swit(this.id)">
+											<img src="loco/12.gif" alt="" width="32" height="32" id="b_loco">
+											<img src="loco/over.gif" alt="" width="36" height="36" id="b_over">
+										</div></td>
+								</tr>
+							</table></td>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="c_bg">
+								<caption>
+								12 Sprung Point Cross-over 2
+								</caption>
+								<tr>
+									<td><img src="grab/tt7/xover1.png" alt="cross-over (sprung2)" width="288" height="288" onclick="swit('c_999')">
+										<div class="sprites">
+											<img src="loco/10s.gif" alt="" width="32" height="32" id="c_0" onclick="swit(this.id)">
+											<img src="loco/5s.gif" alt="" width="32" height="32" id="c_1" onclick="swit(this.id)">
+										<img src="loco/10s.gif" alt="" width="32" height="32" id="c_2" onclick="swit(this.id)">
+										<img src="loco/5s.gif" alt="" width="32" height="32" id="c_3" onclick="swit(this.id)">
+											<img src="loco/12.gif" alt="" width="32" height="32" id="c_loco">
+											<img src="loco/over.gif" alt="" width="36" height="36" id="c_over">
+										</div></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive2.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click start circle to reset train</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><br>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

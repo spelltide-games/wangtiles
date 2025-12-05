@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Sprung Points</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_subs.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+			<h2>Sprung Points
+				<img src="track/11b.gif" alt="sprung point" width="32" height="32" align="middle">
+			</h2>
+			<p>Sprung points allow trains arriving on the curved 'branch' line to join the 'main' line. The points may be briefly opened by the trains wheels, but 'spring back' as the train passes, hence its name. Trains on the main line, travelling in either direction, stay on the main line and never leave on the branch line. </p>
+			<p>The handedness of a sprung point is described by the side that the diverging track leaves.</p>
+			<p>So
+				<img src="track/11b.gif" alt="sprung point" width="32" height="32" align="middle">
+				<img src="track/14b.gif" alt="sprung point" width="32" height="32" align="middle">
+				are left-hand points and
+	<img src="track/14a.gif" alt="sprung point" width="32" height="32" align="middle">
+	<img src="track/11a.gif" alt="sprung point" width="32" height="32" align="middle">
+				are right-hand points. </p>
+			<h3>Subroutines </h3>
+			<p>Sprung points enable us to construct 'calls' to separate areas of a layout, a kind of 'Gosub &amp; Return'. Each area is a self contained subroutine which performs a specific task. Once the task is complete, the train returns back along the same track.</p>
+			<table cellpadding="0" cellspacing="0" class="play" id="s_bg">
+				<caption>
+					Subroutine 'calls'
+					</caption>
+				<tr>
+					<td><img src="grab/tt1/mainloop.png" alt="subroutines" width="288" height="192" onclick="swit('s_999')">
+						<div class="sprites">
+							<img src="loco/2re.gif" alt="" width="32" height="32" id="s_0" onclick="swit(this.id)">
+							<img src="loco/4.gif" alt="" width="32" height="32" id="s_loco">
+							<img src="loco/over.gif" alt="" width="36" height="36" id="s_over">
+						</div></td>
+				</tr>
+			</table><!-- #BeginLibraryItem "/Library/interactive2.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click start circle to reset train</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>For example, here are 3 subroutines, which are visited in order. The train enters a closed 'Program Loop' and will carry out subroutines 1 &gt; 2 &gt; 3 &gt; forever.			</p>
+			<p>However, sprung points allow us to build networks where we can control which tracks are traversed, and in which order. Therefore we can break down a large layout into a series of sublayouts in order to solve a computational problem.</p>
+			<p>These methods provide an effective technique for constructing large complex layouts by a system of 'Divide &amp; Conquer'. Tasks can be reduced into a series of smaller ones. We can control how the train traverses a layout, which tasks are performed and in what order.</p>
+			<h3>Infinite Loops</h3>
+			<p>As the above layout and the ones on the previous page show, it is all too easily for the train to fall into an infinite loop from which it cannot escape by any further point switching. This traps the train and prevents the calculation from completing. The use of subroutines helps avoid this, because we can ensure that at least one subroutine returns the train to the start position to halt the computation.</p>
+			<h3>Alan Turing</h3>
+			<table cellpadding="0" cellspacing="0" class="lout">
+				<tr>
+					<td><p>Due to the Turing Halting problem, we never know if a train will return from a complex layout. If it becomes trapped in an infinite loop, the calculation will carry on forever and never return an answer. It may have no answer. The calculation may not be computable.</p>
+						<p>The calculating layouts on the next few pages are small enough to check that the train returns to the start and halts.</p></td>
+					<td><div class="picap">
+						<img src="art/Alan_Turing.jpg" width="112" height="140" alt="Alan Turing" />
+						<br />
+						Alan Turing</div></td>
+				</tr>
+			</table>
+			<h3>Lazy &amp; Sprung Points</h3>
+			<p>The two types of points are deliberatly drawn differently to make layouts easier to follow. Lazy points are symmetrical. Sprung points have a straight main line and a curved joining (never leaving) branch line. This creates a strong visual form which makes common network elements easier to recognise.</p>
+			<p>When operating a computational layout, sprung points are mostly ignored, as they simply merge a branch line onto a main line. Indeed, the term 'points' often only refers to the lazy points in a layout. </p>
+			<p>Next we'll use both types of point to construct <a href="tt2_func.html">functions</a>. </p>
+			<h3>Duplo</h3>
+			<p>Duplo provides both lazy (new) and sprung (old) types of point, so can be used to build real examples of all layouts (see <a href="tt8_duplo_lout.html">Duplo pages</a>). </p>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

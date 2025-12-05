@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Universal Computer</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_ham2.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+						<h2>Universal Computer</h2>
+						<p>Each of the example layouts shown so far has been specifically designed to carry out a single function. A computer layout would be able to carry out many different functions by following a series of programmed steps. Different examples could be run by simply changing the program.</p>
+						<p>The computer uses a 'library' of built-in functions. We've already seen these layouts over the preceding pages. The functions are stacked one above the other, allowing common registers points to be linked together so data can be shared. </p>
+						<h3>Program Loop</h3>
+						<p>Any function can be 'called' from the main program loop. This will be 'programmed' (built) to carry out the requirements of each particular program, as a series of subroutine calls. Once each task is complete, the train returns back along the same track. We've already seen the idea of a program loop with sprung point <a href="tt1_subs.html">subroutines</a>.						</p>
+						<table cellpadding="0" cellspacing="0" class="lout">
+							<tr>
+								<td><p>At least one subroutine function will need to detect when the calculation is complete and return the train to its starting position. Without a 'Halt' condition, the program will run forever. </p>
+									<p>In theory, the program loop will be the only difference between any two computer layouts. In practice, to save space, only functions which are used will be shown in the library stack, so each layout will be different.<br>
+										<br>
+									</p>
+									<h3>Multiplexer</h3>
+									<p>To saves a multitude of parallel tracks, we'll employ a multiplexer. The circuit shows a 4-way multiplexer which connects the upper program loop with four lower functions. </p>
+								<p>If the train enters on line 2, it switches the two sets of linked points before travelling down the single vertical connecting line. The linked points ensure the train is delivered to the correct function. It then returns back along the same track.</p></td>
+								<td><table cellpadding="0" cellspacing="0" class="play" id="m_bg">
+									<caption>
+										Multiplexer
+									</caption>
+									<tr>
+										<td><img src="grab/tt3t/mux.png" alt="MUX layout" width="256" height="576" onclick="swit('m_999')">
+											<div class="sprites">
+												<img src="loco/2re.gif" alt="" width="32" height="32" id="m_0" onclick="swit(this.id)">
+												<img src="point_/7t_1.gif" alt="" width="32" height="32" id="m_1" onclick="swit(this.id)">
+												<img src="point_/7t_1.gif" alt="" width="32" height="32" id="m_2" onclick="swit(this.id)">
+												<img src="point_/7t_1.gif" alt="" width="32" height="32" id="m_3" onclick="swit(this.id)">
+												<img src="point_/7t_1.gif" alt="" width="32" height="32" id="m_4" onclick="swit(this.id)">
+												<img src="point_/7t_1.gif" alt="" width="32" height="32" id="m_5" onclick="swit(this.id)">
+												<img src="point_/7t_1.gif" alt="" width="32" height="32" id="m_6" onclick="swit(this.id)">
+												<img src="loco/4.gif" alt="" width="32" height="32" id="m_loco">
+												<img src="loco/over.gif" alt="" width="36" height="36" id="m_over">
+											</div></td>
+									</tr>
+								</table></td>
+							</tr>
+						</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem -->
+				<h3>Error Line 
+					<img src="track/2.gif" alt="&quot;&quot;" width="32" height="32" align="absmiddle">
+				</h3>
+				<p>Most computer layouts include a vertical error line. This allows functions to return any overflow errors to an error siding back at the station. This saves time scanning a large layout for a train that may have stopped in an error siding somewhere. Unused Mux lines, Comparator outputs (usually C&gt;n) are also returned as errors. </p>
+				<h3>Reset
+					<img src="loco/10s.gif" alt="&quot;&quot;" width="32" height="32" align="absmiddle">
+				</h3>
+				<p>To ensure accurate and repeatable	results,	it	is	important that all points are reset to their initial positions before each new calculation. Click the start circle to reset the train and again to reset all points. </p>
+				<p>Alternatively, some layouts incorporate a combined 'Clear &amp; error' line, which clears registers before each new computation. It adds time and track area though. It is added to an example <a href="tt3_tri_c&e.html">Triangular Number</a> layout. Essential for a real train track layouts but over complex for a web page where all points can be easily reset to <strong>0</strong>.</p>
+				<h3>Alan Turing</h3>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><p>Due to the Turing Halting conjecture, we can never prove that a train will return from a complex layout. If it becomes trapped in an infinite loop, the calculation will carry on forever and never return an answer. It may have no answer. The calculation may not be computable.</p>
+							<p>The computer layouts on the next few pages are small enough to check that there are no loops to trap the train.</p></td>
+						<td><div class="picap">
+							<img src="art/Alan_Turing.jpg" width="112" height="140" alt="Alan Turing" />
+							<br />
+							Alan Turing</div></td>
+					</tr>
+				</table>
+				<p>&nbsp;</p>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

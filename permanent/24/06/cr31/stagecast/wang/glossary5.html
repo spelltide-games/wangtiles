@@ -1,0 +1,432 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- #BeginTemplate "/Templates/wang.dwt" --><!-- DW6 -->
+<head>
+<!-- #BeginEditable "doctitle" -->
+<title>Glossary</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../wang/text.css" type="text/css">
+<script src="../js/wang.js" type="text/JavaScript"></script>
+<meta name="description" content="Stagecast puzzles, games, animation and sims">
+<meta name="keywords" content="Wang, maze, tile, tile set, tileset, labyrinth, Stagecast, seamless, icon, terrain, path, 32x32, game">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><ul>
+				<li><a href="../trains/tt0_intro.html">Turing Trains</a></li>
+				<li><a href="../../logojs/logo.html">i&nbsp;Logo</a></li>
+				<li class="this">Wang Tiles</li>
+				<li><a href="stage.html">Maze Arrays</a></li>
+			</ul></td>
+		<td class="side"><ul>
+				<li><a href="../../index.html">cr31</a></li>
+				</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Wang Tiles</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>edge and corner matched tilesets</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- #BeginEditable "contents" -->
+					<table cellpadding="0" cellspacing="0" class="lout">
+						<tr>
+							<td width="40%"><h2>Glossary T...Z</h2></td>
+							<td><h3><a href="glossary.html">A...B</a></h3></td>
+							<td><h3><a href="glossary2.html">C...F</a></h3></td>
+							<td><h3><a href="glossary3.html">G...O</a></h3></td>
+							<td><h3><a href="glossary4.html">P...S</a></h3></td>
+							<td><h3>T...Z</h3></td>
+						</tr>
+					</table>
+					<p><strong><a name="t-junction"></a>T-junction</strong> (fork)<br>
+						A three way path tile. See '<a href="#fork">Fork Tile</a>'.
+	<img src="../art/edge/rail/7.gif" alt="tile" width="32" height="32" align="texttop">
+					</p>
+					<p><strong><a name="terrain"></a>Terrain tiles</strong><br>
+						Wang (usually corner) tiles that form a traversable landscape when randomly laid out on a grid. May not be an interesting maze structure. Ddifficult to build a <a href="#perfect">perfect maze</a> using corner terrain tiles.
+	<img src="../art/corn/patch/10.gif" alt="tile" width="32" height="32" align="texttop">
+						Also see '<a href="#path-tile">Path tiles</a>'. </p>
+					<p><strong><a name="tile0"></a>Tidy Tiling Method</strong><br>
+						Tiling method to prevent <span class="sq2">clumping or corner touching</span> of block tiles. See <a href="block.html#tidy">Block Tiles</a> page.</p>
+					<p><strong><a name="tile0"></a>Tile-0</strong><br>
+						A blank or empty tile.
+						<img src="../art/edge/pipe/0.gif" alt="tile" width="32" height="32" align="texttop">
+						As it has no <a href="#exits">exits</a>, its index sum is '0' (zero).					The blank tile is the only tile which has the same index for any order.  Also see <a href="#alternative">alternative</a> tiles.</p>
+					<p><strong><a name="tile15"></a>Tile-15 Alternatives</strong><br>
+						A 2-edge Wang tile with a path on all four edges is <a href="#index">indexed</a> as tile-15. It can have different design variations. Also see <a href="#alternative">alternative</a> tiles.</p>
+					<table cellspacing="0" cellpadding="0">
+						<caption>
+							Tile-15 variations
+						</caption>
+						<tr>
+							<td><table cellpadding="0" cellspacing="0" class="sq4">
+								<tr>
+									<td><img src="../art/edge/path/15.gif" alt="tile" width="32" height="32" align="texttop"></td>
+									<td><img src="../art/edge/path/15b.gif" alt="tile" width="32" height="32" align="texttop"></td>
+									<td><img src="../art/edge/path/15c.gif" alt="tile" width="32" height="32" align="texttop"></td>
+									<td><img src="../art/edge/path/15d.gif" alt="tile" width="32" height="32" align="texttop"></td>
+									<td><img src="../art/edge/path/15e.gif" alt="tile" width="32" height="32" align="texttop"></td>
+								</tr>
+							</table></td>
+							<td><table cellpadding="0" cellspacing="0" class="sq4">
+								<tr>
+									<td><img src="../art/corn/path/_15.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/corn/path/_15b.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/corn/path/_15a.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/corn/path/_15d.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/corn/path/_15e.gif" width="32" height="32" alt="tile"></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table>
+					<p>This does not effect the Wang tile maze building process, but does effect the sprite path followers who must choose the correct path. 
+						For instance, the third tile above, sprites can only move straight ahead, they cannot turn and exit.<br>
+						Also, tile-15 variations may render the maze no longer  '<a href="#perfect">perfect</a>'. The middle tile above is not 'internally connected', it has two separate paths which are not joined. So the final maze may not be connected. See '<a href="#twinbend">Twin bend</a>', '<a href="#perfect">Perfect maze</a>', and '<a href="#weave">Weave</a>'.</p>
+					<p><strong><a name="tile-design"></a>Tile Design</strong><br>
+						The image depicted on a tile. Tiles in a tileset have a similar artistic or graphical design so that they aesthetically 'go' together. Must also all have the same perspective. Design styles can be flat graphics, isometric pixel art or more realistic looking 'pixel art' imagery. </p>
+					<p><strong><a name="tileset"></a>Tileset</strong><br>
+						A collection of tiles which are used to create a <a href="#path">path</a>, <a href="#terrain">terrain</a> or <a href="#maze">maze</a> layout. Usually, all tiles have a similar style, so that the completed maze is aesthetically pleasing.</p>
+					<p><strong><a name="toroidal"></a>Toroidal / Torous</strong><br>
+						A stage which <a href="#wrap">wraps</a> top/bottom and left/right.</p>
+					<p><strong><a name="transparent"></a>Transparent tiles</strong><br>
+						Tile designs with a transparent background. This allows mazes or terrains to be <a href="#layered-maze">layered</a>. Upper layers (especially terrains) may need to be sparse. Or a path (edge tile) maze can be placed over a terrain (corner tile) background. </p>
+					<p><strong><a name="treemaze"></a>Tree maze</strong><br>
+						A <a href="#perfect">perfect</a> maze which is constructed using a slightly different <a href="#algorithm">algorithm</a>. All paths are allowed to grow at the same time. The maze spreads outwards from an initial <a href="#start">start point</a>. Can be <a href="#sparse">sparse</a>. </p>
+					<p><strong><a name="twinbend" id="twinbend"></a>Twin Bend Tile</strong> (Pass-by)<br>
+						A tile with two unjoined path <a href="#bend">bends</a>. A possible <a href="#tile15">Tile-15 variation</a>.</p>
+					<table cellspacing="0" cellpadding="0">
+						<caption>
+							Twin bends
+						</caption>
+						<tr>
+							<td><table cellpadding="0" cellspacing="0" class="sq4">
+								<tr>
+									<td><img src="../art/edge/path/15b.gif" alt="tile" width="32" height="32" align="texttop"></td>
+									<td><img src="../art/edge/path/15c.gif" alt="tile" width="32" height="32" align="texttop"></td>
+								</tr>
+							</table></td>
+							<td><table cellpadding="0" cellspacing="0" class="sq4">
+								<tr>
+									<td><img src="../art/corn/path/_15b.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/corn/path/_15a.gif" width="32" height="32" alt="tile"></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table>
+					<table cellpadding="0" cellspacing="0" class="lout">
+						<tr>
+							<td width="40%"><p><strong><a name="twinmaze"></a>Twin maze</strong><br>
+								A maze which uses two (or more?)  tilesets to build seperate mazes that co-exist on the same stage. Special 'cross-over' tiles are added wherever any paths from one maze cross-over the paths of the other. Can be constructed 'free-form' or more usually restricted to an intermeshed lattice. <br>
+								See <a href="twin.html#twin">2-edge</a> page.</p></td>
+							<td width="40%"><table class="sq" cellspacing="0" cellpadding="0">
+								<caption>
+									Twin maze design
+								</caption>
+								<tr>
+									<td width="33"><img src="../art/twin/brench/12.gif" width="32" height="32" alt="tile"></td>
+									<td width="33"><img src="../art/twin/brench/30.gif" width="32" height="32" alt="tile"></td>
+									<td width="33"><img src="../art/twin/brench/39.gif" width="32" height="32" alt="tile"></td>
+									<td width="33"><img src="../art/twin/brench/30.gif" width="32" height="32" alt="tile"></td>
+									<td width="33"><img src="../art/twin/brench/39.gif" width="32" height="32" alt="tile"></td>
+									<td width="33"><img src="../art/twin/brench/30.gif" width="32" height="32" alt="tile"></td>
+									<td width="33"><img src="../art/twin/brench/36.gif" width="32" height="32" alt="tile"></td>
+									<td width="30"><img src="../art/twin/brench/0.gif" width="32" height="32" alt="tile"></td>
+								</tr>
+								<tr>
+									<td><img src="../art/twin/brench/10.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/24.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/70.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/78.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/70.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/78.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/70.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/72.gif" width="32" height="32" alt="tile"></td>
+								</tr>
+								<tr>
+									<td><img src="../art/twin/brench/13.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/50.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/40.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/50.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/40.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/50.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/37.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/20.gif" width="32" height="32" alt="tile"></td>
+								</tr>
+								<tr>
+									<td><img src="../art/twin/brench/10.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/26.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/70.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/80.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/70.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/80.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/70.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/74.gif" width="32" height="32" alt="tile"></td>
+								</tr>
+								<tr>
+									<td><img src="../art/twin/brench/4.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/50.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/31.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/50.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/31.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/50.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/28.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/20.gif" width="32" height="32" alt="tile"></td>
+								</tr>
+								<tr>
+									<td><img src="../art/twin/brench/0.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/8.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/60.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/62.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/60.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/62.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/60.gif" width="32" height="32" alt="tile"></td>
+									<td><img src="../art/twin/brench/56.gif" width="32" height="32" alt="tile"></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table>
+					<p><strong><a name="tube"></a>Tube</strong> (river)<br>
+						A long <a href="#path">path</a> with no <a href="#junction">junctions</a>. Opposite style to a <a href="#treemaze">tree maze</a> where paths are short with many junctions. If the tube is straight with no bends then called a run.</p>
+					<p><strong><a name="u-turn"></a>U-turn</strong><br>
+						A path following <a href="#sprite">sprite</a> can usually only turn around by 180° if facing a <a href="#deadend">dead-end</a>.</p>
+					<p><strong><a name="unicursal" id="unicursal"></a>Unicursal</strong><br>
+						See <a href="#labyrinth">labyrinth</a> maze. </p>
+					<p><strong><a name="value" id="value"></a>Value</strong><br>
+						The number given to each edge (or corner) of a Wang tile. For 2-order tilesets, values are either '0' or '1'. Usually, '0' depicts no path and '1' a path. 3-order tilesets, can have values of '0', '1' or '2'.<br>
+						These values can be used to calculate a unique tile <a href="#index">Index</a> number. </p>
+					<p><strong><a name="u-turn"></a>Vortex</strong><br>
+						A spiral pattern of maze paths with a single (3 or 4 way) <a href="#junction">junction</a> at the center.</p>
+					<p><strong><a name="wall"></a>Wall</strong><br>
+						An impassable barrier between maze <a href="#path">paths</a> (or <a href="#terrain">terrain</a> areas). A path following <a href="#sprite">sprite</a> cannot jump over or pass through a wall. Also see <a href="#blockmaze">Block maze</a>.</p>
+					<p><strong><a name="wandering" id="wandering"></a>Wandering sprite</strong><br>
+						A <a href="#sprite">sprite</a> that selects a random exit to leave a <a href="#junction">junction tile</a>. Cannot <a href="#u-turn">U-turn</a>.</p>
+					<p><strong><a name="wang-tile"></a>Wang Tile</strong><br>
+						A tile that uses edge or corner matching to allow it to be correctly placed in a <a href="#grid">grid</a> to produce a seamless layout of <a href="#path">paths</a> or <a href="#terrain">terrain</a>. Cannot be <a href="#flip">reflected</a> (flipped) or <a href="#rotation">rotated</a>.</p>
+					<p><strong><a name="wang"></a>Wang Tileset</strong><br>
+						A set of square tiles which can be arranged in a regular <a href="#grid">grid</a> so that all neighboring tile edges or corners match. Tiles can have two or more different types (or color) of edge or corner. Usually, all tiles have a similar design.</p>
+					<table class="sq" cellspacing="0" cellpadding="0">
+						<caption>
+							A set of 2-edge
+							and a set of 2-corner Wang tiles
+						</caption>
+						<tr>
+							<td><img src="../art/edge/wang-2e/0.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/edge/wang-2e/1.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/edge/wang-2e/2.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/edge/wang-2e/3.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/edge/wang-2e/4.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/edge/wang-2e/5.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/edge/wang-2e/6.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/edge/wang-2e/7.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/edge/wang-2e/8.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/edge/wang-2e/9.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/edge/wang-2e/10.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/edge/wang-2e/11.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/edge/wang-2e/12.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/edge/wang-2e/13.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/edge/wang-2e/14.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/edge/wang-2e/15.gif" width="32" height="32" alt="tile"></td>
+						</tr>
+						<tr>
+							<td><img src="../art/corn/wang-2c/0.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/corn/wang-2c/1.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/corn/wang-2c/2.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/corn/wang-2c/3.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/corn/wang-2c/4.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/corn/wang-2c/5.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/corn/wang-2c/6.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/corn/wang-2c/7.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/corn/wang-2c/8.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/corn/wang-2c/9.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/corn/wang-2c/10.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/corn/wang-2c/11.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/corn/wang-2c/12.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/corn/wang-2c/13.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/corn/wang-2c/14.gif" width="32" height="32" alt="tile"></td>
+							<td><img src="../art/corn/wang-2c/15.gif" width="32" height="32" alt="tile"></td>
+						</tr>
+						<tr>
+							<td>0</td>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td>8</td>
+							<td>9</td>
+							<td>10</td>
+							<td>11</td>
+							<td>12</td>
+							<td>13</td>
+							<td>14</td>
+							<td>15</td>
+						</tr>
+					</table>
+					<p>As you can see, corner tiles are similar to edge tiles, but rotated 45° clockwise. However, an edge tile affects two adjacent tiles, whereas a corner tile affects four adjacent tiles. Also see '<a href="#complete">Complete</a>' and '<a href="#reduced">Reduced</a>' tilesets. </p>
+					<p><strong><a name="weave"></a>Weave maze</strong><br>
+						A 
+						maze where paths are allowed to pass <a href="#passunder">under</a> or <a href="#passover">over</a> each other. Paths should not be ambiguous, so   usually  cross   perpendicularly.
+						<img src="../art/edge/path/15d.gif" alt="tile" width="32" height="32" align="texttop">
+						<img src="../art/edge/path/15e.gif" alt="tile" width="32" height="32" align="texttop">
+						<br>
+						Paths can cross as they form, randomly, or depending on their <a href="#chequer">chequer</a> grid position.</p>
+					<p><strong><a name="weighting"></a>Weighting</strong><br>
+						Allocating a 'weight' to each tile edge or corner depending on the order. This allows a unique <a href="#index">index</a> number to be calculated. <br>
+						For 2-edge or 2-corner tiles, which have an order of 2, the weightings are 2^0, 2^1, 2^2 and 2^3, which produces the binary weightings 1, 2, 4, and 8. This	produces	16 unique index	values from 0 to 15.<br>
+						An order 3 tileset will have tertiary weightings 
+						of 3^0, 3^1, 3^2 and 3^3, which produces 1, 3, 9 and 27. 	This	produces	unique index	values	from 0 to 81. </p>
+					<p>Similarly, 4-order tiles will be powers of 4, so 1, 4, 16, 64 etc. </p>
+					<table cellspacing="0" cellpadding="0">
+						<tr>
+							<td><table class="sq4" cellspacing="0" cellpadding="0">
+								<caption>
+									2-edge weightings
+								</caption>
+								<tr>
+									<td width="48">&nbsp;</td>
+									<td width="48">North<br>
+										= 1</td>
+									<td width="48">&nbsp;</td>
+								</tr>
+								<tr>
+									<td>West<br>
+										= 8</td>
+									<td><img src="../art/edge/wang-2e/9.gif" alt="tile" width="32" height="32" class="pad"></td>
+									<td>East<br>
+										= 2</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+									<td>South<br>
+										= 4</td>
+									<td>&nbsp;</td>
+								</tr>
+							</table></td>
+							<td><table class="sq4" cellspacing="0" cellpadding="0">
+								<caption>
+									2-corner weightings
+								</caption>
+								<tr>
+									<td>NorthWest<br>
+										= 8</td>
+									<td>&nbsp;</td>
+									<td>NorthEast<br>
+										= 1</td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+									<td><img src="../art/corn/wang-2c/9.gif" alt="tile" width="32" height="32" class="pad"></td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td>SouthWest<br>
+										= 4</td>
+									<td>&nbsp;</td>
+									<td>SouthEast<br>
+										= 2</td>
+								</tr>
+							</table></td>
+						</tr>
+					</table>
+					<p><strong><a name="wrap"></a>Wrap </strong><br>
+						A <a href="#stage">stage</a> that allows tiles to 'join' or edge match from one side of the stage to the opposite side. If only left/right or top/bottom wrap is allowed then the stage behaves like a cylinder. If both opposite stage edges wrap then it behaves like a torus. A maze on such a surface is called <a href="#planair">'Planair'</a>.</p>
+					<p><strong><a name="zeta"></a>Zeta maze</strong><br>
+						A
+						maze layout of horizontal, vertical and diagonal paths. This combines edge and corner <a href="#wang-tile">Wang  tiles</a> on a square <a href="#grid">grid</a>.</p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+						<tr>
+							<td width="40%"><h2>Glossary T...Z</h2></td>
+							<td><h3><a href="glossary.html">A...B</a></h3></td>
+							<td><h3><a href="glossary2.html">C...F</a></h3></td>
+							<td><h3><a href="glossary3.html">G...O</a></h3></td>
+							<td><h3><a href="glossary4.html">P...S</a></h3></td>
+							<td><h3>T...Z</h3></td>
+						</tr>
+				</table>
+		<!-- #EndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li class="nolink">Intro</li>
+					<li><a href="intro.html">Wang tiles</a></li>
+					<li><a href="array.html">Maze arrays</a></li>
+					<li class="nolink">Wang Tiles</li>
+					<li><a href="2edge.html">2-edge tiles</a></li>
+					<li><a href="2corn.html">2-corner tiles</a></li>
+					<li><a href="3edge.html">3-edge tiles</a></li>
+					<li><a href="3corn.html">3-corner tiles</a></li>
+                    <li><a href="4ord.html">4-order tiles</a></li>
+					<li class="nolink">Tilesets</li>
+					<li><a href="blob.html">Blob tileset</a></li>
+					<li><a href="lout2e.html">Layout 2-edge</a></li>
+                    <li><a href="reduced.html">Reduced sets</a></li>
+					<li class="nolink">Single Side</li>
+					<li><a href="block.html">Block tiles</a></li>
+					<li><a href="1sideedge.html">1-side edge</a></li>
+					<li><a href="1sidecorn.html">1-side corner</a></li>
+					<li class="nolink">Paths</li>
+					<li><a href="angled.html">Angled paths</a></li>
+					<li><a href="border.html">Border paths</a></li>
+					<!--<li>Colour paths</li>-->
+					<li><a href="directed.html">Directed path</a></li>
+					<li><a href="isometric.html">Isometric path</a></li>
+					<li><a href="positioned.html">Position path</a></li>
+					<li><a href="shape.html">Shape tiles</a></li>
+					<li class="nolink">Mazes</li>
+					<li><a href="perfect.html">Perfect</a></li>
+					<li><a href="connect.html">Connected</a></li>
+                    <li><a href="imperfect.html">Imperfect</a></li>
+                    <li><a href="labyrinth.html">Labyrinth</a></li>
+                    <li><a href="twin.html">Twin maze</a></li>
+					<li class="nolink">Gallery</li>
+					<li><a href="tiles_e.html">Tiles 2-edge</a></li>
+					<li><a href="tiles_c.html">Tiles 2-corner</a></li>
+                    <li><a href="tiles_3ec.html">Tiles 3-order</a></li>
+                    <li><a href="blob_g.html">Blob tilesets</a></li>
+                    <li><a href="twin_g.html">Twin tilesets</a></li>
+					<li><a href="truch_g.html">Truchet tiles</a></li>
+					<li><a href="block_g.html">Block tiles</a></li>
+					<li><a href="patts.html">Patterns</a></li>
+					<li><a href="icons.html">Icons</a></li>
+					<li class="nolink">Info</li>
+					<li><a href="maths.html">Maths</a></li>
+					<li><a href="knots.html">Knots</a></li>
+                    <li><a href="pattern.html">Patterns</a></li>
+                    <li><a href="puzzle.html">Puzzles</a></li>
+					<li><a href="web.html">Web news</a></li>
+					<li><a href="glossary.html">Glossary</a></li>
+					<li>&nbsp;</li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>Wang Tiles | cr31.co.uk | 2019</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- #EndTemplate --></html>

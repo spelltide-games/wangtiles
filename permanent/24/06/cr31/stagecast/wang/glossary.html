@@ -1,0 +1,393 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- #BeginTemplate "/Templates/wang.dwt" --><!-- DW6 -->
+<head>
+<!-- #BeginEditable "doctitle" -->
+<title>Glossary</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../wang/text.css" type="text/css">
+<script src="../js/wang.js" type="text/JavaScript"></script>
+<meta name="description" content="Stagecast puzzles, games, animation and sims">
+<meta name="keywords" content="Wang, maze, tile, tile set, tileset, labyrinth, Stagecast, seamless, icon, terrain, path, 32x32, game">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p><a href="../trains/tt0_int.html">Turing Trains</a> | <a href="../../iso/iso.html">Isometric</a> | Wang Tiles | <a href="stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Wang Tiles</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>edge and corner matched tilesets</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- #BeginEditable "contents" -->
+			<table cellpadding="0" cellspacing="0" class="lout">
+				<tr>
+					<td width="40%"><h2>Glossary A...B</h2></td>
+					<td><h3>A...B</h3></td>
+					<td><h3><a href="glossary2.html">C...F</a></h3></td>
+					<td><h3><a href="glossary3.html">G...O</a></h3></td>
+					<td><h3><a href="glossary4.html">P...S</a></h3></td>
+					<td><h3><a href="glossary5.html">T...Z</a></h3></td>
+				</tr>
+			</table>
+			<p><strong><a name="astar"></a>A*</strong><br>
+						An <a href="#algorithm">algorithm</a> for finding the shortest  path between two points (or tiles) in a maze, usually <a href="#start-tile">start tile</a> to <a href="#finish">finish tile</a>, avoiding obstacles or <a href="#deadend">dead-ends</a>. A Maze can have more than one shortest path.</p>
+					<p><strong><a name="active"></a>Active sprite</strong><br>
+					A maze wandering <a href="#sprite">sprite</a> that is able to alter its environment, ie the maze around it. For instance by pushing obstacle blocks (as in Sokoban), creating or removing pathways, or opening closing gates. This will affect the possible path choices for itself and any other wandering sprites. Note it might be possible for sprites to become trapped.</p>
+					<p><strong><a name="agent"></a>Agent</strong><br>
+						A Stagecast character that fulfils a specific function and then deletes itself. Agents make it easier to write more complex Stagecast rules as they are independent of specific characters or sims. Example agent functions are:<br>
+						1/ Jump a character to a random stage location.<br>
+						2/ Insert a fixed or random time delay (pause).<br>
+					3/ Combine several 'layered' characters into a single character. See '<a href="#layered-tile">Layered Tile</a>'.</p>
+					<p><strong><a name="algorithm"></a>Algorithm</strong><br>
+					A step by step set of rules. For instance to build a <a href="#perfect">perfect</a> maze, or to find the shortest path between two points (<a href="#astar">A-star</a>).</p>
+					<p><strong><a name="alternative" id="alternative"></a>Alternative</strong><br>
+Tiles with the same index value can have  different designs.<br>
+<a href="#tile15">Tile-15 alternatives</a> affect  maze connections, so wandering sprites will need to take notice, but  the tiles edge (or corner) matching requirements remains the same.</p>
+					<table cellpadding="0" cellspacing="0" class="sq4">
+					<caption>
+					        Alternative tile-15's
+					    </caption>
+					    <tr>
+					        <td><img src="../art/twin/brench/50.gif" alt="tile" width="32" height="32" align="texttop"></td>
+					        <td><img src="../art/twin/brench/50xx.gif" alt="tile" width="32" height="32" align="texttop"></td>
+					        <td><img src="../art/twin/brench/50y.gif" alt="tile" width="32" height="32" align="texttop"></td>
+					        <td><img src="../art/twin/brench/50z.gif" alt="tile" width="32" height="32" align="texttop"></td>
+					        </tr>
+					    </table>
+					<p><a href="#blank">Blank</a> (Tile-0) alternatives do not affect maze connections and are usually applied at random to improve the look of a maze.</p>
+					<table cellpadding="0" cellspacing="0" class="sq4">
+						<caption>
+					        Alternative tile-0's
+					    </caption>
+						<tr>
+							<td><img src="../art/twin/brench/0.gif" alt="tile" width="32" height="32" align="texttop"></td>
+							<td><img src="../art/block/box/2.gif" alt="tile" width="32" height="32" align="texttop"></td>
+							<td><img src="../art/twin/brench/0ne.gif" alt="tile" width="32" height="32" align="texttop"></td>
+							<td><img src="../art/twin/brench/0n.gif" alt="tile" width="32" height="32" align="texttop"></td>
+						</tr>
+					</table>
+					<p>Straight (Tile-5/Tile-10) alternatives can also be used.</p>
+					<table cellpadding="0" cellspacing="0" class="sq4">
+						<caption>
+					        Tile-5/10's
+					    </caption>
+						<tr>
+							<td><img src="../art/twin/brench/30.gif" alt="tile" width="32" height="32" align="texttop"></td>
+							<td><img src="../art/twin/brench/30x.gif" alt="tile" width="32" height="32" align="texttop"></td>
+						</tr>
+					</table>
+					<p><strong><a name="array"></a>Array</strong><br>
+					The square <a href="#grid">grid</a> onto which the Wang tiles are placed. Same as Stagecast '<a href="#stage">stage</a>'.					</p>
+					<p><strong>Arrow Maze</strong><br>
+See <a href="#directed">Directed maze</a>.</p>
+					<p><strong><a name="bend"></a>Bend tile</strong><br>
+						An edge or corner path tile with a 90 degree turn or curve. <img src="../art/edge/pipe/9.gif" alt="tile" width="32" height="32" align="texttop"> or <img src="../art/corn/path/_9.gif" alt="tile" width="32" height="32" align="texttop"> Also see <a href="#twinbend">twin bend tile</a>.</p>
+					<p><strong><a name="bias"></a>Bias</strong> (balance)<br>
+Duplicating some of the tiles in a <a href="#wang">Wang Tileset</a> to alter the balance (or density) of paths in a maze layout. Because tiles are picked at random from the tileset, adding, say, an extra cross-over tile will increase the number of cross over paths in the final layout.<br>
+Adding extra <a href="#blank">blank</a> tiles will make the layout <a href="#sparse">sparse</a>.<br>
+Adding extra <a href="#bend">bend</a> tiles will make paths more twisty.<br>
+Adding extra <a href="#straight">straight</a> tiles will make the layout more <a href="#tube">tubular</a>.					<br>
+Adding extra <a href="#junction">junction</a> tiles will make the layout more <a href="#treemaze">tree</a> like.<br>
+Adding extra <a href="#crossover">crossover</a> tiles will increase the <a href="#weave">weave</a> of the layout. </p>
+					<p><strong><a name="bifurcation"></a>Bifurcation</strong><br>
+					A maze path that branches (splits into two). See '<a href="#fork">Fork Tile</a>'.</p>
+					<p><strong><a name="bitwise"></a>Bitwise</strong><br>
+					A mathematical procedure for adding up binary (or tertiary) numbers to produce a unique <a href="#index">index</a> number. For example, a 2-edge tile edges are given '<a href="#weighting">weightings</a>' of 1, 2, 4, and 8. Every combination of edge then produces a unique <a href="#index">index</a> between 0 and 15.<br>
+					3-edge tiles are weighted 1, 3, 9 and 27. 
+					</p>
+					<p><strong><a name="blank"></a>Blank tile</strong><br>
+						An empty tile, <a href="#tile0">tile-0</a>. Usually included in a ceramic tileset. <img src="../art/edge/pipe/0.gif" alt="tile" width="32" height="32" align="texttop"></p>
+					<p><strong><a name="blob"></a>Blob tileset</strong><br> 
+					    A reduced 2-edge 2-corner tileset containing 47 from  a possible 256 tiles. There are a couple of reliable methods of generating the required 47 tiles. See <a href="blob.html">Blob tileset</a> page. The tiles are good for covering carpet (or rug) like areas.</p>
+					<table class="sq" cellspacing="0" cellpadding="0">
+					    <caption>
+					        Blob tileset
+					        </caption>
+					    <tr>
+					        <td><img src="../art/blob/wang-2e2c/0.gif" width="32" height="32" alt="tile"></td>
+					        <td><img src="../art/blob/wang-2e2c/1.gif" width="32" height="32" alt="tile"></td>
+					        <td><img src="../art/blob/wang-2e2c/5.gif" width="32" height="32" alt="tile"></td>
+					        <td><img src="../art/blob/wang-2e2c/7.gif" width="32" height="32" alt="tile"></td>
+					        <td><img src="../art/blob/wang-2e2c/17.gif" width="32" height="32" alt="tile"></td>
+					        <td><img src="../art/blob/wang-2e2c/21.gif" width="32" height="32" alt="tile"></td>
+					        <td><img src="../art/blob/wang-2e2c/23.gif" width="32" height="32" alt="tile"></td>
+					        <td><img src="../art/blob/wang-2e2c/29.gif" width="32" height="32" alt="tile"></td>
+					        <td><img src="../art/blob/wang-2e2c/31.gif" width="32" height="32" alt="tile"></td>
+					        <td><img src="../art/blob/wang-2e2c/85.gif" width="32" height="32" alt="tile"></td>
+					        <td><img src="../art/blob/wang-2e2c/87.gif" width="32" height="32" alt="tile"></td>
+					        <td><img src="../art/blob/wang-2e2c/95.gif" width="32" height="32" alt="tile"></td>
+					        <td><img src="../art/blob/wang-2e2c/119.gif" width="32" height="32" alt="tile"></td>
+					        <td><img src="../art/blob/wang-2e2c/127.gif" width="32" height="32" alt="tile"></td>
+					        <td><img src="../art/blob/wang-2e2c/255.gif" width="32" height="32" alt="tile"></td>
+					        </tr>
+					    <tr>
+					        <td>0</td>
+					        <td>1</td>
+					        <td>5</td>
+					        <td>7</td>
+					        <td>17</td>
+					        <td>21</td>
+					        <td>23</td>
+					        <td>29</td>
+					        <td>31</td>
+					        <td>85</td>
+					        <td>87</td>
+					        <td>95</td>
+					        <td>119</td>
+					        <td>127</td>
+					        <td>255</td>
+					        </tr>
+					    <tr>
+					        <td>&nbsp;</td>
+					        <td>4<br>
+					            16<br>
+					            64</td>
+					        <td>20<br>
+					            80<br>
+					            65 </td>
+					        <td>28<br>
+					            112<br>
+					            193</td>
+					        <td>68</td>
+					        <td>84<br>
+					            81<br>
+					            69</td>
+					        <td>92<br>
+					            113<br>
+					            197</td>
+					        <td>116<br>
+					            209<br>
+					            71</td>
+					        <td>124<br>
+					            241<br>
+					            199</td>
+					        <td>&nbsp;</td>
+					        <td>93<br>
+					            117<br>
+					            213</td>
+					        <td>125<br>
+					            245<br>
+					            215</td>
+					        <td>221</td>
+					        <td>253<br>
+					            247<br>
+					            223</td>
+					        <td>&nbsp;</td>
+					        </tr>
+					    </table>
+					<p>Tile weightings are allocated clockwise from the top (North) edge as follows:<br>
+					</p>
+					<table class="sq4" cellspacing="0" cellpadding="0">
+					    <caption>
+					        2-edge 2-corner weightings
+					        </caption>
+					    <tr>
+					        <td>NorthWest<br>
+					            =128</td>
+					        <td>North<br>
+					            = 1</td>
+					        <td>NorthEast<br>
+					            = 2</td>
+					        </tr>
+					    <tr>
+					        <td>West<br>
+					            = 64</td>
+					        <td><img src="../art/blob/wang-2e2c/71.gif" width="32" height="32" alt="tile"></td>
+					        <td>East<br>
+					            = 4</td>
+					        </tr>
+					    <tr>
+					        <td>SouthWest<br>
+					            = 32</td>
+					        <td>South<br>
+					            = 16</td>
+					        <td>SouthEast<br>
+					            = 8</td>
+					        </tr>
+					    </table>
+					<p>The Blob 2-order tile has a yellow North, East and West edge, as well as a North-East corner, and so has an index of 1+2+4+64=71.</p>
+					<p><strong><a name="block"></a>Block tiles</strong><br>
+						Tiles that do not need to be edge or corner matched. Can be used to create random path or terrain layouts. <img src="../art/block/diag/1.gif" alt="floor2" width="32" height="32" align="texttop"></p>
+					<table cellpadding="0" cellspacing="0" class="lout">
+						<tr>
+							<td><p><strong><a name="blockmaze"></a>Block maze</strong> (Hedge maze)<br>
+							The maze creation <a href="#algorithm">algorithm</a>  separates the paths with impassable wall block tiles (or hedges). Walls may also need to be added around the stage border.</p>
+							<p>Wall blocks joined only at their corners are best avoided. Floor tiles may show wall shadows for 3d effect.</p></td>
+							<td width="40%"><table cellpadding="0" cellspacing="0" class="sq">
+								<caption>
+									6x4 block and space maze
+									</caption>
+								<tr>
+									<td><img src="../art/icons/floor2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/block/box/2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/icons/floor2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/block/box/2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/icons/floor2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/block/box/2.gif" width="32" height="32" alt="floor2"></td>
+								</tr>
+								<tr>
+									<td><img src="../art/block/box/2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/block/box/2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/block/box/2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/block/box/2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/icons/floor2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/block/box/2.gif" width="32" height="32" alt="floor2"></td>
+								</tr>
+								<tr>
+									<td><img src="../art/block/box/2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/icons/floor2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/block/box/2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/icons/floor2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/icons/floor2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/icons/floor2.gif" width="32" height="32" alt="floor2"></td>
+								</tr>
+								<tr>
+									<td><img src="../art/block/box/2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/icons/floor2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/block/box/2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/block/box/2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/block/box/2.gif" width="32" height="32" alt="floor2"></td>
+									<td><img src="../art/icons/floor2.gif" width="32" height="32" alt="floor2"></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table>
+					<p><strong><a name="border"></a>Border</strong><br>
+The <a href="#stage">stage</a> perimeter. <a href="#wang-tile">Wang tiles</a> adjoining the stage border  can have their edges or corners  set to a particular type, or set to the 'opposite' border  if the stage <a href="#wrap">wraps</a>.</p>
+					<p><strong><a name="braid"></a>Braid maze</strong><br>
+						A maze without  <a href="#deadend">dead-end</a> paths. Dead-ends that do form are <a href="#deadend">fused</a> with an adjacent path. Braid mazes cannot be <a href="#perfect">perfect</a>. They are more difficult/interesting to solve than a perfect maze, as you spend a great deal of time simply going around in circles.</p>
+					<p><strong>Branch Tile</strong><br>
+					See '<a href="#fork">Fork Tile</a>'.</p>
+					<table cellpadding="0" cellspacing="0" class="lout">
+					    <tr>
+					        <td width="60%"><strong><a name="brigid"></a>Brigid's Cross</strong><br>
+The distinctive 'cross' shape which forms with a 4x4 layout  of a Wang 2-corner tileset. The pattern 'wraps' top/bottom and left/right and so can cover any area seamlessly. <br>
+There are a total of 32 variations allowing for row/column translations and color swopping.</td>
+					        <td><table class="sq" cellspacing="0" cellpadding="0">
+					            <caption>
+					                Patch Tileset
+					                </caption>
+					            <tr>
+					                <td><img src="../art/corn/patch/4.gif" alt="6" width="32" height="32"></td>
+					                <td><img src="../art/corn/patch/3.gif" alt="14" width="32" height="32"></td>
+					                <td><img src="../art/corn/patch/14.gif" alt="8" width="32" height="32"></td>
+					                <td><img src="../art/corn/patch/6.gif" alt="4" width="32" height="32"></td>
+					                </tr>
+					            <tr>
+					                <td><img src="../art/corn/patch/10.gif" width="32" height="32" alt="1"></td>
+					                <td><img src="../art/corn/patch/7.gif" width="32" height="32" alt="7"></td>
+					                <td><img src="../art/corn/patch/15.gif" width="32" height="32" alt="12"></td>
+					                <td><img src="../art/corn/patch/13.gif" width="32" height="32" alt="5"></td>
+					                </tr>
+					            <tr>
+					                <td><img src="../art/corn/patch/1.gif" width="32" height="32" alt="2"></td>
+					                <td><img src="../art/corn/patch/9.gif" width="32" height="32" alt="15"></td>
+					                <td><img src="../art/corn/patch/11.gif" width="32" height="32" alt="11"></td>
+					                <td><img src="../art/corn/patch/12.gif" width="32" height="32" alt="13"></td>
+					                </tr>
+					            <tr>
+					                <td><img src="../art/corn/patch/0.gif" width="32" height="32" alt="3"></td>
+					                <td><img src="../art/corn/patch/2.gif" width="32" height="32" alt="3"></td>
+					                <td><img src="../art/corn/patch/5.gif" width="32" height="32" alt="8"></td>
+					                <td><img src="../art/corn/patch/8.gif" width="32" height="32" alt="1"></td>
+					                </tr>
+					            </table></td>
+					        </tr>
+					    </table>
+					<table cellpadding="0" cellspacing="0" class="lout">
+						<tr>
+							<td width="40%"><h2>Glossary A...B</h2></td>
+							<td><h3>A...B</h3></td>
+							<td><h3><a href="glossary2.html">C...F</a></h3></td>
+							<td><h3><a href="glossary3.html">G...O</a></h3></td>
+							<td><h3><a href="glossary4.html">P...S</a></h3></td>
+							<td><h3><a href="glossary5.html">T...Z</a></h3></td>
+						</tr>
+					</table>
+		<!-- #EndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li class="nolink">Intro</li>
+					<li><a href="intro.html">Wang tiles</a></li>
+					<li><a href="array.html">Maze arrays</a></li>
+					<li class="nolink">Wang Tiles</li>
+					<li><a href="2edge.html">2-edge tiles</a></li>
+					<li><a href="2corn.html">2-corner tiles</a></li>
+					<li><a href="3edge.html">3-edge tiles</a></li>
+					<li><a href="3corn.html">3-corner tiles</a></li>
+                    <li><a href="4ord.html">4-order tiles</a></li>
+					<li class="nolink">Tilesets</li>
+					<li><a href="blob.html">Blob tileset</a></li>
+					<li><a href="lout2e.html">Layout 2-edge</a></li>
+                    <li><a href="reduced.html">Reduced sets</a></li>
+					<li class="nolink">Single Side</li>
+					<li><a href="block.html">Block tiles</a></li>
+					<li><a href="1sideedge.html">1-side edge</a></li>
+					<li><a href="1sidecorn.html">1-side corner</a></li>
+					<li class="nolink">Paths</li>
+					<li><a href="angled.html">Angled paths</a></li>
+					<li><a href="border.html">Border paths</a></li>
+					<!--<li>Colour paths</li>-->
+					<li><a href="directed.html">Directed path</a></li>
+					<li><a href="isometric.html">Isometric path</a></li>
+					<li><a href="positioned.html">Position path</a></li>
+					<li><a href="shape.html">Shape tiles</a></li>
+					<li class="nolink">Mazes</li>
+					<li><a href="perfect.html">Perfect</a></li>
+					<li><a href="connect.html">Connected</a></li>
+                    <li><a href="imperfect.html">Imperfect</a></li>
+                    <li><a href="labyrinth.html">Labyrinth</a></li>
+                    <li><a href="twin.html">Twin maze</a></li>
+					<li class="nolink">Gallery</li>
+					<li><a href="tiles_e.html">Tiles 2-edge</a></li>
+					<li><a href="tiles_c.html">Tiles 2-corner</a></li>
+                    <li><a href="tiles_3ec.html">Tiles 3-order</a></li>
+                    <li><a href="blob_g.html">Blob tilesets</a></li>
+                    <li><a href="twin_g.html">Twin tilesets</a></li>
+					<li><a href="truch_g.html">Truchet tiles</a></li>
+					<li><a href="block_g.html">Block tiles</a></li>
+					<li><a href="patts.html">Patterns</a></li>
+					<li><a href="icons.html">Icons</a></li>
+					<li class="nolink">Info</li>
+					<li><a href="maths.html">Maths</a></li>
+					<li><a href="knots.html">Knots</a></li>
+                    <li><a href="pattern.html">Patterns</a></li>
+                    <li><a href="puzzle.html">Puzzles</a></li>
+					<li><a href="web.html">Web news</a></li>
+					<li><a href="glossary.html">Glossary</a></li>
+					<li>&nbsp;</li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- #EndTemplate --></html>

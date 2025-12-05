@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Duplo Layouts</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_duplo.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Duplo Layouts</h2>
+				<p>Duplo is a train set system made by Lego®. It is well built and a great toy for kids. There is a useful <a href="http://www.eurobricks.com/forum/index.php?showtopic=78402&st=175">Eurobricks forum</a> on Duplo trains and track.</p>
+				<p>It is ideal for testing computational layouts as it has the two different types of point required: 'lazy' and 'sprung' (as pointed out by <a href="http://www.robertcailliau.eu/Welcome-en.html">Robert Cailliau</a>).</p>
+				<p>The current 'new' point is a lazy point. The older type has an additional <a href="http://www.cailliau.org/Alphabetical/L/Lego/Duplo/Train/Rails/Switches/">spring mechanism</a> beneath the track so it behaves as a sprung point. </p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><h3>Duplo Points </h3>
+							<p>Duplo points have a red lever that is set by an operator to guide the train onto either track. </p>
+							<p><strong>New 'Lazy' Points</strong></p>
+							<p>These are switched by a train arriving on the 'wrong' branch line. The train wheels simply push against the lever, forcing it to switch over.<br>
+								<br>
+						</p></td>
+						<td><div class="picap">
+								<img src="art/points.jpg" width="200" height="178" alt="Duplo lazy point">
+								<br>
+								A new lazy Duplo point</div></td>
+					</tr>
+					<tr>
+						<td><p><strong>Old 'Sprung' Points</strong></p>
+							<p>The 'old' type of point allows the operator to set the lever to guide the train onto either branch, but, the train cannot switch the point when arriving from a branch line. </p>
+							<p>The 'old' points remember the branch line set by the operator. The 'new' points remember the last branch line the train arrived on.</p></td>
+						<td><div class="picap">
+							<img src="art/point_old.jpg" width="200" height="178" alt="Duplo sprung point">
+							<br>
+							An old sprung Duplo point</div></td>
+					</tr>
+				</table>
+				<p>As both types of points are available for one system, it makes sense to build some of the train track layouts using Duplo track. However, with only a 30<sup>o</sup> turn instead of (possibly unrealistic) 90<sup>o</sup> turn, layouts are a good deal larger.</p>
+				<p>Here are a few Duplo layouts:</p>
+				<h3>Count Up (increment) </h3>
+				<table cellpadding="0" cellspacing="0" class="play" id="c_bg">
+					<caption>
+					Count Up
+					function
+					</caption>
+					<tr>
+						<td><img src="grab/tt2b/count_up.png" alt="count up" width="576" height="96" onclick="swit('c_999')">
+							<div class="sprites">
+								<textarea id="c_tens1" readonly></textarea>
+								<img src="loco/8le.gif" alt="" width="32" height="32" id="c_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_3" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="c_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="c_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>Each stage is built like this:</p>
+				<p>
+					<img src="../art/forums/duplo_stage.jpg" width="475" height="250" alt="Duplo counter stage">
+				</p>
+				<p>The complete counter layout. The right hand loop just serves to return the train.</p>
+				<p>
+					<img src="../art/forums/duplo_3stage.jpg" width="820" height="170" alt="Duplo counter">
+				</p>
+				<p>Peter Nolan from the <a href="http://www.eurobricks.com/forum/index.php?s=983553f197cbbfdb9338ac72fc1cd3a8&showtopic=78402&st=125">Duplo Trains Forums</a> has made this layout and posted a <a href="https://www.youtube.com/watch?v=--LolAtwecE&feature=youtu.be">video on You Tube</a> !!</p>
+				<p>A 2-stage counter can be bent round and the end loops overlapped to create a more compact rectangular layout. No one needs know its computational origin.</p>
+				<p>
+					<img src="../art/forums/apv.png" width="640" height="375" alt="Duplo APV rectangular layout">
+				</p>
+				<h3>Equivalent Circuits</h3>
+				<p>The old types of Duplo point are available on eBay. However, they can be emulated with two linked lazy points. Also see <a href="tt8_equiv.html">equivalent circuits</a>.				</p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><img src="../art/forums/sprung_em2.jpg" width="335" height="340" alt="Duplo sprung point"></td>
+						<td><img src="grab/tt7/sprungx.png" width="128" height="160" alt="sprung point"></td>
+					</tr>
+				</table>
+				<p>And a cross-over point equivalent layout. </p>
+				<table cellpadding="0" cellspacing="0" class="play" id="a_bg">
+					<caption>
+								Linked Lazy Point Cross-over
+								</caption>
+							<tr>
+								<td><img src="grab/tt7/crossover.png" alt="cross-over (lazy)" width="288" height="288" onclick="swit('a_999')">
+									<div class="sprites">
+										<img src="loco/10s.gif" alt="" width="32" height="32" id="a_0" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_1" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_2" onclick="swit(this.id)">
+										<img src="loco/5s.gif" alt="" width="32" height="32" id="a_3" onclick="swit(this.id)">
+										<img src="loco/10s.gif" alt="" width="32" height="32" id="a_4" onclick="swit(this.id)">
+										<img src="loco/5s.gif" alt="" width="32" height="32" id="a_5" onclick="swit(this.id)">
+										<img src="loco/12.gif" alt="" width="32" height="32" id="a_loco">
+										<img src="loco/over.gif" alt="" width="36" height="36" id="a_over">
+									</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive2.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click start circle to reset train</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>
+					<img src="../art/forums/xover_em.jpg" width="541" height="580" alt="Duplo cross-over">
+					<!-- end .contents --></p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><h3>Flip-Flop Circuit</h3>
+							<p>An important circuit is a flip-flop. This needs both an 'old' style sprung point and a linked pair of lazy points (a co-operative point).</p>
+							<p>Trains arriving on the main line are diverted up into an inverter loop and then exit the lower lazy point on alternate branch lines. Also see <a href="tt8_equiv.html">equivalent circuits</a>. </p>
+							<p>Adam Chalcraft and Michael Greene in their paper '<a href="http://www.monochrom.at/turingtrainterminal/Chalcraft.pdf">Train Sets</a>' name the circuit a 'Distributor'. Without the use of linked points they must construct a layout of infinite size.</p></td>
+						<td><table cellpadding="0" cellspacing="0" class="array">
+								<caption>
+								Flip-flop
+								</caption>
+								<tr>
+									<td><img src="grab/tt7/flip-flop.png" alt="flip-flop point" width="128" height="192"></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table>
+				<p>
+					<img src="../art/forums/distributor.png" width="640" height="350" alt="Duplo distributor">
+				</p>
+				<p>And here is how it looks as a Duplo layout.</p>
+				<p>
+					<img src="../art/forums/dup41.jpg" width="640" height="391" alt="Duplo distributor layout">
+				</p>
+				<h3>Auto Switching Layout</h3>
+				<p>This uses 2 pairs of linked lazy points. See <a href="tt8_auto_run.html">Auto Switching Layouts</a> page for more layouts.</p>
+				<p>
+					<img src="../art/forums/maxrun4.png" width="640" height="360" alt="Duplo track plan">
+				</p>
+				<p>
+					<img src="../art/forums/maxrun4.jpg" width="640" height="300" alt="Duplo track layout">
+				</p>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

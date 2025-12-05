@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><!-- #BeginTemplate "/Templates/small-sim.dwt" --><!-- DW6 -->
+<head>
+<!-- #BeginEditable "doctitle" -->
+<title>Stagecast Sim | Layers</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../textsims.css" type="text/css">
+<script src="../../js/js.js" type="text/JavaScript"></script>
+<!-- #BeginEditable "Meta" -->
+<meta name="description" content="Stagecast puzzles, games, animation and sims">
+<meta name="keywords" content="Stagecast, Creator, sims, worlds, computer, programming, coding, object orientated, stand alone">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<div id="tank">
+<div id="head"> <img src="../../art/icons/wec2.gif" alt="Wec Man" width="32" height="32"> <img src="../../art/scast.png" width="432" height="52" alt="StageCast"></div>
+<!-- #BeginLibraryItem "/Library/Tabs.lbi" --><ul id="tabs">
+	<li><a href="../index.html">Home</a></li>
+	<li><a href="../../../logojs/logo.html">Logo</a></li>
+	<li><a href="../../info/sims.html">Sims</a></li>
+	<li><a href="../../wang/stage.html">Stage</a></li>
+	<li><a href="../../wang/tiles_e.html">Tiles</a></li>
+    <li><a href="../../trains/tt0_intro.html">Trains</a></li>
+	<li><a href="../../wang/intro.html">Wang</a></li>
+</ul>
+<!-- #EndLibraryItem -->
+<div id="cent">
+		<table class="lout" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="main"><!-- #BeginEditable "contents" -->
+					<h1>Shuffled Layers <span class="smallhead">- test sim</span></h1>
+					<table cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="353"><table class="sim64" cellspacing="0" cellpadding="0">
+									<tr>
+										<td><APPLET
+              					code="StagecastApplet.class"
+              					archive="StagecastApplet.jar, PlayerLibrary.jar"
+              					width=225 height=201>
+												<param name="ApplicationClass" value="com.stagecast.creator.PlayerApplet">
+												<param name="VersionNeeded" value="2.0">
+												<param name="AutoInstall" value="false">
+												<param name="InstallerURL" value="http://www.stagecast.com/installplayer/">
+												<param name="World" value="Layers.sim">
+											</APPLET></td>
+									</tr>
+								</table>
+								<p class="siminfo">Click the sim once to enable it to respond to keyboard keys.<br>
+									Click <img src="../../art/sc/mid.gif" width="13" height="7" alt="tag"> for playback controls and <img src="../../art/sc/redsq.gif" alt="red tag" width="14" height="19" align="top"> for sim info and reset.</p>
+								<p>At each tick, every object on stage is processed 
+									in turn. Starting with the first object to be placed 
+									(or born) and ending with the last placed object. 
+									When an object is born or created, it is placed 
+									at the end of the processing queue.<br>
+									Therefore if an object is killed and reborn, it 
+									will move to the end of the queue. If this is a 
+									random event, objects quickly end up shuffled in 
+									processing order.</p></td>
+							<td background="../../art/line.gif"><img src="../../art/space.gif" width="18" height="1" alt=" "></td>
+							<td><p><span class="smallhead">Controls: </span>None</p>
+								<p><strong>Green Star</strong>: This is placed first and is 
+									never replaced. It resets the layers counter to 
+									zero. It also uses a flag counter to create a pause.</p>
+								<p>re set counter and decrement flag<br>
+									if flag &lt; 0 then flag = 8<br>
+									<br>
+									<strong>Yellow Square</strong>: Increments the counter and 
+									shows the count on itself.<br>
+									Then either:<br>
+									1) Replaces itself and moves to the end of the queue 
+									(flashes red).<br>
+									or:<br>
+									2) Does nothing and remains at its present queue 
+									position (flashes green).<br>
+									And that's it.</p></td>
+						</tr>
+					</table>
+					<!-- #EndEditable --></td>
+			</tr>
+		</table>
+	</div>
+	<p class="foot">&nbsp;</p>
+</div>
+</body>
+<!-- #EndTemplate --></html>

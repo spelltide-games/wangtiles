@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><!-- #BeginTemplate "/Templates/small-sim.dwt" --><!-- DW6 -->
+<head>
+<!-- #BeginEditable "doctitle" -->
+<title>Stagecast Sim | 15 Puzzle</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../textsims.css" type="text/css">
+<script src="../../js/js.js" type="text/JavaScript"></script>
+<!-- #BeginEditable "Meta" -->
+<meta name="description" content="Stagecast puzzles, games, animation and sims">
+<meta name="keywords" content="Stagecast, Creator, sims, worlds, computer, programming, coding, object orientated, stand alone">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<div id="tank">
+<div id="head"> <img src="../../art/icons/wec2.gif" alt="Wec Man" width="32" height="32"> <img src="../../art/scast.png" width="432" height="52" alt="StageCast"></div>
+<!-- #BeginLibraryItem "/Library/Tabs.lbi" --><ul id="tabs">
+	<li><a href="../index.html">Home</a></li>
+	<li><a href="../../../logojs/logo.html">Logo</a></li>
+	<li><a href="../../info/sims.html">Sims</a></li>
+	<li><a href="../../wang/stage.html">Stage</a></li>
+	<li><a href="../../wang/tiles_e.html">Tiles</a></li>
+    <li><a href="../../trains/tt0_intro.html">Trains</a></li>
+	<li><a href="../../wang/intro.html">Wang</a></li>
+</ul>
+<!-- #EndLibraryItem -->
+<div id="cent">
+		<table class="lout" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="main"><!-- #BeginEditable "contents" -->
+					<h1>15 Puzzle <span class="smallhead">- sliding blocks</span></h1>
+					<table cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="353"><table class="sim44" cellspacing="0" cellpadding="0">
+									<tr>
+										<td><APPLET
+              					code="StagecastApplet.class"
+              					archive="StagecastApplet.jar, PlayerLibrary.jar"
+              					width=225 height=265>
+												<param name="ApplicationClass" value="com.stagecast.creator.PlayerApplet">
+												<param name="VersionNeeded" value="2.0">
+												<param name="AutoInstall" value="false">
+												<param name="InstallerURL" value="http://www.stagecast.com/installplayer/">
+												<param name="World" value="15Puzzle.sim">
+											</APPLET></td>
+									</tr>
+								</table>
+								<p class="siminfo">Click the sim once to enable it to respond to keyboard keys.<br>
+									Click <img src="../../art/sc/mid.gif" width="13" height="7" alt="tag"> for playback controls and <img src="../../art/sc/redsq.gif" alt="red tag" width="14" height="19" align="top"> for sim info and reset.</p>
+								<p>Only two tile pictures are used (light and dark). 
+									Tile numbers are local character variables added 
+									in the paint window.</p>
+								<p>Pressing the space bar anytime will shuffle the 
+									pieces. The shuffle ring moves at random, in a similar 
+									fashion to a 'ladybug', ie it cannot move backward 
+									and so unshuffle the previous move.</p>
+								<p>The shuffle ring counts down each move to zero 
+									and then heads for the lower right corner before 
+									disappearing.</p>
+								<p>Tiles in the correct position light up and their 
+									number changes from grey to red.</p>
+								<p>A bit of maths determines if a tile should appear 
+									lit. The calculation is:<br>
+									Tile No = 4*(4-V) + H<br>
+									where V = vertical position of tile<br>
+									and H = horizontal position of tile<br>
+									(remember lower left position is 1,1).<br>
+								</p>
+								<p>Any piece in the same row or column as the space 
+									can be clicked, allowing several pieces to be moved 
+									at once, as in the real puzzle.</p>
+								<p>The background turns orange when the puzzle is 
+									correctly completed, -but only after at least one 
+									shuffle has been done.</p></td>
+							<td background="../../art/line.gif"><img src="../../art/space.gif" width="18" height="1" alt=" "></td>
+							<td><p><span class="smallhead">Controls:</span></p>
+								<p><strong>Space Bar</strong> -shuffle.</p>
+								<p><strong>Mouse</strong> -click on tile to move.</p>
+								<p><strong>Arrow Keys</strong> -move tiles (think 
+									of moving the empty space).</p></td>
+						</tr>
+					</table>
+					<!-- #EndEditable --></td>
+			</tr>
+		</table>
+	</div>
+	<p class="foot">&nbsp;</p>
+</div>
+</body>
+<!-- #EndTemplate --></html>

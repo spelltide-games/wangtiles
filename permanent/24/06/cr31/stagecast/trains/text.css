@@ -1,0 +1,228 @@
+@charset "UTF-8";
+/* CSS Document Trains */
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+body {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	color: #003; line-height: 1.4;
+	font-size: 15px;
+	/*background: #4e4e4e; #42413C #726358 #e8e2ca */
+	background-image: url(../art/bg/bgsq.png);
+	Xpadding-top: 8px;
+}
+
+body table {
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+
+/* ~~ Element/tag selectors ~~ */
+
+ul, ol { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. */
+	margin: -1em 0 1em 0;
+	padding: 0 0 0 48px;
+}
+
+hr {
+	margin: 2em 12px 0 12px;
+	height: 2px;
+	background-color: #999;
+	border:none;
+}
+
+img {
+	margin: 0 auto;
+	border: 1px solid #333;
+}
+
+caption {caption-side: top; background: #ccc; border: 1px solid #666; border-bottom: none; font-size: 90%; }
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	/*Xcolor: #42413C;*/
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	/*Xcolor: #208080; /*#6E6C64;*/
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	color: #cc0000; /*red;*/ 
+	text-decoration: none;
+}
+a:link img, a:visited img {border: 1px solid red; }
+/*.array a:hover img, .array a:active img, .array a:focus img {border: 1px solid red; }*/
+
+
+/* ~~ page layout ~~ */
+
+.main {width: 672px; }
+
+.tabs p {text-align: center; }
+
+.head .main {text-align: center; background: #76828f; }
+.head h1 {font-size: 250%; font-weight: lighter; letter-spacing: 6px; color: white; margin: 0; padding: 0; }
+
+.strap .main {background: #556D87; } /* #586474 */
+.strap .main p {text-align: center; color: #eee; font-size: 90%; margin: 2px; padding: 0; letter-spacing: 1px; padding: 2px 0; }
+
+.cont .main {vertical-align: top; text-align: left; background-image: url(../art/icons/bgsq.gif); border-left: 1px solid #666; } /* efd */
+	/*margin: 0 auto; the auto value on the sides, coupled with the width, centers the layout */
+	/*border: 1px solid #333;*/
+
+.cont .main .content {width: 642px; margin: 0 auto; } /* retain for overhanging images */
+
+.foot .main {background: #76828f; }
+.foot .main p {text-align: center; color: white; margin: 0; padding: 0; font-size: 80%; letter-spacing: 1px; padding: 4px 0 6px 0; }
+
+.base .main p {text-align: center; margin: 0; padding: 0; font-size: 80%; }
+
+.side {width: 150px; }
+
+.strap .side {background: #556D87; }
+.strap .side p {text-align: center; color: #eee; font-size: 90%; margin: 2px; padding: 0; letter-spacing: 1px; }
+
+.cont .side {vertical-align: top; text-align: left; font-size: 90%; }
+.cont .side ul {background: #76828f; margin: 0; padding: 0; }
+.cont .side ul li {list-style-type: none; margin: 0 0 0 4px; border-right: 1px solid #666; }
+.cont .side ul li a:link, .cont .side ul li a:visited {display: block; text-decoration: none; color: #003; padding: 2px 0 2px 8px; background-color: #99a3b1; border-bottom: 1px solid #666; }
+.cont .side ul li strong a:link, .cont .side ul li strong a:visited {display: block; text-decoration: none; color: #003; padding: 3px 0 3px 4px; background-color: #76828f; border-bottom: 1px solid #666; }
+.cont .side ul li a:hover, .cont .side ul li a:active, .cont .side ul li a:focus {background-color: #cdd9eb; }
+.cont .side ul li strong a:hover, .cont .side ul li strong a:active, .cont .side ul li strong a:focus {background-color: #bec8d8; }
+
+
+/* editable content area */
+
+table.lout {
+	width: 100%;
+	margin: 1em 0 0 0; /* 0 0 added to remove gaps below imgs */
+}
+table.lout td {
+	vertical-align: top;
+}
+table.lout td p, table.lout td h2, table.lout td h3 {
+	margin-top: 0;
+}
+table.lout td p { /* text always in left column */
+	margin-right: 1em;
+}
+
+table.lout2 {
+	margin: 1em 0 0 0; /* 0 0 added to remove gaps below imgs */
+	border: 1px solid #333;
+	background: #dca;
+}
+table.lout2 td {
+	vertical-align: top;
+	text-align: center;
+	border: 1px solid #666;
+	padding: 2px;
+}
+
+table.array {
+	margin: 16px auto;
+	border: 1px solid #333;
+	background: #bcb; /* bcb cdc*/
+}
+table.array td {padding: 0; }
+table.array td img {vertical-align: middle; border: none; }
+
+.picap {
+	/*background: #bcb;*/
+	text-align: center;
+	font-size: 12px;
+	padding-bottom: 0;
+}
+
+.wideleft {
+	float: right;
+}
+
+table.tab {
+	border-top: 2px solid #888;
+	border-left: 2px solid #888;
+	border-bottom: 1px solid #666;
+	border-right: 1px solid #666;
+	background: #e7e0d4;
+	font-size: 90%;
+}
+
+table.tab td {
+	border-bottom: 1px solid #666;
+	border-right: 1px solid #666;
+	text-align: center;
+	padding: 2px 4px;
+}
+
+tr.tabtop {
+	font-weight: bolder;
+	background: #dca;
+	color: #333;
+}
+
+table.ii { /*interactive info*/
+	margin: 0 auto;
+	font-size: 12px;
+	background: #ecc;
+	border: 1px solid #666;
+	border-top: none;
+	border-left: none;
+}
+
+table.ii td {
+	padding: 2px 4px;
+	border-left: 1px solid #666;
+}
+
+table.ji { /*layout info*/
+	margin: 0 auto 12px auto;
+	font-size: 12px;
+	background: #ccc;
+	border-right: 1px solid #666;
+}
+
+table.ji td {
+	padding: 0 2px;
+	border-bottom: 1px solid #666;
+}
+
+.red {color: red; }
+
+/* ~~ This is the interactive layout information. ~~ */
+
+table.play {margin: 0 auto; border: 2px solid #a3b1a3; }
+
+table.play td {position: relative; }
+table.play td img {border: none; vertical-align: middle; cursor: pointer; cursor: hand; }
+
+div.sprites img {position: absolute; border: none; opacity: 0; }
+
+div.sprites textarea {
+	position: absolute;
+	margin: 0; padding: 0;
+	border: none;
+	resize: none; /* remove handel */
+	overflow: hidden;
+	width: 32px;
+	height: 32px;
+	color: #333;
+	font-size: 14px;
+	background: transparent;
+	text-align: center;
+	line-height: 32px; /* <-- this is what you must define */
+	vertical-align: middle;
+	outline: none; /* remove glow */
+	/*border: 1px solid #f00;*/
+}
+
+#myTextarea { /* for array!! */
+	font-family: Monaco, monospace;
+}
+
+blockquote {
+	background: #eed;
+	border-left: 10px solid #aaa;
+	margin: 0 10px;
+	padding: 0 10px;
+}

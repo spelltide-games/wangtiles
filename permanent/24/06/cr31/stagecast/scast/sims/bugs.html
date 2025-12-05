@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><!-- #BeginTemplate "/Templates/small-sim.dwt" --><!-- DW6 -->
+<head>
+<!-- #BeginEditable "doctitle" -->
+<title>Stagecast Sim | Bugs</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../textsims.css" type="text/css">
+<script src="../../js/js.js" type="text/JavaScript"></script>
+<!-- #BeginEditable "Meta" -->
+<meta name="description" content="Stagecast puzzles, games, animation and sims">
+<meta name="keywords" content="Stagecast, Creator, sims, worlds, computer, programming, coding, object orientated, stand alone">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<div id="tank">
+<div id="head"> <img src="../../art/icons/wec2.gif" alt="Wec Man" width="32" height="32"> <img src="../../art/scast.png" width="432" height="52" alt="StageCast"></div>
+<!-- #BeginLibraryItem "/Library/Tabs.lbi" --><ul id="tabs">
+	<li><a href="../index.html">Home</a></li>
+	<li><a href="../../../logojs/logo.html">Logo</a></li>
+	<li><a href="../../info/sims.html">Sims</a></li>
+	<li><a href="../../wang/stage.html">Stage</a></li>
+	<li><a href="../../wang/tiles_e.html">Tiles</a></li>
+    <li><a href="../../trains/tt0_intro.html">Trains</a></li>
+	<li><a href="../../wang/intro.html">Wang</a></li>
+</ul>
+<!-- #EndLibraryItem -->
+<div id="cent">
+		<table class="lout" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="main"><!-- #BeginEditable "contents" -->
+					<h1><img src="../../art/icons/bug.gif" alt="icon" width="32" height="32" class="nobo">Bugs <span class="smallhead">- objects</span></h1>
+					<table cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="353"><table class="sim108" cellspacing="0" cellpadding="0">
+									<tr>
+										<td><APPLET
+              					code="StagecastApplet.class"
+              					archive="StagecastApplet.jar, PlayerLibrary.jar"
+              					width=353 height=297>
+												<param name="ApplicationClass" value="com.stagecast.creator.PlayerApplet">
+												<param name="VersionNeeded" value="2.0">
+												<param name="AutoInstall" value="false">
+												<param name="InstallerURL" value="http://www.stagecast.com/installplayer/">
+												<param name="World" value="Bugs.sim">
+											</APPLET></td>
+									</tr>
+								</table>
+								<p class="siminfo">Click the sim once to enable it to respond to keyboard keys.<br>
+									Click <img src="../../art/sc/mid.gif" width="13" height="7" alt="tag"> for playback controls and <img src="../../art/sc/redsq.gif" alt="red tag" width="14" height="19" align="top"> for sim info and reset.</p>
+								<ol>
+									<li>Use <strong>8</strong> and <strong>2</strong> to add or remove 
+										bugs.</li>
+									<li>If step (<strong>S</strong>) is on, with a step length of 1, bugs always 
+										turn and never manage to move anywhere.</li>
+									<li>If step (<strong>S</strong>) is off, and turn (<strong>T</strong>) 
+										is intelligent, then bug movement can become ordered. Most easily 
+										seen with 3, 4 or 5 bugs.</li>
+									<li>Return bugs to chaotic movement by briefly switching step (<strong>S</strong>) 
+										on and off. Bugs will eventually settle back into an ordered pattern.</li>
+									<li>Or switch the stage wrapping, forcing bugs to establish a new 
+										pattern.</li>
+									<li>Remove all bugs and add them in again with step (<strong>S</strong>) off, 
+										wrap (<strong>W</strong>) off and turn (<strong>T</strong>) intelligent, creating 
+										an ordered counter clockwise procession.</li>
+									<li>Bored of waiting? -open the lower control panel and increase 
+										the sim speed.</li>
+								</ol></td>
+							<td background="../../art/line.gif"><img src="../../art/space.gif" width="18" height="1" alt=" "></td>
+							<td><p><span class="smallhead">Controls:</span><span class="smallhead2"><br>
+									</span><strong>8</strong> - add a bug (max 20)<br>
+									<strong>2</strong> - remove a bug</p>
+								<p><strong>S</strong> - toggle step on/off<br>
+									<strong>6</strong> - inc step length (max 20)<br>
+									<strong>4</strong> - dec step length</p>
+								<p><strong>T</strong> - toggle random or intelligent turning<br>
+									<strong>W</strong> - toggle stage wrap on/off</p>
+								<p> Bugs move forwards. If their path is blocked they 
+									turn left or right.</p>
+								<p>Turning can be random or intelligent -so that they 
+									face an empty cell. (If no cell on either side is empty, the bug 
+									doesn't turn).</p>
+								<p>If step (<strong>S</strong>) is on, bugs will stop and turn 
+									(randomly or intelligently) every so often. How often is determined 
+									by the step length. With a short step length bugs will turn often. 
+									Long step lengths give only an occasional chance of a turn, (1 in 
+									step length).</p></td>
+						</tr>
+					</table>
+					<!-- #EndEditable --></td>
+			</tr>
+		</table>
+	</div>
+	<p class="foot">&nbsp;</p>
+</div>
+</body>
+<!-- #EndTemplate --></html>

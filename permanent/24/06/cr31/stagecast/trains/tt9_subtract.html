@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>2's Comp</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_subtract.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+		<h2>2's Complement</h2>
+		<p>Two's complement is a method of representing negative binary numbers. It allows arithmetic operations to work correctly with negative values, in a similar manner as positive numbers. The MSB (most significant bit) of each register is reserved to hold the sign of the number. A <strong>0</strong> denotes a positive value, so positive values remain unchanged. A leading <strong>1</strong> denotes a negative value.</p>
+		<table cellpadding="0" cellspacing="0" class="lout">
+			<tr>
+				<td><p>Normally, a 3 bit binary number ranges from 0 (000) to 7 (111). With 2's complement the range is from plus 3 (011) to minus 3 (101).</p>
+					<p>Note that binary zero (all 0's) has a single representation.</p>
+					<p>Applying the 2's complement function a second time reverts<strong> </strong>back to the original number. </p></td>
+				<td><table cellpadding="0" cellspacing="0" class="tab">
+					<tr class="tabtop">
+						<td>Dec</td>
+						<td>Binary</td>
+						<td>&nbsp;</td>
+						<td>Dec</td>
+						<td>2's Comp</td>
+					</tr>
+					<tr>
+						<td>0<br>
+							1<br>
+							2<br>
+							3<br>
+							4<br>
+							5<br>
+							6<br>
+							7</td>
+						<td>000<br>
+							001<br>
+							010<br>
+							011<br>
+							100<br>
+							101<br>
+							110<br>
+							111</td>
+						<td>&nbsp;</td>
+						<td>+3<br>
+							+2<br>
+							+1<br>
+							&nbsp;0<br>
+							-1<br>
+							-2<br>
+							-3</td>
+						<td>011<br>
+							010<br>
+							001<br>
+							000<br>
+							111<br>
+							110<br>
+							101</td>
+					</tr>
+				</table></td>
+				<td width="32">&nbsp;</td>
+			</tr>
+		</table>
+		<p>Both these layouts calculate the value of <strong>A</strong> minus <strong>B</strong> using the 2's complement method of invert and add 1. The result is held in register <strong>B</strong>, so the original value of <strong>B</strong> is 'lost'. Three functions are used:</p>
+		<ol>
+			<li><a href="tt2_func_single.html#inv">Inverter</a> function, to invert <strong>B</strong>.</li>
+			<li><a href="tt2_func_single.html#inc">Incrementor</a> function, to increment (add 1) to <strong>B</strong>.</li>
+			<li><a href="tt2_func_single.html#add">Accumulator</a> function, to add <strong>A</strong> to <strong>B</strong>.</li>
+	</ol>
+		<h3>Operation</h3>
+		<p>Enter the values of <strong>A</strong> and <strong>B</strong> and start the train from the station. When the train halts, the result can be read from register <strong>B</strong>.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="t_bg">
+					<caption>
+					Train track layout to calculate A Minus B<br>
+					</caption>
+					<tr>
+						<td><img src="grab/tt9/sub.png" alt="subtract function" width="608" height="480" onclick="swit('t_999')">
+							<div class="sprites">
+								<textarea id="t_tens1" readonly></textarea>
+								<textarea id="t_tens2" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="t_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_2">
+								<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_3">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_4">
+								<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_5">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_6" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_7">
+								<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_8">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_9">
+								<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_10">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_11" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_12">
+								<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_13">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_14">
+								<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_15">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_16" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_17">
+								<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_18">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_19">
+								<img src="point_/13d_1.gif" alt="" width="32" height="32" id="t_20">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_21" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_22" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_23" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_24" onclick="swit(this.id)">
+								<img src="point_/13r_1.gif" alt="" width="32" height="32" id="t_25">
+								<img src="point_/13r_1.gif" alt="" width="32" height="32" id="t_26">
+								<img src="point_/13r_1.gif" alt="" width="32" height="32" id="t_27">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="t_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="t_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/points.lbi" --><table cellpadding="0" cellspacing="0" class="ji">
+	<tr>
+		<td><img src="extra/7y_0.gif" alt="lazy point" width="32" height="32"></td>
+		<td>Lazy points switch between upper <strong>0</strong> or lower <strong>1</strong> branch lines<br>
+			Trains arriving on a branch line switch the point to that line</td>
+	</tr>
+	<tr>
+		<td><img src="track/11a.gif" alt="sprung point" width="32" height="32"></td>
+		<td>Sprung points allow branch line trains to join the main line<br>
+			All main line trains go straight ahead and never 'branch off'</td>
+	</tr>
+</table><!-- #EndLibraryItem --><h3>How it works</h3>
+<p>The lower Inverter and Incrementor functions calculate the 2's complement of <strong>B</strong>. The Inverter uses <a href="tt2_func_flipflop.html">compact flip-flops</a>. The Adder then adds the value of <strong>A</strong> to <strong>B</strong>.</p>
+<hr>
+<p>This second layout is more compact as the Incrementor is not needed. Instead, a 'first return' latch ensures the train returns to the Adder to add the final <strong>1</strong>. The operation is the same as the layout above.		</p>
+<table cellpadding="0" cellspacing="0" class="play" id="tu_bg">
+					<caption>
+					Train track layout to calculate A Minus B<br>
+					</caption>
+					<tr>
+						<td><img src="grab/tt9/subtract.png" alt="subtract function" width="640" height="352" onclick="swit('tu_999')">
+							<div class="sprites">
+								<textarea id="tu_tens1" readonly></textarea>
+								<textarea id="tu_tens2" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="tu_0" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="tu_1">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="tu_2" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="tu_3">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="tu_4" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="tu_5">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="tu_6" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="tu_7">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="tu_8" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="tu_9" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="tu_10" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="tu_11" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="tu_12" onclick="swit(this.id)">
+								<img src="point_/13r_1.gif" alt="" width="32" height="32" id="tu_13">
+								<img src="point_/13r_1.gif" alt="" width="32" height="32" id="tu_14">
+								<img src="point_/13r_1.gif" alt="" width="32" height="32" id="tu_15">
+								<img src="point_/13b_1.gif" alt="" width="32" height="32" id="tu_16">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="tu_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="tu_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/points.lbi" --><table cellpadding="0" cellspacing="0" class="ji">
+	<tr>
+		<td><img src="extra/7y_0.gif" alt="lazy point" width="32" height="32"></td>
+		<td>Lazy points switch between upper <strong>0</strong> or lower <strong>1</strong> branch lines<br>
+			Trains arriving on a branch line switch the point to that line</td>
+	</tr>
+	<tr>
+		<td><img src="track/11a.gif" alt="sprung point" width="32" height="32"></td>
+		<td>Sprung points allow branch line trains to join the main line<br>
+			All main line trains go straight ahead and never 'branch off'</td>
+	</tr>
+</table><!-- #EndLibraryItem --><h3>How it works</h3>
+<p>From the station, the train enters the Inverter function which inverts the value of <strong>B</strong>. It then passes up to the Adder, resetting the 'first return' latch to <strong>0</strong> on the way. Therefore there is no need to reset this latch before each new calculation.<br>
+	The Accumulator function adds <strong>A</strong> to <strong>B</strong>. 
+	As the train returns, it uses the top set of latches to set <strong>A</strong> to <strong>1</strong>. The 'first return' latch returns the train to the Adder, so that the <strong>1</strong> is added to <strong>B</strong>. <br>
+	On its second visit, the 'first return' latch lets the train pass through, so the train 
+	returns to the 'Halt' siding to end the calculation.		</p>
+<h3><strong>Note</strong></h3>
+<ol>
+	<li>The 2's complement method only works when all registers are of the same size. Add and Incrementor overflows are simply 'lost',	so there are no overflow error lines.</li>
+	<li>If <strong>B</strong> is greater than <strong>A</strong>, then the result of <strong>A</strong>-<strong>B</strong> is negative, and is read as a 2's complement value. </li>
+</ol>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

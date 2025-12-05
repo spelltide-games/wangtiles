@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Lazy Points</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_points.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+			<h2>Lazy Points			
+				<img src="point_/7y_0.gif" alt="train engine" width="32" height="32" align="middle">
+				<img src="point_/7y_1.gif" alt="train engine" width="32" height="32" align="middle">
+			</h2>
+<p>Each lazy point switches the 'main' line between two curved 'branch' lines. Lazy points show <strong>0</strong> when switched to the upper branch line and <strong>1</strong> when switched to the lower branch line. They are called 'lazy' points because they remain in the position they were last set. </p>
+			<p>Lazy points make layouts interactive. They can be set as inputs or read as outputs, so allowing a layout, (or system) to exist in a number of different 'states'.</p>
+			<h3>Interactive Layouts</h3>
+			<p>Here is a typical layout, using two lazy points. Click the layout to start the train running. Note that the train covers all the track, and all the track is traversed in both directions.</p>
+			<table cellpadding="0" cellspacing="0" class="play" id="d_bg">
+				<caption>
+					Layout 1
+				</caption>
+				<tr>
+					<td><img src="grab/tt1/l1.png" alt="layout 1" width="256" height="96" onclick="swit('d_999')">
+						<div class="sprites">
+							<img src="loco/5s.gif" alt="" width="32" height="32" id="d_0" onclick="swit(this.id)">
+							<img src="point_/7y_1.gif" alt="" width="32" height="32" id="d_1" onclick="swit(this.id)">
+							<img src="point_/13y_1.gif" alt="" width="32" height="32" id="d_2" onclick="swit(this.id)">
+							<img src="loco/0.gif" alt="" width="32" height="32" id="d_loco">
+							<img src="loco/over.gif" alt="" width="36" height="36" id="d_over">
+						</div></td>
+				</tr>
+			</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem -->Click the points to switch them between <strong>0</strong> and <strong>1</strong>. Note that the train can also switch (or correct) a point, if it enters on the 'dead' branch line. 
+<p>You can almost feel the circuit wanting to calculate something. The points actually follow a 'Gray Code' sequence: 00, 01, 11, 10 etc, so we've almost got our first calculating layout!</p>
+<h3>Registers</h3>
+<p>Computational layouts need to be able to store binary numbers in some kind of memory. This is done using a row of lazy points arranged horizontally as a data register. Each lazy point holds a single bit of data, <strong>0</strong> or <strong>1</strong>.</p>
+<table cellpadding="0" cellspacing="0" class="array">
+	<caption>
+		Binary 101 stored in register <strong>A</strong>
+	</caption>
+	<tr>
+		<td><span class="picap">
+			<img src="grab/tt2b/register.png" alt="data register" width="512" height="32">
+		</span></td>
+	</tr>
+</table>
+<br>
+<table cellpadding="0" cellspacing="0" class="lout">
+	<tr>
+		<td><h3>Binary Arithmetic</h3>
+			<p>Computers use binary arithmetic. The table shows the binary numbers 000 to 111 . The right most column (x1) is the least significant bit (LSB).</p>
+			<p>Each column doubles in value, x2, x4 etc. The left most column is the most significant bit (MSB). So the above register is set to a value of 101 (binary) which is '4+1' or 5 (decimal). </p>
+			<p>To hold larger numbers, the register is extended to the left. Any computational layout can be extended in this manner to compute numbers of any size. It is usually best to duplicate a central stage, as the LSB and MSB stages at each end can be slightly different.</p></td>
+		<td><table cellpadding="0" cellspacing="0" class="tab">
+			<tr class="tabtop">
+				<td>Decimal</td>
+				<td colspan="3">Binary</td>
+			</tr>
+			<tr class="tabtop">
+				<td>&nbsp;</td>
+				<td><em>x4</em></td>
+				<td><em>x2</em></td>
+				<td><em>x1</em></td>
+			</tr>
+			<tr>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>0</td>
+				<td>0</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>0</td>
+				<td>1</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>0</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>1</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>1</td>
+				<td>0</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>1</td>
+				<td>1</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+		</table></td>
+	</tr>
+</table>
+<h3>Layouts with 2 Lazy Points</h3>
+			<p>There are a further 4 distinct layouts containing two lazy points. Two layouts with 2 separate loops joined by a single track and two where both loops share a track. (see <a href="https://en.wikipedia.org/wiki/Wikipedia:Reference_desk/Archives/Mathematics/2013_October_14">Wikipedia</a> article).</p>
+			<table cellpadding="0" cellspacing="0" class="lout">
+				<tr>
+					<td><table cellpadding="0" cellspacing="0" class="play" id="m_bg">
+						<caption>
+							Layout 2
+							</caption>
+						<tr>
+							<td><img src="grab/tt1/l2.png" alt="layout 2" width="96" height="224" onclick="swit('m_999')">
+								<div class="sprites">
+									<img src="loco/5s.gif" alt="" width="32" height="32" id="m_0" onclick="swit(this.id)">
+									<img src="point_/7y_1.gif" alt="" width="32" height="32" id="m_1" onclick="swit(this.id)">
+									<img src="point_/7y_1.gif" alt="" width="32" height="32" id="m_2" onclick="swit(this.id)">
+									<img src="loco/0.gif" alt="" width="32" height="32" id="m_loco">
+									<img src="loco/over.gif" alt="" width="36" height="36" id="m_over">
+								</div></td>
+						</tr>
+					</table></td>
+					<td><table cellpadding="0" cellspacing="0" class="play" id="n_bg">
+						<caption>
+							Layout 3
+							</caption>
+						<tr>
+							<td><img src="grab/tt1/l3.png" alt="layout 3" width="96" height="224" onclick="swit('n_999')">
+								<div class="sprites">
+									<img src="loco/5s.gif" alt="" width="32" height="32" id="n_0" onclick="swit(this.id)">
+									<img src="point_/13y_1.gif" alt="" width="32" height="32" id="n_1" onclick="swit(this.id)">
+									<img src="point_/7y_1.gif" alt="" width="32" height="32" id="n_2" onclick="swit(this.id)">
+									<img src="loco/0.gif" alt="" width="32" height="32" id="n_loco">
+									<img src="loco/over.gif" alt="" width="36" height="36" id="n_over">
+								</div></td>
+						</tr>
+					</table></td>
+					<td><table cellpadding="0" cellspacing="0" class="play" id="p_bg">
+						<caption>
+							Layout 4
+							</caption>
+						<tr>
+							<td><img src="grab/tt1/l4.png" alt="layout 4" width="96" height="224" onclick="swit('p_999')">
+								<div class="sprites">
+									<img src="loco/5s.gif" alt="" width="32" height="32" id="p_0" onclick="swit(this.id)">
+									<img src="point_/7y_1.gif" alt="" width="32" height="32" id="p_1" onclick="swit(this.id)">
+									<img src="point_/13y_1.gif" alt="" width="32" height="32" id="p_2" onclick="swit(this.id)">
+									<img src="loco/0.gif" alt="" width="32" height="32" id="p_loco">
+									<img src="loco/over.gif" alt="" width="36" height="36" id="p_over">
+								</div></td>
+						</tr>
+					</table></td>
+					<td><table cellpadding="0" cellspacing="0" class="play" id="q_bg">
+						<caption>
+							Layout 5
+							</caption>
+						<tr>
+							<td><img src="grab/tt1/l5.png" alt="layout 5" width="96" height="224" onclick="swit('q_999')">
+								<div class="sprites">
+									<img src="loco/5s.gif" alt="" width="32" height="32" id="q_0" onclick="swit(this.id)">
+									<img src="point_/7y_1.gif" alt="" width="32" height="32" id="q_1" onclick="swit(this.id)">
+									<img src="point_/13y_1.gif" alt="" width="32" height="32" id="q_2" onclick="swit(this.id)">
+									<img src="loco/0.gif" alt="" width="32" height="32" id="q_loco">
+									<img src="loco/over.gif" alt="" width="36" height="36" id="q_over">
+								</div></td>
+						</tr>
+					</table></td>
+				</tr>
+			</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>If you play with these 4 circuits, (they are interactive), you'll find that the train quickly gets 'trapped' in a single loop and fails to cover all the track. This illustrates the limitations of model train track layouts supplied with only lazy points. It is difficult to construct long train runs without entering a small infinity loop. See <a href="tt8_auto_run.html">Auto Run Layouts</a>.</p>
+			<p>This is a major problem when designing computational layouts, because a trapped train ends any further calculation. The unvisited track is wasted. The computation cannot return an answer and so fails. Constructing layouts with more lazy points does not help. It simply leaves more track unused when the train gets trapped.</p>
+			<p>Usually, this is no big deal. Most model trains can reverse, or can be picked up, turned around, and replaced on the track. But, we want our layouts to carry out calculations without human intervention. Therefore, 'Turing' trains always stay on the track and only move forwards. </p>
+			<p>To build more complex layouts, we need a second type of point, the Sprung point.<br>
+		</p>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

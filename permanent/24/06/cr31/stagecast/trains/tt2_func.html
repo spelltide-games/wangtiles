@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Function circuits</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_subs.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+			<h2>Functions</h2>
+<p>Finally, we can look at a typical task, shown as a self contained function. The function holds data (a binary number) in a horizontal register of lazy points.</p>
+				<p> For example, this is a 'Count Up' function. The train increments the binary number, held in register <strong>C</strong>, by <strong>1</strong> and returns back along the same track.				</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="c_bg">
+					<caption>
+					Count Up function
+					</caption>
+					<tr>
+						<td><img src="grab/tt2b/count_up_oe.png" alt="count up" width="576" height="96" onclick="swit('c_999')">
+							<div class="sprites">
+								<textarea id="c_tens1" readonly></textarea>
+								<img src="loco/8le.gif" alt="" width="32" height="32" id="c_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_3" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="c_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="c_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>
+				This 3-stage counter counts up to 7 (binary 111). The data indicates the number of times the train has visited the circuit.				</p>
+				<h3>Overflow
+					<img src="track/2.gif" alt="&quot;&quot;" width="32" height="32" align="absmiddle">
+				</h3>
+				<p>An additional count above 111 causes the train to enter the error siding and stop, as the Counter has overflowed. In larger layouts, all errors are returned to the error siding close to the start. </p>
+				<h3>Readout
+					<img src="extra/tens.gif" alt="&quot;&quot;" width="32" height="32" align="absmiddle">
+				</h3>
+				<p>The 'readout' uses some behind-the-scenes Javascript to display the register binary data in base 10. This has no effect on the train or layout, but makes the computation easier to follow if you're not familiar with numbers in base 2.</p>
+				<p>Note that the readout is updated whenever a point is switched, so it can show some spurious (but temporary) numbers.</p>
+<h3>Reset
+	<img src="loco/10s.gif" alt="&quot;&quot;" width="32" height="32" align="absmiddle">
+</h3>
+<p>Click the yellow start circle to reset a running train back to its start position. Click again to reset all lazy points to their initial positions.</p>
+<p>This is also called the 'Halt' position as the train returns to the start and halts indicating that the computation (in this case adding 1) has been completed successfully. </p>
+<p>Later, we will construct a train track <a href="tt3_univ.html">computer</a> and use these self contained functions to create a functions library which can be called by a program loop.</p>
+<h3>Duplo</h3>
+<p>Duplo can be used to build real examples (see <a href="tt8_duplo_lout.html">Duplo pages</a>). You can see this layout in action on <a href="https://www.youtube.com/watch?v=--LolAtwecE&feature=youtu.be">You Tube</a>!</p>
+<h3>Simplification</h3>
+<p>In their paper <a href="http://www.monochrom.at/turingtrainterminal/Chalcraft.pdf">Train Sets</a>, Chalcraft and Greene describe a method to simplify a layout without altering the route of the train. Once completed, it then consists of only lazy points and roundabouts. Every section of track is two-way except the track inside a roundabout which is one-way.</p>
+<p>The Count Up function is fully simplified, as it contains only lazy points and roundabouts (see below).</p>
+<h3>Roundabouts</h3>
+<p>Roundabouts are a group of sprung points arranged in a ring. When a train enters a roundabout, it travels to the next exit to the left (clockwise) or right (anti-clockwise) along one-way track and exits the roundabout.</p>
+<table cellpadding="0" cellspacing="0" class="array">
+	<caption>
+		Roundabouts with 1, 2 and 3 exits
+	</caption>
+	<tr>
+		<td><span class="picap">
+			<img src="grab/tt7/rbouts.png" alt="roundabouts" width="480" height="128">
+		</span></td>
+	</tr>
+</table>
+<h3>Merging Track</h3>
+<table cellpadding="0" cellspacing="0" class="lout">
+	<tr>
+		<td><p>When merging two lines together, it's sometimes neater and more compact to use a single 'merger' junction. </p>
+			<p>The first tile looks similar to a lazy point. However, if a train arrives on the main line, it won't know which way to go! Ensure that the main line feeds into another branch line so this never happens. </p>
+			<p>The second merger junction is a better solution.</p></td>
+		<td width="60"><br>
+			<p>
+				<img src="track/7.gif" alt="curve" width="32" height="32">
+			</p>
+			<p>&nbsp;</p>
+			<p>
+				<img src="track/7c.gif" alt="curve" width="32" height="32">
+			</p></td>
+	</tr>
+</table>
+<p>Next page, we'll have a look at more single point <a href="tt2_func_single.html">Functions</a> which will be used in the later example layouts. </p>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

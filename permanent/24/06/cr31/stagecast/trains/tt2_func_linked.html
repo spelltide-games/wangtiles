@@ -1,0 +1,491 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Functions using linked lazy points</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_coop2.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Functions using Linked Points</h2>
+				<p>Linked (or cooperative) points, are connected by a mechanical link so that they operate together. If one point is switched by an operator or train, then both points are switched.</p>
+				<p>The train enters each function from the right. This allows registers to be extended to the left to accommodate larger numbers.</p>
+				<h3><a name="comp"></a>Comparator (= &lt; &gt;)</h3>
+				<p>This comparator circuit detects if <strong>n</strong>&gt;<strong>C</strong> or <strong>C</strong>&gt;<strong>n</strong> as well as <strong>n</strong>=<strong>C</strong>. To do so it must start the comparison process at the left 'most significant bit'. If they are the same the train passes on to test the next stage. If they are different the train returns along the corresponding upper or lower track.				</p>
+				<p>The upper track returns the train if the value of <strong>C</strong> is less than <strong>n</strong>. <br>
+					The lower track returns the train if the value of <strong>C</strong> is greater than <strong>n</strong>. <br>
+				The central track returns the train if the value of <strong>C</strong> equals <strong>n</strong>. </p>
+				<p>In this circuit, the cental track is connected to the upper track so the two inequalities are combined. Usually the computation is halted if the Count <strong>C</strong> is equal to or greater than the requested n<sup>th</sup> term. Also note that the upper lazy 'x1' point is redundent and can be removed. </p>
+				<table cellspacing="0" cellpadding="0" class="play" id="b_bg">
+					<caption>
+						Comparator function
+					</caption>
+					<tr>
+						<td><img src="grab/tt2c/comp_full.png" width="608" height="224" alt="comparator" onclick="swit('b_999')">
+							<div class="sprites">
+								<textarea id="b_tens1" readonly></textarea>
+								<textarea id="b_tens2" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="b_0" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="b_1" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="b_2" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="b_3" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="b_4" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="b_5" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="b_6" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="b_7" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="b_8" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="b_9" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="b_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="b_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><h3><a name="ne" id="ne"></a>Not Equal</h3>
+				<p>This circuit detects if <strong>n</strong> is not equal to <strong>C</strong> and if so, returns the train back along the same track. If <strong>n</strong> is equal to <strong>C</strong> then the train returns via the lower track, usually to halt the computation.</p>
+				<table cellspacing="0" cellpadding="0" class="play" id="e_bg">
+					<caption>
+						Not Equal function
+					</caption>
+					<tr>
+						<td><img src="grab/tt2c/notequal.png" width="608" height="224" alt="not equal" onclick="swit('e_999')">
+							<div class="sprites">
+								<textarea id="e_tens1" readonly></textarea>
+								<textarea id="e_tens2" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="e_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_4" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_5" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_6" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_7" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_8" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_9" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="e_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="e_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><br>
+				The train checks each stage in turn. If <strong>C</strong> is not equal to <strong>n</strong> the train passes onto the next stage. Otherwise, the train exits back along the input track. 
+<h3><a name="ex" id="ne"></a>Exchange (Swop)</h3>
+				<p>This circuit exchanges (swops) the values held in registers <strong>A</strong> and <strong>B</strong>.</p>
+				<table cellspacing="0" cellpadding="0" class="play" id="ee_bg">
+					<caption>
+						Exchange (Swop) function
+					</caption>
+					<tr>
+						<td><img src="grab/tt2c/swop.png" width="608" height="192" alt="exchange (swop)" onclick="swit('ee_999')">
+							<div class="sprites">
+								<textarea id="ee_tens1" readonly></textarea>
+								<textarea id="ee_tens2" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="ee_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ee_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ee_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ee_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ee_4" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ee_5" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ee_6" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ee_7" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ee_8" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ee_9" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="ee_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="ee_over">
+						</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><br>
+				The train checks each stage in turn. If <strong>A</strong> and <strong>B</strong> are equal, the train passes onto the next stage. Otherwise, the bit values of <strong>B</strong> then <strong>A</strong> are inverted. To test the circuit, enter values into both registers. The train will swop the two values. 
+				<h3><a name="2c" id="2c"></a>Negate (2's complement)</h3>
+				<p>Two's complement is a method of representing negative binary numbers. See <a href="tt9_subtract.html">2'c Comp</a> for subtraction methods using an Inverter and an Incrementor. This circuit generates the 2's complement directly, by inverting all bits 'after' the first <strong>1</strong>.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="ff_bg">
+					<caption>
+					Negator (2's complement)
+					of <strong>A</strong>
+					</caption>
+					<tr>
+						<td><img src="grab/tt2c/2scomp.png" alt="2's complement" width="544" height="224" onclick="swit('ff_999')">
+							<div class="sprites">
+								<textarea id="ff_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="ff_0" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="ff_1">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ff_2" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="ff_3">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ff_4" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="ff_5">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ff_6" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="ff_7" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="ff_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="ff_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>Starting from the least significant bit (LSB), if it is a <strong>0</strong>, the train passes onto the next stage. If it is a <strong>1</strong>, then all subsequent bits are inverted. There are no overflow errors.
+				</p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><p>Normally, a 3 bit binary number ranges from 0 (000) to 7 (111). With 2's complement the range is from plus 3 (011) to minus 3 (101).</p>
+							<p>Note that binary zero (all 0's) has a single representation.</p>
+							<p>Applying the 2's complement function a second time reverts<strong> </strong>back to the original number. </p></td>
+						<td><table cellpadding="0" cellspacing="0" class="tab">
+							<tr class="tabtop">
+								<td>Dec</td>
+								<td>Binary</td>
+								<td>&nbsp;</td>
+								<td>Dec</td>
+								<td>2's Comp</td>
+							</tr>
+							<tr>
+								<td>0<br>
+									1<br>
+									2<br>
+									3<br>
+									4<br>
+									5<br>
+									6<br>
+									7</td>
+								<td>000<br>
+									001<br>
+									010<br>
+									011<br>
+									100<br>
+									101<br>
+									110<br>
+									111</td>
+								<td>&nbsp;</td>
+								<td>+3<br>
+									+2<br>
+									+1<br>
+									&nbsp;0<br>
+									-1<br>
+									-2<br>
+									-3</td>
+								<td>011<br>
+									010<br>
+									001<br>
+									000<br>
+									111<br>
+									110<br>
+									101</td>
+							</tr>
+						</table></td>
+						<td width="32">&nbsp;</td>
+					</tr>
+				</table>
+				<h3><a name="gray"></a>Gray Code Counter</h3>
+				<p>This counter circuit exhibits Gray Code (non reflective). The header circuit on the right creates an inverted lazy point (see <a href="tt9_lout.html#inv">layouts</a>). It is an example of a maximum run (28 step) <a href="tt8_auto_run.html">Auto Switching Layout</a>. </p>
+				<table cellpadding="0" cellspacing="0" class="play" id="f_bg">
+					<caption>
+					Gray Code Counter
+					</caption>
+					<tr>
+						<td><img src="grab/tt2c/gray.png" alt="gray code counter" width="608" height="192" onclick="swit('f_999')">
+							<div class="sprites">
+								<textarea id="f_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="f_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_4" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_5" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_6" onclick="swit(this.id)">
+								<img src="point_/7q_1.gif" alt="" width="32" height="32" id="f_7" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="f_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="f_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><p>The circuit produces an 8 step sequence as shown in the table.</p>
+							<p>Gray Code Counters ensure only one pair of linked points is switched at each step.</p>
+							<p>&nbsp;</p></td>
+						<td><table cellpadding="0" cellspacing="0" class="tab">
+								<tr class="tabtop">
+									<td>Step</td>
+									<td>x4</td>
+									<td>x2</td>
+									<td>x1</td>
+									<td>Dec</td>
+								</tr>
+								<tr>
+									<td>0<br>
+										1<br>
+										2<br>
+										3<br>
+										4<br>
+										5<br>
+										6<br>
+										7</td>
+									<td>0<br>
+										0<br>
+										1<br>
+										1<br>
+										1<br>
+										1<br>
+										0<br>
+										0</td>
+									<td>0<br>
+										0<br>
+										0<br>
+										0<br>
+										1<br>
+										1<br>
+										1<br>
+										1</td>
+									<td>0<br>
+										1<br>
+										1<br>
+										0<br>
+										0<br>
+										1<br>
+										1<br>
+										0</td>
+									<td>0<br>
+										1<br>
+										5<br>
+										4<br>
+										6<br>
+										7<br>
+										3<br>
+										2</td>
+								</tr>
+							</table></td>
+						<td width="32">&nbsp;</td>
+					</tr>
+				</table>
+				<h3><a name="read"></a>Sequential Read</h3>
+				<p>Trains arriving on the lower line read out each data bit in turn from register <strong>A</strong>. The lower lazy points act as an incremental latch, sending the train one stage further on each visit.<br>
+				</p>
+				<table cellspacing="0" cellpadding="0" class="play" id="c_bg">
+					<caption>
+					Sequential Read function
+					</caption>
+					<tr>
+						<td><img src="grab/tt2c/p2s.png" alt="sequential read" width="544" height="224" onclick="swit('c_999')">
+							<div class="sprites">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="c_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_4" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_5" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_6" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="c_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="c_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><br>
+				The train passes through each stage until it reaches the first lazy point set to <strong>0</strong>. This is inverted. The train passes up and reads out the data bit held in register <strong>A</strong>, by leaving along the appropriate <strong>0</strong> or <strong>1</strong> exit line.
+<p>When all latches are set to <strong>1</strong>, the train returns back along the input line.</p>
+				<h3><a name="write"></a>Sequential Write</h3>
+				<p>All lazy points need to be reset to <strong>0</strong>. Trains arriving on the <strong>0</strong> or <strong>1</strong> line write each data bit in turn into Register <strong>A</strong>. Trains exit on the lower <strong>1</strong> line.</p>
+				<table cellspacing="0" cellpadding="0" class="play" id="d_bg">
+					<caption>
+					Sequential Write function
+					</caption>
+					<tr>
+						<td><img src="grab/tt2c/s2p.png" alt="sequential write" width="544" height="224" onclick="swit('d_999')">
+							<div class="sprites">
+								<textarea id="d_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="d_0" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="d_1" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="d_2" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="d_3" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="d_4" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="d_5" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="d_6" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="d_7" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="d_8" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="d_9" onclick="swit(this.id)">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="d_10" onclick="swit(this.id)">
+								<!-- extra halt tile -->
+								<img src="loco/12.gif" alt="" width="32" height="32" id="d_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="d_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p><strong>How it works</strong><br>
+					Each linked lazy point acts as a latch. The train passes through each stage until it reaches the first latch set to <strong>0</strong>. The train is diverted to the centre where it writes a <strong>0</strong> or <strong>1</strong> into register <strong>A</strong> (note that register <strong>A</strong> lazy points are drawn reflected). The train leaves and exits along the lower <strong>1</strong> line. No points will be switched, as all are already set to <strong>1</strong>.</p>
+				<p>Any overflow errors from either a <strong>0</strong> or a <strong>1</strong> input, are sent back via the upper <strong>0</strong> line, which resets all latches to <strong>0</strong>.</p>
+				<h3><a name="lzl"></a>Leading Zero Latch</h3>
+				<p>A combined specialised function used in <a href="tt3_multiplier.html">multiplier</a> circuits. This function identifies leading zeros in the number held in register <strong>A</strong>, and also checks if all latches are set to <strong>1</strong>. </p>
+				<table cellspacing="0" cellpadding="0" class="play" id="h_bg">
+					<caption>
+					Leading Zero Latch function with 'All 1' check
+					</caption>
+					<tr>
+						<td><img src="grab/tt2c/lzl.png" alt="leading zero latch" width="576" height="256" onclick="swit('h_999')">
+							<div class="sprites">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="h_0" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="h_1" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="h_2" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="h_3" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="h_4" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="h_5" onclick="swit(this.id)">
+								<img src="point_/7b_1.gif" alt="" width="32" height="32" id="h_6" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="h_7" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="h_8" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="h_9" onclick="swit(this.id)">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="h_10" onclick="swit(this.id)">
+								<!-- extra halt tile -->
+								<img src="loco/12.gif" alt="" width="32" height="32" id="h_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="h_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p><strong>How it works</strong><br>
+					This circuit checks each digit of register <strong>A</strong> in turn. Starting at the left (most significant bit), each latch is set to a <strong>1</strong> for a leading <strong>0</strong> and zeros thereafter. So for instance if register <strong>A</strong> = 00101 then the look ahead function will set the latches to 11000. </p>
+<p>The second upper input line checks if all latches are set to <strong>1</strong>. If they are, there is no need for any further calculations and the train is returned by the lower line, usually to halt the computation. If any latch is set to <strong>0</strong>, the train is returned back along the same line to continue with the calculation.</p>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><!-- #BeginTemplate "/Templates/small-sim.dwt" --><!-- DW6 -->
+<head>
+<!-- #BeginEditable "doctitle" -->
+<title>Stagecast Sim | Animation (rotation)</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../textsims.css" type="text/css">
+<script src="../../js/js.js" type="text/JavaScript"></script>
+<!-- #BeginEditable "Meta" -->
+<meta name="description" content="Stagecast puzzles, games, animation and sims">
+<meta name="keywords" content="Stagecast, Creator, sims, worlds, computer, programming, coding, object orientated, stand alone">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<div id="tank">
+<div id="head"> <img src="../../art/icons/wec2.gif" alt="Wec Man" width="32" height="32"> <img src="../../art/scast.png" width="432" height="52" alt="StageCast"></div>
+<!-- #BeginLibraryItem "/Library/Tabs.lbi" --><ul id="tabs">
+	<li><a href="../index.html">Home</a></li>
+	<li><a href="../../../logojs/logo.html">Logo</a></li>
+	<li><a href="../../info/sims.html">Sims</a></li>
+	<li><a href="../../wang/stage.html">Stage</a></li>
+	<li><a href="../../wang/tiles_e.html">Tiles</a></li>
+    <li><a href="../../trains/tt0_intro.html">Trains</a></li>
+	<li><a href="../../wang/intro.html">Wang</a></li>
+</ul>
+<!-- #EndLibraryItem -->
+<div id="cent">
+		<table class="lout" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="main"><!-- #BeginEditable "contents" -->
+					<h1><img src="../../art/icons/ra.gif" alt="Oliver" width="32" height="32" class="nobo">Animation <span class="smallhead">- sprite rotation</span></h1>
+					<table cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="353"><table class="sim64" cellspacing="0" cellpadding="0">
+									<tr>
+										<td><APPLET
+              					code="StagecastApplet.class"
+              					archive="StagecastApplet.jar, PlayerLibrary.jar"
+              					width=225 height=201>
+												<param name="ApplicationClass" value="com.stagecast.creator.PlayerApplet">
+												<param name="VersionNeeded" value="2.0">
+												<param name="AutoInstall" value="false">
+												<param name="InstallerURL" value="http://www.stagecast.com/installplayer/">
+												<param name="World" value="Anim.sim">
+											</APPLET></td>
+									</tr>
+								</table>
+								<p class="siminfo">Click the sim once to enable it to respond to keyboard keys.<br>
+									Click <img src="../../art/sc/mid.gif" width="13" height="7" alt="tag"> for playback controls and <img src="../../art/sc/redsq.gif" alt="red tag" width="14" height="19" align="top"> for sim info and reset.</p>
+								<p>This sim shows how to control sprite animation. The spaceship character has 16 pictures. These are labelled 0 ... 15 in the Paint window. </p>
+								<p>We can calculate the next picture and put the number directly into the appearance box to switch the characters picture. So calculating:</p>
+								<p>1 ... 2 ... 3 ... etc. rotates slowly clockwise<br>
+									3 ... 2 ... 1 ... etc. rotates slowly anti-clockwise<br>
+									1 ... 3 ... 5 ... etc. rotates fast clockwise<br>
+									1 ... 4 ... 7 ... etc. rotates very fast clockwise </p>
+								<p>To make it work, we have to use Modulo 16 arithmetic to keep the answers within range of 0 .. 15. Any answers which do not match an appearance name are ignored.<br>
+									By adding 8 to the current picture number, we can 'flip', rotate the sprite 180°. </p></td>
+							<td background="../../art/line.gif"><img src="../../art/space.gif" width="18" height="1" alt=" "></td>
+							<td><p><span class="smallhead">Controls:</span></p>
+								<p><strong>No keyboard, only mouse</strong></p>
+								<p>Click Play/Pause icon to toggle between play and paused. </p>
+								<p>Click the left red arrow to increase anti-clockwise rotation.<br>
+									Click the right red arrow to increase clockwise rotation.<br>
+									The LED bar graph indicates the speed. </p>
+								<p>While PAUSED:</p>
+								<p>Click the left red arrow to advance one picture anti-clockwise.<br>
+									Click the right red arrow to advance one picture clockwise. </p>
+								<p>Click the bar graph icon to 'flip' the sprite 180°.</p>
+							<p>&nbsp;</p></td>
+						</tr>
+					</table>
+					<!-- #EndEditable --></td>
+			</tr>
+		</table>
+	</div>
+	<p class="foot">&nbsp;</p>
+</div>
+</body>
+<!-- #EndTemplate --></html>

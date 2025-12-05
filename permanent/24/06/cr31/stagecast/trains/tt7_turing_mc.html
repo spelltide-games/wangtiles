@@ -1,0 +1,498 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Turing Machine</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_turing_mc.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Turing machine, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Turing Machine</h2>
+				<p>A Turing Machine is an idealised computer model that in theory can simulate any computation. There is much information on the web including <a href="https://en.wikipedia.org/wiki/Turing_machine">Wikipedia</a> and this useful <a href="http://www.logique.jussieu.fr/~michel/tmi.html">introduction</a>.</p>
+				<p>Turing machines use an unlimited tape, divided into cells, with each cell holding a symbol. The machine can read or write a symbol to a cell, and move either left or right to the next adjacent cell. </p>
+<p>The machine stores 3 values:</p>
+				<ol>
+					<li><strong>Symbol</strong> - 0 or 1 for a binary machine.</li>
+					<li><strong>Move</strong> - Left or Right, to the adjacent cell.</li>
+					<li><strong>State</strong> - A B or C, and halt.<br>
+					</li>
+				</ol>
+				<p>The machine also has a program, as a list of 'transition rules'. For each combination of State and Symbol, the rule gives updated values for Symbol, Move and State.<br>
+				eg. Rule (A1: 0 R B) means if the machine is in state A and the Symbol is 1, then update Symbol to 0, Move to Right and enter State B.</p>
+				<p>When the machine is run, it repeats the following Write, Read and Update operations each step:</p>
+				<ol>
+					<li> <strong>Write</strong> the Symbol to the current cell.</li>
+					<li>Move to the next adjacent cell.</li>
+					<li><strong>Read</strong> the Symbol from the cell.</li>
+					<li>If the State is 'halt' then Halt the machine. Else...</li>
+					<li><strong>Update</strong> Symbol, Move and State values.</li>
+				</ol>
+				<h3>Layout</h3>
+				<p>At the top of the layout is the tape which extends horizontally left and right. Just eight cells are shown, with the central cell labelled '0'. Each cell contains a lazy point which holds the Symbol, shown as a <strong>0</strong> or a <strong>1</strong>. </p>
+				<p>Above them is a row of linked lazy points which select Left or Right, and below is a similar row of linked lazy points which hold the Symbol to be written into or just read out of the cell. At the bottom of the tape is a row of passive points which direct the train back to the current cell.</p>
+				<p>When the train enters a cell, it writes the Symbol into the cell, then moves Left or Right to read out the Symbol in the adjacent cell.</p>
+				<p>Below the tape, connected by a single track bridge, is the main layout. On the left are the State points. In the centre, are 6 pairs of manual points which set Symbol and Move direction. On the right, are 6 sets of 3 manual points to select the next State. These are linked horizontally so that only one, (or none) can be selected at a time. This just makes the layout easier to follow.				</p>
+				<h3>Operation</h3>
+				<p> The train leaves the station and sets the State Switch to A. It proceeds to the tape where the passive points guide the train to read the value from the current cell. </p>
+				<p>On returning to the central State Switch the train updates Symbol and Move values before updating the State Switch with the new State.</p>
+				<p>To program the machine, set the manual points (blue border) to each transition rule and the tape cells to the initial tape data. <br>
+				Alternatively, load one of the programs from the table below. </p>
+				<h3>Busy Beavers (3 State)</h3>
+				<p>This <a href="http://www.logique.jussieu.fr/~michel/ha.html#tm32">web page</a> lists some 'winners and other good machines' which I've reproduced in the table below. All can be loaded into the Turing Machine with the relevant 'Load' button. This also clears the tape and resets Symbol to <strong>0</strong> and Move to Right.</p>
+				<table cellpadding="0" cellspacing="0" class="lout2">
+					<tr>
+						<td>Sigma</td>
+						<td>5</td>
+						<td>5</td>
+						<td>5</td>
+						<td>4</td>
+						<td>5</td>
+						<td>6</td>
+						<td>6</td>
+						<td>6</td>
+						<td>5</td>
+						<td>6</td>
+						<td>6</td>
+					</tr>
+					<tr>
+						<td>Steps</td>
+						<td>21</td>
+						<td>20</td>
+						<td>20</td>
+						<td>17</td>
+						<td>16</td>
+						<td>14</td>
+						<td>13</td>
+						<td>13</td>
+						<td>13</td>
+						<td>12</td>
+						<td>11</td>
+					</tr>
+					<tr>
+						<td>L-R</td>
+						<td>1-3</td>
+						<td>2-2</td>
+						<td>2-3</td>
+						<td>2-2</td>
+						<td>2-3</td>
+						<td>1-4</td>
+						<td>2-4</td>
+						<td>3-2</td>
+						<td>1-4</td>
+						<td>2-3</td>
+						<td>3-2</td>
+					</tr>
+					<tr>
+						<td><strong>A0<br>
+							A1<br>
+							B0<br>
+							B1<br>
+							C0<br>
+							C1</strong></td>
+						<td>1 R B<br>
+							1 R <strong>h</strong><br>
+							1 L B<br>
+							0 R C<br>
+							1 L C<br>
+							1 L A</td>
+						<td>1 R B<br>
+							1 R <strong>h</strong><br>
+							0 L C<br>
+							0 R C<br>
+							1 L C<br>
+							1 L A</td>
+						<td>1 R B<br>
+							1 L A<br>
+							0 R C<br>
+							1 R <strong>h</strong><br>
+							1 L C<br>
+							0 L A</td>
+						<td>0 R B<br>
+							1 R <strong>h</strong><br>
+							0 L C<br>
+							1 R A<br>
+							1 R B<br>
+							1 L C</td>
+						<td>0 R B<br>
+							1 L C<br>
+							1 L A<br>
+							1 R B<br>
+							1 L B<br>
+							1 R <strong>h</strong></td>
+						<td>1 R B<br>
+							1 R <strong>h</strong><br>
+							0 R C<br>
+							1 R B<br>
+							1 L C<br>
+							1 L A</td>
+						<td>1 R B<br>
+							1 R C<br>
+							1 L C<br>
+							1 R <strong>h</strong><br>
+							1 R A<br>
+							0 L B</td>
+						<td>1 R B<br>
+							1 L C<br>
+							1 L A<br>
+							1 R B<br>
+							1 L B<br>
+							1 R <strong>h</strong></td>
+						<td>0 R B<br>
+							1 L C<br>
+							1 R C<br>
+							1 R B<br>
+							1 L A<br>
+							1 R <strong>h</strong></td>
+						<td>1 R B<br>
+							1 R A<br>
+							1 L C<br>
+							1 R <strong>h</strong><br>
+							1 R A<br>
+							1 L B</td>
+						<td>1 R B<br>
+							1 L C<br>
+							1 R C<br>
+							1 R <strong>h</strong><br>
+							1 L A<br>
+							0 L B</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td><input type="button" onclick="loadprog([50,63,51,52,58,69,73,54,60,76,55,61,77])" value="Load"></td>
+						<td><input type="button" onclick="loadprog([50,63,51,58,70,73,54,60,76,61,77])" value="Load"></td>
+						<td><input type="button" onclick="loadprog([50,63,51,57,65,70,53,54,60,76,61,77])" value="Load"></td>
+						<td><input type="button" onclick="loadprog([63,51,58,70,53,71,54,75,55,61,79])" value="Load"></td>
+						<td><input type="button" onclick="loadprog([63,51,57,67,52,58,68,53,72,54,60,75,55])" value="Load"></td>
+						<td><input type="button" onclick="loadprog([63,51,70,53,72,54,60,76,55,61,77])" value="Load"></td>
+						<td><input type="button" onclick="loadprog([50,63,51,67,52,58,70,53,54,74,61,78])" value="Load"></td>
+						<td><input type="button" onclick="loadprog([50,63,51,57,67,52,58,68,53,72,54,60,75,55])" value="Load"></td>
+						<td><input type="button" onclick="loadprog([63,51,57,67,52,70,53,72,54,60,74,55])" value="Load"></td>
+						<td><input type="button" onclick="loadprog([50,63,51,65,52,58,70,53,54,74,55,61,78])" value="Load"></td>
+						<td><input type="button" onclick="loadprog([50,63,51,57,67,52,70,53,54,60,74,61,78])" value="Load"></td>
+					</tr>
+				</table>
+				<p> The first and sixth have already been built as fixed <a href="tt7_turing.html">Busy Beaver</a> layouts.				</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="t_bg">
+					<tr>
+						<td><img src="grab/tmc.png" alt="Turing Machine layout" width="768" height="960" onclick="swit('t_999')">
+							<div class="sprites">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="t_0" onclick="swit(this.id)">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_1">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_2">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_3">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_4" onclick="swit(this.id)">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_5">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_6">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_7">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_8">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="t_9" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="t_10" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="t_11" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="t_12" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="t_13" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="t_14" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="t_15" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="t_16" onclick="swit(this.id)">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_17">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_18">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_19">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_20" onclick="swit(this.id)">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_21">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_22">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_23">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_24">
+								<img src="point_/7q_1.gif" alt="" width="32" height="32" id="t_25" onclick="swit(this.id)">
+								<img src="point_/7q_1.gif" alt="" width="32" height="32" id="t_26" onclick="swit(this.id)">
+								<img src="point_/13q_1.gif" alt="" width="32" height="32" id="t_27">
+								<img src="point_/13q_1.gif" alt="" width="32" height="32" id="t_28">
+								<img src="point_/13q_1.gif" alt="" width="32" height="32" id="t_29">
+								<img src="point_/13q_1.gif" alt="" width="32" height="32" id="t_30">
+								<img src="point_/14q_1.gif" alt="" width="32" height="32" id="t_31">
+								<!--bridge-->
+								<img src="point_/13b_1.gif" alt="" width="32" height="32" id="t_32">
+								<img src="point_/13b_1.gif" alt="" width="32" height="32" id="t_33">
+								<img src="point_/13b_1.gif" alt="" width="32" height="32" id="t_34">
+								
+								<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_35">
+								<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_36">
+								<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_37">
+								<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_38">
+								<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_39">
+								<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_40">
+								
+								<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_41">
+								<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_42">
+								<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_43">
+								<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_44">
+								<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_45">
+								<img src="point_/7s_1.gif" alt="" width="32" height="32" id="t_46">
+								
+								<!--A-->
+								<img src="point_/11q_1.gif" alt="" width="32" height="32" id="t_47" onclick="swit(this.id)">
+								<!--B-->
+								<img src="point_/11q_1.gif" alt="" width="32" height="32" id="t_48" onclick="swit(this.id)">
+								<!--C-->
+								<img src="point_/11q_1.gif" alt="" width="32" height="32" id="t_49" onclick="swit(this.id)">
+								
+								<!--Mans-->
+								<img src="mans/man13_1.gif" alt="" width="32" height="32" id="t_50" onclick="swit(this.id)">
+								<img src="mans/man13_1.gif" alt="" width="32" height="32" id="t_51" onclick="swit(this.id)">
+								<img src="mans/man13_1.gif" alt="" width="32" height="32" id="t_52" onclick="swit(this.id)">
+								<img src="mans/man13_1.gif" alt="" width="32" height="32" id="t_53" onclick="swit(this.id)">
+								<img src="mans/man13_1.gif" alt="" width="32" height="32" id="t_54" onclick="swit(this.id)">
+								<img src="mans/man13_1.gif" alt="" width="32" height="32" id="t_55" onclick="swit(this.id)">
+								
+								<img src="mans/man13_1.gif" alt="" width="32" height="32" id="t_56" onclick="swit(this.id)">
+								<img src="mans/man13_1.gif" alt="" width="32" height="32" id="t_57" onclick="swit(this.id)">
+								<img src="mans/man13_1.gif" alt="" width="32" height="32" id="t_58" onclick="swit(this.id)">
+								<img src="mans/man13_1.gif" alt="" width="32" height="32" id="t_59" onclick="swit(this.id)">
+								<img src="mans/man13_1.gif" alt="" width="32" height="32" id="t_60" onclick="swit(this.id)">
+								<img src="mans/man13_1.gif" alt="" width="32" height="32" id="t_61" onclick="swit(this.id)">
+								
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_62" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_63" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_64" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_65" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_66" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_67" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_68" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_69" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_70" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_71" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_72" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_73" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_74" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_75" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_76" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_77" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_78" onclick="man_swit(this.id)">
+								<img src="mans/14a_1.gif" alt="" width="32" height="32" id="t_79" onclick="man_swit(this.id)">
+								
+								<img src="loco/12.gif" alt="" width="32" height="32" id="t_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="t_over">
+						</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/points.lbi" --><table cellpadding="0" cellspacing="0" class="ji">
+	<tr>
+		<td><img src="extra/7y_0.gif" alt="lazy point" width="32" height="32"></td>
+		<td>Lazy points switch between upper <strong>0</strong> or lower <strong>1</strong> branch lines<br>
+			Trains arriving on a branch line switch the point to that line</td>
+	</tr>
+	<tr>
+		<td><img src="track/11a.gif" alt="sprung point" width="32" height="32"></td>
+		<td>Sprung points allow branch line trains to join the main line<br>
+			All main line trains go straight ahead and never 'branch off'</td>
+	</tr>
+</table><!-- #EndLibraryItem --><table cellpadding="0" cellspacing="0" class="lout">
+	<tr>
+		<td><h3>Busy Beavers (2 State)</h3>
+			<p>This <a href="http://www.logique.jussieu.fr/~michel/ha.html#tm32">web page</a> also lists some 'winners and other good machines' for 2 State Busy Beavers, which again can be loaded into the Turing Machine with the relevant 'Load' button.</p>
+			<h3>More Programs</h3>
+			<p><strong>Invert</strong> - This inverts all data. The machine never halts, although the train soon stops when it runs out of tape.</p>
+			<p><strong>010</strong> - This halts if a single <strong>1</strong> with a <strong>0</strong> either side is found. The halt rule sets Move to <strong>L</strong> to save a tape cell.</p>
+			<p>Both programs read the tape from the right of the central cell. You can change the initial data on the tape of course. Also, two passive points are clickable, so the central cell can be repositioned to the left to extend the tape by two cells.</p></td>
+		<td><table cellpadding="0" cellspacing="0" class="lout2">
+			<tr>
+				<td>Sigma</td>
+				<td>4</td>
+				<td>3</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>Steps</td>
+				<td>6</td>
+				<td>6</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>L-R</td>
+				<td>2-2</td>
+				<td>1-2</td>
+				<td>2-2</td>
+			</tr>
+			<tr>
+				<td><strong>A0<br>
+					A1<br>
+					B0<br>
+					B1</strong></td>
+				<td>1 R B<br>
+					1 L B<br>
+					1 L A<br>
+					1 R <strong>h</strong></td>
+				<td>1 R B<br>
+					1 R <strong>h</strong><br>
+					1 L B<br>
+					1 L A</td>
+				<td>1 L B<br>
+					1 R B<br>
+					1 R A<br>
+					1 L <strong>h</strong></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="button" onclick="loadprog([50,63,51,57,66,52,58,68,53])" value="Load"></td>
+				<td><input type="button" onclick="loadprog([50,63,51,52,58,69,53,59,71])" value="Load"></td>
+				<td><input type="button" onclick="loadprog([50,63,57,66,52,58,68,53])" value="Load"></td>
+			</tr>
+		</table>
+			<table cellpadding="0" cellspacing="0" class="lout2">
+				<tr>
+					<td width="32">&nbsp;</td>
+					<td><strong>Inv</strong></td>
+					<td><strong>010</strong></td>
+				</tr>
+				<tr>
+					<td><strong>A0<br>
+						A1<br>
+						B0<br>
+						B1<br>
+						C0<br>
+						C1</strong></td>
+					<td>1 R A<br>
+						0 R A</td>
+					<td>0 R A<br>
+						1 R B<br>
+						0 L <strong>h</strong><br>
+						1 R C<br>
+						0 R A<br>
+						1 R C</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td><input type="button" onclick="loadprog([12,15,50,62,65])" value="Load"></td>
+					<td><input type="button" onclick="loadprog([12,13,15,62,51,66,58,53,73,74,55,79])" value="Load"></td>
+				</tr>
+			</table></td>
+	</tr>
+</table>
+<h3>Notes</h3>
+				<p>The Turing machine is locked into a write/read loop. So the first action is to write a <strong>0</strong> into the cell to the left of the central cell. I've researched the web and this is usually OK as the tape should begin with all data to the right of the central cell. </p>
+				<p>If not, then a second bridge can be added. The central cell is read directly (without a preceeding write), and then the machine continues with its normal write/read loop. This also reduces the requirement to reset points before each new computation.</p>
+				<h3>Turing Train Turing Machine</h3>
+				<ol>
+					<li>Does not have a moving head or tape. All track is firmly nailed to the ground. The train is guided back to the current cell by the tapes passive lazy points. This means steps take longer to complete the further they are from the central cell.</li>
+					<li>Does not have a list of transition rules. Instead, each rule is described and implemented by the actual track layout.</li>
+				</ol>
+				<p>In his book 'The Emporer's New Mind' (page 48) Roger Penrose writes:</p>
+				<blockquote>
+					<p>For my own part, I feel a little uncomfortable about having our finite device moving a potentially infinite tape backwards and forwards. No matter how lightweight its material, an <em>infinite</em> tape might be hard to shift! Instead, I prefer to think of the tape as representing some external environment through which our finite device can 'move'. On this view, the device receives all its input from this environment. It uses the environment as its 'rough paper'. Finally it writes out its output on this same environment. </p>
+				</blockquote>
+<h3>Further Machines</h3>
+				<ol>
+					<li>The layout can be extended downwards to accommodate more States.</li>
+					<li>Each cell can be expanded to hold more symbols. A <a href="tt9_lout.html#3lp">3 position lazy point</a>, would provide 3 symbols, producing a Busy Beaver needing 374,676,383 cells. Turing machines get big fast!</li>
+					<li>The layout could incorporate a <a href="tt2_func_single.html#inc">Counter</a> to record the number of steps taken.</li>
+					<li>A third set of manual points can be added to send the train to two (or more) tapes. All tapes would be stacked one above the other in parallel. The tape number would be added to each transition rule. Returning trains would be combined as they re-enter the State Switch.</li>
+					<li>The top of the tape can be simplified by removing the bypass to each Left/Right lazy point. The Left/Right points would always switch (flip) as the train enters the adjacent cell, but they are set correctly by the next transition rule.</li>
+				</ol>
+				<br>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

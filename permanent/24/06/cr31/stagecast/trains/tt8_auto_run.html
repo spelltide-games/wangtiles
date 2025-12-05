@@ -1,0 +1,598 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Auto Switching Layouts</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_maxrun.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Auto Switching Layouts</h2>
+				<p>Here, we'll look at some interesting auto switching layouts. These achieve long train runs without human intervention. The train switches the points as it traverses the layout. They are not functions, the train is in a closed circuit and loops forever. No sprung points are used. Each circuit is APV -all points visited. </p>
+				<p>There is further discussion on the <a href="http://www.eurobricks.com/forum/index.php?showtopic=78402&st=175">Eurobricks forum</a> pages.</p>
+				<h3>Two Lazy Points</h3>
+				<p>There is only one interesting circuit (as shown on <a href="tt1_points.html">Points</a> page). The train covers all the track, and all the track is traversed in both directions.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="a_bg">
+					<caption>
+					2 x Lazy Points
+					</caption>
+					<tr>
+						<td><img src="grab/tt1/l1.png" alt="layout 1" width="256" height="96" onclick="swit('a_999')">
+							<div class="sprites">
+								<img src="loco/5s.gif" alt="" width="32" height="32" id="a_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_1" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="a_2" onclick="swit(this.id)">
+								<img src="loco/0.gif" alt="" width="32" height="32" id="a_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="a_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>The two lazy points cycle through the Gray ode sequence: 00, 01, 11, 10.</p>
+				<h3>Auto Run Length </h3>
+				<p>This is a measure of the complexity, (or interest) of a layout. To return all points and the train to their starting positions, a total of 8 track sections (or 8 points) are traversed by the train.</p>
+				<p>We say this layout has an auto run length of 8 steps, with 4 points switched by the train. This is written as 8/4.</p>
+				<p>Any layout with two points always has 3 sections of track. So some tracks are used more than once. Indeed, the central track is traversed 4 times and each loop twice. </p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><h3>Pair of Linked Points </h3>
+							<p>We can bend the layout round and link the two lazy points as shown. The central track is traversed twice as each loop is traversed once. </p>
+							<p>The circuit has an auto run length of 4 with 2 points switched by the train, so 4/2.</p></td>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="d_bg">
+								<caption>
+								Pair of Linked Points
+								</caption>
+								<tr>
+									<td><img src="grab/tt8/layout1.png" alt="linked points" width="160" height="192" onclick="swit('d_999')">
+										<div class="sprites">
+											<img src="loco/10s.gif" alt="" width="32" height="32" id="d_0" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="d_1" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="d_2" onclick="swit(this.id)">
+											<img src="loco/12.gif" alt="" width="32" height="32" id="d_loco">
+											<img src="loco/over.gif" alt="" width="36" height="36" id="d_over">
+										</div></td>
+								</tr>
+							</table></td>
+						<td width="32">&nbsp;</td>
+					</tr>
+				</table><h3>Connecting in Series</h3>
+				<p>We can connect circuits together, one after the other in series, by merging the central track with a loop from the next circuit. This produces a 2:1 gear ratio as the central track <span class="lout">is traversed twice as each loop is traversed once.</span> Three connected circuits look like this:</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="f_bg">
+					<caption>
+					Auto Switching Layout (28/8)
+					</caption>
+					<tr>
+						<td><img src="grab/tt8/cct1.png" alt="auto switching layout 1" width="480" height="192" onclick="swit('f_999')">
+							<div class="sprites">
+								<textarea id="f_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="f_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_4" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_5" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_6" onclick="swit(this.id)">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="f_7" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="f_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="f_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>This produces an auto run length of 28 steps with 8 sets of points switched by the train. Points D and B are passive. The auto run sequence of 28/8 is:</p>
+<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><p><br>
+							A0 <strong>A1</strong> B1 D0 E0 <strong>E1</strong> D0 B1 A1 <strong>A0</strong> B0 C0 <strong>C1</strong> B0 A0 <strong>A1</strong> B1 D1 F1 <strong>F0</strong> D1 B1 A1 <strong>A0</strong> B0 C1 <strong>C0</strong> B0. </p>
+<p>Entries in bold indicate the point is switched by the train. </p></td>
+						<td><table cellpadding="0" cellspacing="0" class="tab">
+								<tr class="tabtop">
+									<td>Step</td>
+									<td>Point</td>
+									<td>x4</td>
+									<td>x2</td>
+									<td>x1</td>
+									<td>Dec</td>
+								</tr>
+								<tr>
+									<td>0<br>
+										1<br>
+										5<br>
+										9<br>
+										12<br>
+										15<br>
+										19<br>
+										23<br>
+										26</td>
+									<td><br>
+										A1<br>
+										E1<br>
+										A0<br>
+										C1<br>
+										A1<br>
+										F0<br>
+										A0<br>
+										C0</td>
+									<td>0<br>
+										0<br>
+										1<br>
+										1<br>
+										1<br>
+										1<br>
+										0<br>
+										0<br>
+										0</td>
+									<td>0<br>
+										0<br>
+										0<br>
+										0<br>
+										1<br>
+										1<br>
+										1<br>
+										1<br>
+										0</td>
+									<td>0<br>
+										1<br>
+										1<br>
+										0<br>
+										0<br>
+										1<br>
+										1<br>
+										0<br>
+										0</td>
+									<td>0<br>
+										1<br>
+										5<br>
+										4<br>
+										6<br>
+										7<br>
+										3<br>
+										2<br>
+										0</td>
+								</tr>
+							</table></td>
+						<td width="32">&nbsp;</td>
+					</tr>
+				</table>
+				<p>Labelling these as x1, x2, x4 as normal we can see the circuit does not behave as a counter. Instead, the circuit produces Gray Code cycling through all 8 possible positions. </p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><br>
+						<p>Here is an alternate layout for a pair of linked points. Again, the central track is traversed twice as each loop is traversed once. It produces the same auto run length of 4 with 2 points switched by the train, so 4/2.</p></td>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="c_bg">
+								<caption>
+								Pair of Linked Points
+								</caption>
+								<tr>
+									<td><img src="grab/tt8/layout2.png" alt="linked points" width="160" height="192" onclick="swit('c_999')">
+										<div class="sprites">
+											<img src="loco/10s.gif" alt="" width="32" height="32" id="c_0" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_1" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_2" onclick="swit(this.id)">
+											<img src="loco/12.gif" alt="" width="32" height="32" id="c_loco">
+											<img src="loco/over.gif" alt="" width="36" height="36" id="c_over">
+										</div></td>
+								</tr>
+							</table></td>
+						<td width="32">&nbsp;</td>
+					</tr>
+				</table><p>Connecting 3 circuits in series produces the following layout:
+				</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="e_bg">
+					<caption>
+					Auto Switching Layout (28/14)
+					</caption>
+					<tr>
+						<td><img src="grab/tt8/cct2.png" alt="auto switching layout 2" width="480" height="192" onclick="swit('e_999')">
+							<div class="sprites">
+								<textarea id="e_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="e_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_4" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_5" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_6" onclick="swit(this.id)">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="e_7" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="e_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="e_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>This also produces an auto run length of 28 steps but with 14 sets of points (instead of 8) switched by the train. Points E and C are passive. The auto run sequence of 28/14 is:</p>
+<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><p><br>
+							A0 <strong>B1</strong> A1 C0 <strong>D1</strong> <strong>B0</strong> A0 <strong>B1</strong> A1 C1 E0 <strong>F1</strong> <strong>D0</strong> <strong>B0</strong> A0 <strong>B1</strong> A1 C0 <strong>D1</strong> <strong>B0</strong> A0 <strong>B1</strong> A1 C1 E1 <strong>F0</strong> <strong>D0</strong> <strong>B0</strong>. </p>
+<p>Tabulating the steps in bold shows more clearly the 14 cyclic steps.</p>
+							<p>Decimal values of 1 and 5 are repeated twice and values 3 and 7 three times.</p>
+							<p>Using the second starting point, sends the train 'round the other way', producing the same switching sequence in reverse.</p></td>
+						<td><table cellpadding="0" cellspacing="0" class="tab">
+								<tr class="tabtop">
+									<td>Step</td>
+									<td>Point</td>
+									<td>x4</td>
+									<td>x2</td>
+									<td>x1</td>
+									<td>Dec</td>
+								</tr>
+								<tr>
+									<td>0<br>
+										1<br>
+										4<br>
+										5<br>
+										7<br>
+										11<br>
+										12<br>
+										13<br>
+										15<br>
+										18<br>
+										19<br>
+										21<br>
+										25<br>
+										26<br>
+										27</td>
+									<td><br>
+										B1<br>
+										D1<br>
+										B0<br>
+										B1<br>
+										F1<br>
+										D0<br>
+										B0<br>
+										B1<br>
+										D1<br>
+										B0<br>
+										B1<br>
+										F1<br>
+										D0<br>
+										B0</td>
+									<td>0<br>
+										0<br>
+										0<br>
+										0<br>
+										0<br>
+										1<br>
+										1<br>
+										1<br>
+										1<br>
+										1<br>
+										1<br>
+										1<br>
+										0<br>
+										0<br>
+										0</td>
+									<td>0<br>
+										0<br>
+										1<br>
+										1<br>
+										1<br>
+										1<br>
+										0<br>
+										0<br>
+										0<br>
+										1<br>
+										1<br>
+										1<br>
+										1<br>
+										0<br>
+										0</td>
+									<td>0<br>
+										1<br>
+										1<br>
+										0<br>
+										1<br>
+										1<br>
+										1<br>
+										0<br>
+										1<br>
+										1<br>
+										0<br>
+										1<br>
+										1<br>
+										1<br>
+										0</td>
+									<td>0<br>
+										1<br>
+										3<br>
+										2<br>
+										3<br>
+										7<br>
+										5<br>
+										4<br>
+										5<br>
+										7<br>
+										6<br>
+										7<br>
+										3<br>
+										1<br>
+										0</td>
+								</tr>
+							</table></td>
+						<td width="32">&nbsp;</td>
+					</tr>
+				</table>
+				<p>The auto run length is given by the formulae: 4 (2^c -1), where c is the number of circuits (pairs of linked lazy points) connected in series.</p>
+				<h3>Two Pairs of Linked Points</h3>
+				<p>Either of the above circuits can be reduced to two pairs of linked points, giving an auto run length (from the above formulae) of 12. There are also a few alternative auto switching layouts.</p>
+				<p>Paul Race describes a maximum run 'Automated Switching Layout' which was constructed for Christmas shows and shop window displays in the 1940's. Read more at <a href="http://bigindoortrains.com/primer/track_plans/switching_0_gauge/automated_switching_layout.htm">Big Indoor Trains™</a>.</p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><p>A hand drawn diagram of the layout shows the two pairs of linked lazy points A-B and C-D.</p>
+							<p>The train starts in either direction at the station on the right. It passes through a total of 10 points before all are returned to their original position.</p></td>
+						<td><img src="art/trackplan.jpg" width="320" height="200" alt="track plan"></td>
+					</tr>
+				</table>
+				<p>Here is the same circuit redrawn as an interactive layout.</p>
+				<table cellspacing="0" cellpadding="0" class="play" id="i_bg">
+					<caption>
+					Auto Switching Layout (10/4)
+					</caption>
+					<tr>
+						<td><img src="grab/tt8/asl_10_2p.png" width="352" height="224" alt="auto run (2-pair) " onclick="swit('i_999')">
+							<div class="sprites">
+								<textarea id="i_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="i_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="i_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="i_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="i_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="i_4" onclick="swit(this.id)">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="i_5" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="i_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="i_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>Auto run sequence = A0 C0 <strong>B1</strong> A1 <strong>D1</strong> <strong>B0</strong> A0 C1 <strong>D0 </strong> B0. </p>
+				<p><strong>How it works</strong><br>
+					This produces quite a 'monkey-puzzle' of a layout. Ten sections of track are traversed before all points and the train return to their initial start positions. So this circuit has an auto switching length of 10, with 4 points switched.</p>
+				<p>Using Duplo track the layout looks like this:</p>
+				<p>
+					<img src="../art/forums/maxrun4.png" width="640" height="360" alt="Duplo track plan">
+				</p>
+				<p>The 10 chevrons show the number of times and the direction each track is traversed. See <a href="tt8_duplo_lout.html">Duplo page</a> for a Duplo layout.</p>
+				<p>This layout below has a slightly longer auto run length of 12. The pair of points A-B has been drawn reflected, making the layout more symmetrical.</p>
+				<table cellspacing="0" cellpadding="0" class="play" id="j_bg">
+					<caption>
+					Auto Switching Layout (12/4)
+					</caption>
+					<tr>
+						<td><img src="grab/tt8/asl_12_2p.png" width="352" height="224" alt="auto run (2-pair) " onclick="swit('j_999')">
+							<div class="sprites">
+								<textarea id="j_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="j_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="j_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="j_2" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="j_3" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="j_4" onclick="swit(this.id)">
+								<img src="loco/4.gif" alt="" width="32" height="32" id="j_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="j_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>Auto run sequence = A0 C0 B0 <strong>A1</strong> D0 <strong>C1</strong> B1 D1 A1 <strong>B0</strong> C0 <strong>D0</strong>.</p>
+				<p>This layout below requires 8 steps to return points and train to their original starting positions. The loco starts heading down so all points can begin at <strong>0</strong>.</p>
+				<table cellspacing="0" cellpadding="0" class="play" id="k_bg">
+					<caption>
+					Auto Switching Layout (8/4)
+					</caption>
+					<tr>
+						<td><img src="grab/tt8/asl_8_2p.png" width="352" height="224" alt="auto run (2-pair) " onclick="swit('k_999')">
+							<div class="sprites">
+								<textarea id="k_tens1" readonly></textarea>
+								<img src="loco/5s.gif" alt="" width="32" height="32" id="k_0" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="k_1" onclick="swit(this.id)">
+								<img src="point_/13y_1.gif" alt="" width="32" height="32" id="k_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="k_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="k_4" onclick="swit(this.id)">
+								<img src="loco/8.gif" alt="" width="32" height="32" id="k_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="k_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>Auto run sequence = B0 <strong>C1</strong> D1 <strong>B1</strong> A1 <strong>D0</strong> C0 <strong>A0</strong>.</p>
+				<p>It can be built with Duplo as below.</p>
+				<p>
+					<img src="../art/forums/maxrun3.png" width="640" height="250" alt="Duplo track plan">
+				</p>
+				<p>If one pair of points is manually switched, the train effectively reverses direction and traverses the circuit in reverse order.</p>
+				<h3>Three Pairs of Linked Lazy Points</h3>
+				<p>Layouts are now getting quite big to build in Duplo. This circuit has 3 pairs of linked points. The auto run length is 24 steps. </p>
+				<table cellspacing="0" cellpadding="0" class="play" id="b_bg">
+					<caption>
+					Auto Switching Layout (24/10)
+					</caption>
+					<tr>
+						<td><img src="grab/tt8/asl_15_3p.png" width="416" height="256" alt="auto run 3-pair" onclick="swit('b_999')">
+							<div class="sprites">
+								<textarea id="b_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="b_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="b_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="b_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="b_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="b_4" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="b_5" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="b_6" onclick="swit(this.id)">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="b_7" onclick="swit(this.id)">
+								<img src="loco/4.gif" alt="" width="32" height="32" id="b_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="b_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>Auto run sequence = A0 C0 E0 <strong>B1</strong> A1 D0 <strong>C1</strong> <strong>A0</strong> B0 F0 <strong>E1</strong> <strong>B1</strong> A1 D1 F1 <strong>B0 </strong>A0 C1 <strong>D0</strong> <strong>A1</strong> B1 E1 <strong>F0</strong> <strong>B0</strong>.</p>
+				<p>And here is a similar layout. * Start with linked pair E-F set to <strong>1</strong>. *</p>
+				<table cellspacing="0" cellpadding="0" class="play" id="p_bg">
+					<caption>
+					Auto Switching Layout (24/10)
+					</caption>
+					<tr>
+						<td><img src="grab/tt8/aa.png" width="416" height="288" alt="auto run 3-pair" onclick="swit('p_999')">
+							<div class="sprites">
+								<textarea id="p_tens1" readonly></textarea>
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="p_0" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="p_1" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="p_2" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="p_3" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="p_4" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="p_5" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="p_6" onclick="swit(this.id)">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="p_7" onclick="swit(this.id)">
+								<img src="loco/4.gif" alt="" width="32" height="32" id="p_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="p_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>Auto run sequence = A0 C0 F1 <strong>B1</strong> A1 D0 <strong>C1</strong> <strong>A0</strong> B0 E1 <strong>F0</strong> <strong>B1</strong> A1 D1 E0 <strong>B0</strong> A0 C1 <strong>D0</strong> <strong>A1</strong> B1 F0 <strong>E1</strong> <strong>B0</strong>.</p>
+				<p>Swopping the tracks between B and E&amp;F allows a more compact Duplo layout to be built as shown below.</p>
+				<p>
+					<img src="../art/forums/3coop.png" alt="3 co-op points" width="416" height="356">
+				</p>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

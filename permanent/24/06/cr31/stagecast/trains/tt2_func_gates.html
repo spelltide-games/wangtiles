@@ -1,0 +1,747 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Boolean Logic Gates</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_gates.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Functions: Boolean Logic Gates</h2>
+				<p>Using lazy points to hold binary values, we can build layouts to operate as Boolean logic gates. </p>
+				<p>These circuits are built as functions. They are added to computer layouts in a similar manner as previous function circuits. No circuit alters the value of <strong>A</strong> or <strong>B</strong>, the points are inputs and so are 'read' only. They can though be linked vertically to other functions or gates.</p>
+				<p>The train enters on the right and proceeds to the left. It returns back along the same track for logic <strong>0</strong> (false), or exits the function (output) on the left for logic <strong>1</strong> (true).</p>
+				<h3><a name="AND"></a>AND gate</h3>
+				<p>Output if both <strong>A</strong> and <strong>B</strong> are <strong>1</strong>, else return along the same track ... or ...<br>
+					Return if either <strong>A</strong> or <strong>B</strong> is <strong>0</strong>, else output. <br>
+				The 'AND' gate is a vertical reflection of a 'NOR' gate layout.				</p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td width="28%"><table cellpadding="0" cellspacing="0" class="tab">
+								<tr class="tabtop">
+									<td>&nbsp;B&nbsp;</td>
+									<td>&nbsp;A&nbsp;</td>
+									<td>AND</td>
+								</tr>
+								<tr>
+									<td>0<br>
+										0<br>
+										1<br>
+										1</td>
+									<td>0<br>
+										1<br>
+										0<br>
+										1</td>
+									<td>0<br>
+										0<br>
+										0<br>
+										1</td>
+								</tr>
+							</table></td>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="a_bg">
+								<caption>
+								AND gate
+								</caption>
+								<tr>
+									<td><img src="grab/tt2g/and.png" alt="AND gate" width="416" height="96" onclick="swit('a_999')">
+										<div class="sprites">
+											<img src="loco/10s.gif" alt="" width="32" height="32" id="a_0" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_1" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="a_2" onclick="swit(this.id)">
+											<img src="loco/12.gif" alt="" width="32" height="32" id="a_loco">
+											<img src="loco/over.gif" alt="" width="36" height="36" id="a_over">
+										</div></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><h3><a name="OR"></a>OR gate</h3>
+				<p>Output if either <strong>A</strong> or <strong>B</strong> is <strong>1</strong>, else return along the same track ... or ...<br>
+					Return if both <strong>A</strong> and <strong>B</strong> are <strong>0</strong>, else output. <br>
+				The 'OR' gate is a vertical reflection of a 'NAND' gate layout.				</p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td width="28%"><table cellpadding="0" cellspacing="0" class="tab">
+								<tr class="tabtop">
+									<td>&nbsp;B&nbsp;</td>
+									<td>&nbsp;A&nbsp;</td>
+									<td>OR</td>
+								</tr>
+								<tr>
+									<td>0<br>
+										0<br>
+										1<br>
+										1</td>
+									<td>0<br>
+										1<br>
+										0<br>
+										1</td>
+									<td>0<br>
+										1<br>
+										1<br>
+										1</td>
+								</tr>
+							</table></td>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="b_bg">
+								<caption>
+								OR gate
+								</caption>
+								<tr>
+									<td><img src="grab/tt2g/or.png" alt="OR gate" width="416" height="96" onclick="swit('b_999')">
+										<div class="sprites">
+											<img src="loco/10s.gif" alt="" width="32" height="32" id="b_0" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="b_1" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="b_2" onclick="swit(this.id)">
+											<img src="loco/12.gif" alt="" width="32" height="32" id="b_loco">
+											<img src="loco/over.gif" alt="" width="36" height="36" id="b_over">
+										</div></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><h3><a name="NAND"></a>NAND gate</h3>
+				<p>Output if either <strong>A</strong> or <strong>B</strong> is <strong>0</strong>, else return along the same track ... or ...<br>
+					Return if both <strong>A</strong> and <strong>B</strong> are <strong>1</strong>, else output. </p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td width="28%"><table cellpadding="0" cellspacing="0" class="tab">
+								<tr class="tabtop">
+									<td>&nbsp;B&nbsp;</td>
+									<td>&nbsp;A&nbsp;</td>
+									<td>NAND</td>
+								</tr>
+								<tr>
+									<td>0<br>
+										0<br>
+										1<br>
+										1</td>
+									<td>0<br>
+										1<br>
+										0<br>
+										1</td>
+									<td>1<br>
+										1<br>
+										1<br>
+										0</td>
+								</tr>
+							</table></td>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="c_bg">
+								<caption>
+								NAND gate
+								</caption>
+								<tr>
+									<td><img src="grab/tt2g/nand.png" alt="NAND gate" width="416" height="96" onclick="swit('c_999')">
+										<div class="sprites">
+											<img src="loco/10s.gif" alt="" width="32" height="32" id="c_0" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_1" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="c_2" onclick="swit(this.id)">
+											<img src="loco/12.gif" alt="" width="32" height="32" id="c_loco">
+											<img src="loco/over.gif" alt="" width="36" height="36" id="c_over">
+										</div></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><h3><a name="NOR"></a>NOR gate</h3>
+				<p>Output if both <strong>A</strong> and <strong>B</strong> are <strong>0</strong>, else return along the same track ... or ...<br>
+					Return if either <strong>A</strong> or <strong>B</strong> is <strong>1</strong>, else output. </p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td width="28%"><table cellpadding="0" cellspacing="0" class="tab">
+								<tr class="tabtop">
+									<td>&nbsp;B&nbsp;</td>
+									<td>&nbsp;A&nbsp;</td>
+									<td>NOR</td>
+								</tr>
+								<tr>
+									<td>0<br>
+										0<br>
+										1<br>
+										1</td>
+									<td>0<br>
+										1<br>
+										0<br>
+										1</td>
+									<td>1<br>
+										0<br>
+										0<br>
+										0</td>
+								</tr>
+							</table></td>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="d_bg">
+								<caption>
+								NOR gate
+								</caption>
+								<tr>
+									<td><img src="grab/tt2g/nor.png" alt="NOR gate" width="416" height="96" onclick="swit('d_999')">
+										<div class="sprites">
+											<img src="loco/10s.gif" alt="" width="32" height="32" id="d_0" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="d_1" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="d_2" onclick="swit(this.id)">
+											<img src="loco/12.gif" alt="" width="32" height="32" id="d_loco">
+											<img src="loco/over.gif" alt="" width="36" height="36" id="d_over">
+										</div></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><h3><a name="XOR"></a>XOR gate (exclusive OR)</h3>
+				<p>Output if <strong>A</strong> and <strong>B</strong> are different, else return along the same track ... or ...<br>
+					Return if <strong>A</strong> and <strong>B</strong> are the same, else output.</p>
+				<p>A double linked point is required for Boolean <strong>B</strong>. The central lazy point only serves to combine tracks and so its position is not labelled. </p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td width="28%"><table cellpadding="0" cellspacing="0" class="tab">
+								<tr class="tabtop">
+									<td>&nbsp;B&nbsp;</td>
+									<td>&nbsp;A&nbsp;</td>
+									<td>XOR</td>
+								</tr>
+								<tr>
+									<td>0<br>
+										0<br>
+										1<br>
+										1</td>
+									<td>0<br>
+										1<br>
+										0<br>
+										1</td>
+									<td>0<br>
+										1<br>
+										1<br>
+										0</td>
+								</tr>
+							</table></td>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="e_bg">
+								<caption>
+								XOR gate
+								</caption>
+								<tr>
+									<td><img src="grab/tt2g/exor.png" alt="XOR gate" width="416" height="160" onclick="swit('e_999')">
+										<div class="sprites">
+											<img src="loco/10s.gif" alt="" width="32" height="32" id="e_0" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_1" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_2" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="e_3" onclick="swit(this.id)">
+											<img src="loco/12.gif" alt="" width="32" height="32" id="e_loco">
+											<img src="loco/over.gif" alt="" width="36" height="36" id="e_over">
+										</div></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><h3><a name="XNOR"></a>XNOR gate (exclusive NOR)</h3>
+				<p>Output if <strong>A</strong> and <strong>B</strong> are the same, else return along the same track ... or ...<br>
+					Return if <strong>A</strong> and <strong>B</strong> are different, else output.</p>
+				<p>A double linked point is required for Boolean <strong>B</strong>. The central lazy point only serves to combine tracks and so its position is not labelled. </p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td width="28%"><table cellpadding="0" cellspacing="0" class="tab">
+								<tr class="tabtop">
+									<td>&nbsp;B&nbsp;</td>
+									<td>&nbsp;A&nbsp;</td>
+									<td>XNOR</td>
+								</tr>
+								<tr>
+									<td>0<br>
+										0<br>
+										1<br>
+										1</td>
+									<td>0<br>
+										1<br>
+										0<br>
+										1</td>
+									<td>1<br>
+										0<br>
+										0<br>
+										1</td>
+								</tr>
+							</table></td>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="f_bg">
+								<caption>
+								XNOR gate
+								</caption>
+								<tr>
+									<td><img src="grab/tt2g/exnor.png" alt="XNOR gate" width="416" height="192" onclick="swit('f_999')">
+										<div class="sprites">
+											<img src="loco/10s.gif" alt="" width="32" height="32" id="f_0" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_1" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_2" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="f_3" onclick="swit(this.id)">
+											<img src="loco/12.gif" alt="" width="32" height="32" id="f_loco">
+											<img src="loco/over.gif" alt="" width="36" height="36" id="f_over">
+										</div></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><h3>Not gate</h3>
+				<p>Output if <strong>A</strong> is <strong>0</strong>, else return along the same track ... or ...<br>
+					Return if <strong>A</strong> is <strong>1</strong>, else output. </p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td width="28%"><table cellpadding="0" cellspacing="0" class="tab">
+							<tr class="tabtop">
+								<td>&nbsp;A&nbsp;</td>
+								<td>Not</td>
+							</tr>
+							<tr>
+								<td>0<br>
+									1</td>
+								<td>1<br>
+									0<br></td>
+							</tr>
+						</table></td>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="h_bg">
+							<caption>
+								Not gate
+								</caption>
+							<tr>
+								<td><img src="grab/tt2g/not.png" alt="Not gate" width="416" height="96" onclick="swit('h_999')">
+									<div class="sprites">
+										<img src="loco/10s.gif" alt="" width="32" height="32" id="h_0" onclick="swit(this.id)">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="h_1" onclick="swit(this.id)">
+										<img src="loco/12.gif" alt="" width="32" height="32" id="h_loco">
+										<img src="loco/over.gif" alt="" width="36" height="36" id="h_over">
+									</div></td>
+							</tr>
+						</table></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p></p>
+				<h2>Multi input gates</h2>
+				<p>You can see from the track layouts that the AND and NOR gates are easily extended to 3 or more inputs.</p>
+				<h3><a name="ANDs"></a>AND gates</h3>
+				<p>The multi input AND gate can be used to check that every data bit is a <strong>1</strong>. </p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td width="28%"><table cellpadding="0" cellspacing="0" class="tab">
+								<tr class="tabtop">
+									<td>&nbsp;C&nbsp;</td>
+									<td>&nbsp;B&nbsp;</td>
+									<td>&nbsp;A&nbsp;</td>
+									<td>AND</td>
+								</tr>
+								<tr>
+									<td>0<br>
+										0<br>
+										0<br>
+										0<br>
+										1<br>
+										1<br>
+										1<br>
+										1</td>
+									<td>0<br>
+										0<br>
+										1<br>
+										1<br>
+										0<br>
+										0<br>
+										1<br>
+										1</td>
+									<td>0<br>
+										1<br>
+										0<br>
+										1<br>
+										0<br>
+										1<br>
+										0<br>
+										1</td>
+									<td>0<br>
+										0<br>
+										0<br>
+										0<br>
+										0<br>
+										0<br>
+										0<br>
+										1</td>
+								</tr>
+							</table></td>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="j_bg">
+								<caption>
+								3 input AND gate
+								</caption>
+								<tr>
+									<td><img src="grab/tt2g/3and.png" alt="3 input AND gate" width="416" height="96" onclick="swit('j_999')">
+										<div class="sprites">
+											<img src="loco/10s.gif" alt="" width="32" height="32" id="j_0" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="j_1" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="j_2" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="j_3" onclick="swit(this.id)">
+											<img src="loco/12.gif" alt="" width="32" height="32" id="j_loco">
+											<img src="loco/over.gif" alt="" width="36" height="36" id="j_over">
+										</div></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><h3><a name="NORs"></a>NOR gates</h3>
+				<p>The multi input NOR gate can be used to check that every data bit in a register is <strong>0</strong> (return if register is not <strong>0</strong>).</p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td width="28%"><table cellpadding="0" cellspacing="0" class="tab">
+								<tr class="tabtop">
+									<td>&nbsp;C&nbsp;</td>
+									<td>&nbsp;B&nbsp;</td>
+									<td>&nbsp;A&nbsp;</td>
+									<td>NOR</td>
+								</tr>
+								<tr>
+									<td>0<br>
+										0<br>
+										0<br>
+										0<br>
+										1<br>
+										1<br>
+										1<br>
+										1</td>
+									<td>0<br>
+										0<br>
+										1<br>
+										1<br>
+										0<br>
+										0<br>
+										1<br>
+										1</td>
+									<td>0<br>
+										1<br>
+										0<br>
+										1<br>
+										0<br>
+										1<br>
+										0<br>
+										1</td>
+									<td>1<br>
+										0<br>
+										0<br>
+										0<br>
+										0<br>
+										0<br>
+										0<br>
+										0</td>
+								</tr>
+							</table></td>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="k_bg">
+								<caption>
+								3 input NOR gate
+								</caption>
+								<tr>
+									<td><img src="grab/tt2g/3nor.png" alt="3 input NOR gate" width="416" height="96" onclick="swit('k_999')">
+										<div class="sprites">
+											<img src="loco/10s.gif" alt="" width="32" height="32" id="k_0" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="k_1" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="k_2" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="k_3" onclick="swit(this.id)">
+											<img src="loco/12.gif" alt="" width="32" height="32" id="k_loco">
+											<img src="loco/over.gif" alt="" width="36" height="36" id="k_over">
+										</div></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><p>Other gates are not so easy. One solution is to deMux the inputs and then join similar <strong>0</strong> or <strong>1</strong> outputs.</p>
+				<h3>3 input XOR gate</h3>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td width="28%"><table cellpadding="0" cellspacing="0" class="tab">
+								<tr class="tabtop">
+									<td>&nbsp;C&nbsp;</td>
+									<td>&nbsp;B&nbsp;</td>
+									<td>&nbsp;A&nbsp;</td>
+									<td>XOR</td>
+								</tr>
+								<tr>
+									<td>0<br>
+										0<br>
+										0<br>
+										0<br>
+										1<br>
+										1<br>
+										1<br>
+										1</td>
+									<td>0<br>
+										0<br>
+										1<br>
+										1<br>
+										0<br>
+										0<br>
+										1<br>
+										1</td>
+									<td>0<br>
+										1<br>
+										0<br>
+										1<br>
+										0<br>
+										1<br>
+										0<br>
+										1</td>
+									<td>0<br>
+										1<br>
+										1<br>
+										0<br>
+										1<br>
+										0<br>
+										0<br>
+										1</td>
+								</tr>
+							</table></td>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="m_bg">
+								<caption>
+								3 input XOR gate
+								</caption>
+								<tr>
+									<td><img src="grab/tt2g/3xor.png" alt="3 input XOR gate gate" width="416" height="352" onclick="swit('m_999')">
+										<div class="sprites">
+											<img src="loco/10s.gif" alt="" width="32" height="32" id="m_0" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="m_1" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="m_2" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="m_3" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="m_4" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="m_5" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="m_6" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="m_7" onclick="swit(this.id)">
+											<img src="loco/12.gif" alt="" width="32" height="32" id="m_loco">
+											<img src="loco/over.gif" alt="" width="36" height="36" id="m_over">
+										</div></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><h3>3 input XNOR gate</h3>
+				<p>The XNOR gate is an XOR gate with the <strong>0</strong> and <strong>1</strong> outputs swopped over. It is also shown in a slightly more compact layout than the XOR gate above.</p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td width="28%"><table cellpadding="0" cellspacing="0" class="tab">
+								<tr class="tabtop">
+									<td>&nbsp;C&nbsp;</td>
+									<td>&nbsp;B&nbsp;</td>
+									<td>&nbsp;A&nbsp;</td>
+									<td>XNOR</td>
+								</tr>
+								<tr>
+									<td>0<br>
+										0<br>
+										0<br>
+										0<br>
+										1<br>
+										1<br>
+										1<br>
+										1</td>
+									<td>0<br>
+										0<br>
+										1<br>
+										1<br>
+										0<br>
+										0<br>
+										1<br>
+										1</td>
+									<td>0<br>
+										1<br>
+										0<br>
+										1<br>
+										0<br>
+										1<br>
+										0<br>
+										1</td>
+									<td>1<br>
+										0<br>
+										0<br>
+										1<br>
+										0<br>
+										1<br>
+										1<br>
+										0</td>
+								</tr>
+							</table></td>
+						<td><table cellpadding="0" cellspacing="0" class="play" id="n_bg">
+								<caption>
+								3 input XNOR gate
+								</caption>
+								<tr>
+									<td><img src="grab/tt2g/3xnor.png" alt="3 input XNOR gate" width="416" height="320" onclick="swit('n_999')">
+										<div class="sprites">
+											<img src="loco/10s.gif" alt="" width="32" height="32" id="n_0" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="n_1" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="n_2" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="n_3" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="n_4" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="n_5" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="n_6" onclick="swit(this.id)">
+											<img src="point_/7y_1.gif" alt="" width="32" height="32" id="n_7" onclick="swit(this.id)">
+											<img src="loco/12.gif" alt="" width="32" height="32" id="n_loco">
+											<img src="loco/over.gif" alt="" width="36" height="36" id="n_over">
+										</div></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><br>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

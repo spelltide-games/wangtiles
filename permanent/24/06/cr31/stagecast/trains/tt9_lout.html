@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Layouts</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_subs.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Layouts</h2>
+				<p>This section demonstrates some interesting train track layouts. Each is constructed as a fixed 'table-top' circuit, and carries out a dedicated computation. </p>
+				<p>They work in your browser window as usual. Of course, any of these layouts can be built using Duplo track and points.</p>
+				<h3>Passive Points</h3>
+				<p>Passive points are single lazy points which direct the train back along the track from whence it came. This allows a function to be called from two different places, and the train returned correctly. Passive points are not interactive because they never need to be switched or reset by the operator. </p>
+				<table cellpadding="0" cellspacing="0" class="play" id="a_bg">
+					<caption>
+						Subroutine 'calls'
+					</caption>
+					<tr>
+						<td><img src="grab/tt1/subs.png" alt="subroutines" width="288" height="96" onclick="swit('a_999')">
+							<div class="sprites">
+								<img src="loco/2re.gif" alt="" width="32" height="32" id="a_0" onclick="swit(this.id)">
+								<img src="point_/7s_1.gif" alt="" width="32" height="32" id="a_1">
+								<img src="loco/2re.gif" alt="" width="32" height="32" id="a_2" onclick="swit(this.id)">
+								<img src="loco/4.gif" alt="" width="32" height="32" id="a_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="a_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive2.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click start circle to reset train</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem -->
+				<p>Also used in <a href="tt2_func_single.html#add">Add</a> and <a href="tt2_func_single.html#sub">Subtract</a> functions to return the train to the correct stage to continue the calculation.</p>
+				<h3>Halt 
+					<img src="loco/8le.gif" alt="sprung point" width="32" height="32" align="middle">
+				</h3>
+				<p>In computational layouts, the train must return to its start position to indicate successful completion of a subroutine. It then 'halts'. If the whole layout is a subroutine in some larger scheme, then the train can continue back to the 'calling' routine.				</p>
+				<h3>Overflow Error</h3>
+				<p>Sometimes, you don't want a register to rollover. If the data is too large to be held in the register, then the calculation has 'failed' and any result will be incorrect. The calculation will have to be re-run with smaller data or larger registers.</p>
+				<p> To indicate an overflow error, the final stage can return the train along a separate 'overflow error' (oe) line, to a siding close to the start. This saves time scanning a large layout for trains which have failed to return. </p>
+				<p>If the whole layout is a subroutine, then the 'oe' line may 'bubble up' and pass the train back to the calling layout. Eventually, both Halt and 'oe' trains should return to the station where they originally started.</p>
+				<h3><a name="inv"></a>Inverted Lazy Point</h3>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><p>Similar to a lazy point but a train arriving on a branch line switches the point to the opposite branch line, before exiting as normal on the main line. </p>
+							<p> The additional 'inverter circuit' of four sprung points causes the train to swop branch lines if it arrives on a branch line, but not on exit.</p>
+							<p>Used in <a href="tt2_func_linked.html#gray">Gray Code Counter</a> circuit.</p></td>
+						<td><table cellpadding="0" cellspacing="0" class="array">
+							<caption>
+								Inverted Lazy Point
+								</caption>
+							<tr>
+								<td><img src="grab/tt7/inv_lazy.png" alt="inverted lazy point" width="224" height="128"></td>
+							</tr>
+						</table></td>
+					</tr>
+				</table>
+				<h3>Bypassed Lazy Point</h3>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><p>A train arriving on the 'dead' or 'wrong' branch line never corrects the point as it passes onto the main line. This is called bypass and the effect can be achieved with extra sprung points. </p>
+							<p><strong>Single Bypass</strong><br>
+								Trains arriving on the upper branch line bypass the lazy point and so never correct it. Trains arriving on the lower branch line correct the points as normal. </p>
+							<p> <strong>Dual Bypass</strong><br>
+								Uses a dual sprung point, which is just a neater way of drawing 2 separate sprung points. The lazy point is never corrected. It is 'uncorrectable'.<br>
+							</p>
+							<p>Used in <a href="tt9_mem.html">R. A. Memory</a> layout. </p></td>
+						<td><br>
+							<table cellpadding="0" cellspacing="0" class="array">
+								<caption>
+									Single bypass
+								</caption>
+								<tr>
+									<td><img src="grab/tt7/sing_bp.png" alt="single bypass" width="128" height="96"></td>
+								</tr>
+							</table>
+							<br>
+							<table cellpadding="0" cellspacing="0" class="array">
+								<caption>
+									Dual bypass
+								</caption>
+								<tr>
+									<td><img src="grab/tt7/dual_bp.png" alt="dual bypass" width="128" height="96"></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table>
+				<h3>Redundancy</h3>
+				<p>Some sections of track can be removed as they cannot be traversed by the loco or provide no extra capability.</p>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><p>Here, the branch lines from two sprung points are directly connected together. The central section of track can never be reached and so is redundant.</p></td>
+						<td width="200"><img src="grab/tt1/red.png" alt="redundant track" width="160" height="96"></td>
+					</tr>
+				</table>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><p>Here, the lazy point can be removed as it makes no difference to the trains route. It may be needed though if the lazy point is linked to other points, as a returning train will switch the point to <strong>0</strong>.</p></td>
+						<td width="200"><img src="grab/tt1/red2.png" alt="redundant track" width="160" height="96"></td>
+					</tr>
+				</table>
+				<p>&nbsp;</p>
+				<h2>User Input Points </h2>
+				<p>These points help simplify some complex layouts where many user input points are required. They are shown with a blue border. </p>
+				<h3><a name="full"></a>Full Point
+					<img src="mans/man13_0.gif" alt="sprung point" width="32" height="32" align="middle">
+				</h3>
+				<p>Full points operate as normal lazy points, but, have an additional <strong>X</strong> 'don't care' horizontal position. They can be manually switched (cycled) between all 3 positions, and usually start in the default <strong>X</strong> position.</p>
+				<p>Trains can switch the points to either <strong>0</strong> or <strong>1</strong> branch lines, but, <strong>importantly</strong>, cannot switch points to the horizontal <strong>X</strong> position. If they could, the point would be a 3 position lazy point.</p>
+				<p>The DigiComp layout is much simplified with full points, as compared to the layout using normal lazy points.</p>
+				<h3><a name="half"></a>Manual Point
+<img src="mans/11a_1.gif" alt="sprung point" width="32" height="32" align="middle">
+				</h3>
+				<p>If only one of the branch lines is used then this results in a 'half' point. These help simplify arrays of user input points, as used in the <a href="tt3_syard.html">Switching Yard</a> and <a href="tt7_turing_mc.html">Turing Machine</a> layouts.</p>
+				<p>In both layouts, trains are never required to switch the point to a branch line. The Train Yard layout has 6 points (below the main diagonal) where a returning train arrives on the horizontal <strong>X</strong> line and, as expected, does not switch the point to that line.</p>
+				<p>As the train never switches these half points they are referred to as 'manual' points because they can only be switched manually.</p>
+				<p>Note that as half points cannot be switched by the train into both positions, they cannot replace normal lazy points. Also, they cannot be gang linked to form more complex operations.</p>
+				<p>I've added some additional code so that half points act like radio buttons. As one of them is switched, the others return to the default horizontal <strong>X</strong> position. This is not required by a Turing Trains layouts, but helps clarify the layout.</p>
+				<h3><a name="3lp"></a>3 Position Lazy Point 
+					<img src="point_/7m_x.gif" alt="" width="32" height="32" align="middle">
+				</h3>
+				<p>Normal lazy points switch between <strong>0</strong> and <strong>1</strong> branch lines. 3 position lazy points have a third horizontal line, labelled <strong>2</strong>. They introduce tertiary (base 3) logic systems. They are not used on these pages as all layouts follow the binary logic of todays computers.</p>
+				<p>They could be used to build 3 symbol <a href="tt7_turing_mc.html">Turing Machine</a> layout, which would be quite compact. <br>
+					<br>
+				</p>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

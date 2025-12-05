@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Duplo Computer</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+						<h2>Duplo Computer</h2>
+						<p>This page is very much work in progress.</p>
+						<table cellpadding="0" cellspacing="0" class="lout">
+							<tr>
+								<td width="20">&nbsp;</td>
+								<td><img src="art/$_35_.jpg" width="112" height="130" alt="Duplo computer"></td>
+								<td width="12"><p>&nbsp;</p></td>
+								<td><p>The idea is to plan and build a working computer using Duplo track with lazy and sprung points.</p>
+								<p>It would take up a large space. The actual size would depend on the number of built-in functions and the word size of each register. </p></td>
+							</tr>
+				</table>
+						<h3>Specifications</h3>
+						<p>There are a number of specifications to work out. At the moment, a minimum specification might be:</p>
+						<ol>
+							<li>5 registers: <strong>A</strong>, <strong>B</strong>, <strong>C</strong>ount, <strong>In</strong>put and <strong>S</strong>um, all 4 bits in size and 6 bits for <strong>S</strong>.</li>
+							<li>Limit of 8 Mux lines.</li>
+							<li>Built-in functions, to allow greatest number of programs to be run: <br>
+								Add, Increment, Decrement, Copy... etc</li>
+							<li>Positive integers only. </li>
+						</ol>
+				<p>2's complement representation may be added later. If so, all registers need to be the same size and the carry in and out to the MSB (most significant bit) needs to be monitored to correctly determine overflow errors.</p>
+				<p>Some careful thought on:</p>
+						<ol>
+							<li>Which registers are linked together.</li>
+							<li>Can all functions halt the program or only the comparator.</li>
+							<li>Can functions be called from different places in the program loop.</li>
+							<li>Ability to clear any register, or just Count and Sum registers.</li>
+						</ol>
+						<h3>Reset All						</h3>
+						<p>To ensure accurate and repeatable	results,	it	is	important that all points are reset to their initial positions before each new calculation. For web page layouts, it is easy to click the browsers 'reload' button.						</p>
+						<p>For electro mechanical computers it is easy to interrupt the power supply and let all relays etc reset to their non energised state.</p>
+				<p>A physical Duplo train track computer is more difficult, as the lazy points rest in either position. There are three posiible solutions:</p>
+						<ol>
+							<li>Include a mechanical method to return each lazy point to its initial position. Possibly a gentle pneumatic or hydraulic system. As it is not used for calculating, its design specifications should not be critical. </li>
+							<li>Add a linked lazy point to every lazy point, or every group of linked points. The train then visits each point on a grand circular tour and so resets all points before each new calculation. Requires a lot more track, points, space and time to reset. </li>
+							<li>Use the error line, along with some modified functions, to reset registers, as shown in this '<a href="tt3_tri_c&e.html">Clear &amp; Error</a>' layout. </li>
+						</ol>
+						<h3>Link Limit</h3>
+						<p>There is a practical limit for the number of lazy points that can be linked together. There might need to be some kind of detector which switches additional lazy points using an external power source. This reduces the mechanical strain on the train wheels, switch lever and any linking bars. There is plenty of time available to do this, as the train only moves slowly from one point to another. Therefore the design specifications of the system are not critical. </p>
+<h3>Plan</h3>
+				<p>So far, the plan of action is to:</p>
+				<ol>
+							<li>Continue to design computational layouts. This will help show which functions and features are most useful to include.</li>
+							<li>Convert some functions from square to hexagonal layout. Duplo sprung points have the same 'footprint' as lazy points, so some functions may end up quite different.</li>
+							<li>Explore practical limitations of large Duplo layouts. Track pieces can move slightly, altering the effectiveness of links. </li>
+						</ol>
+						<p>&nbsp;</p>
+						<p><!-- end .contents -->				Comments to guy at cr31 dot co dot uk. </p>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Busy Beavers</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_turing.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Turing machine, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Busy Beaver Turing Machine</h2>
+				<p>A Turing Machine is an idealised computer model that in theory can simulate any computation. There is much information on the web including <a href="https://en.wikipedia.org/wiki/Turing_machine">Wikipedia</a> and this useful <a href="http://www.logique.jussieu.fr/~michel/tmi.html">introduction</a>.</p>
+				<p>Turing machines use an unlimited tape, divided into cells, with each cell holding a symbol. The machine can read or write a symbol to a cell, and move either left or right to the next adjacent cell. </p>
+				<p>The machine stores 3 values:</p>
+				<ol>
+					<li><strong>Symbol</strong> - 0 or 1 for a binary machine.</li>
+					<li><strong>Move</strong> - Left or Right, to the adjacent cell.</li>
+					<li><strong>State</strong> - A B or C, and halt.<br>
+					</li>
+				</ol>
+				<p>The machine also has a program, as a list of 'transition rules'. For each combination of State and Symbol, the rule gives updated values for Symbol, Move and State.<br>
+					eg. Rule (A1: 0 R B) means if the machine is in state A and the Symbol is 1, then update Symbol to 0, Move to Right and enter State B.</p>
+				<p>When the machine is run, it repeats the following Write, Read and Update operations each step:</p>
+				<ol>
+					<li> <strong>Write</strong> the Symbol to the current cell.</li>
+					<li>Move to the next adjacent cell.</li>
+					<li><strong>Read</strong> the Symbol from the cell.</li>
+					<li>If the State is 'halt' then Halt the machine. Else...</li>
+					<li><strong>Update</strong> Symbol, Move and State values.</li>
+				</ol>
+				<h3>Busy Beavers </h3>
+				<p>The aim of busy beaver machines is to write as many 1's to the tape as possible, or run the machine for as many steps as possible before halting. These example layouts implement a Busy Beaver using 2 symbols and 3 states. Machines start with Symbol 0, Move Right and State A. </p>
+				<h4>Max 1's</h4>
+				<p>This program produces the known maximum of six 1's (in 14 steps). From the web, the six instructions (for each combination of State and Symbol) are:<br>
+					(A0: 1 R B) (A1: 1 R <strong>h</strong>) (B0: 0 R C) (B1: 1 R B) (C0: 1 L C) (C1: 1 L A)</p>
+				<p>If we run the machine, we find 7 (out of 12) lazy points never alter a value. They are redundant and can be removed. 	Also, we will not define Move for the halt state. So we end up with:<br>
+				(A0: 1 R B) (A1: - - <strong>h</strong>) (B0: - - C) (B1: - - B) (C0: 1 L C) (C1: - - A)<br>
+				where '-' denotes 'undefined'. 
+				This needs two points for A0 and two points for C0.
+			</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="t_bg">
+					<tr>
+						<td><img src="grab/turing6.png" alt="Turing Machine layout" width="576" height="640" onclick="swit('t_999')">
+							<div class="sprites">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="t_0" onclick="swit(this.id)">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_1">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_2">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_3">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_4">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_5">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_6">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="t_7" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="t_8" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="t_9" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="t_10" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="t_11" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="t_12" onclick="swit(this.id)">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_13">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_14">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_15">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_16">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_17">
+								<img src="point_/14d_0.gif" alt="" width="32" height="32" id="t_18">
+								<!--<img src="point_/7q_1.gif" alt="" width="32" height="32" id="t_19">-->
+								<img src="point_/14q_1.gif" alt="" width="32" height="32" id="t_19">
+								<!--bridge-->
+								<img src="point_/13q_1.gif" alt="" width="32" height="32" id="t_20">
+								<img src="point_/13q_1.gif" alt="" width="32" height="32" id="t_21">
+								<img src="point_/13q_1.gif" alt="" width="32" height="32" id="t_22">
+								<img src="point_/13q_1.gif" alt="" width="32" height="32" id="t_23">
+								<!--<img src="point_/13q_1.gif" alt="" width="32" height="32" id="t_24">-->
+								<img src="point_/11q_1.gif" alt="" width="32" height="32" id="t_24">
+								<!--A-->
+								<img src="point_/11q_1.gif" alt="" width="32" height="32" id="t_25">
+								<!--B-->
+								<img src="point_/11q_1.gif" alt="" width="32" height="32" id="t_26">
+								<!--C-->
+								<img src="point_/13b_1.gif" alt="" width="32" height="32" id="t_27">
+								<img src="point_/13b_1.gif" alt="" width="32" height="32" id="t_28">
+								<img src="point_/13b_1.gif" alt="" width="32" height="32" id="t_29">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_30" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_31" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_32" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_33" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="t_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="t_over">
+							</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/points.lbi" --><table cellpadding="0" cellspacing="0" class="ji">
+	<tr>
+		<td><img src="extra/7y_0.gif" alt="lazy point" width="32" height="32"></td>
+		<td>Lazy points switch between upper <strong>0</strong> or lower <strong>1</strong> branch lines<br>
+			Trains arriving on a branch line switch the point to that line</td>
+	</tr>
+	<tr>
+		<td><img src="track/11a.gif" alt="sprung point" width="32" height="32"></td>
+		<td>Sprung points allow branch line trains to join the main line<br>
+			All main line trains go straight ahead and never 'branch off'</td>
+	</tr>
+</table><!-- #EndLibraryItem --><h3>Layout</h3>
+				<p>At the top of the layout is the tape which extends horizontally left and right. Just six cells are shown, with the central cell labelled '0'. Each cell contains a lazy point which holds the Symbol, shown as a <strong>0</strong> or a <strong>1</strong>. </p>
+				<p>Above them is a row of linked lazy points which select Left or Right, and below is a similar row of linked lazy points which hold the Symbol to be written into or just read out of the cell. At the bottom of the tape is a row of passive points which direct the train back to the current cell.</p>
+				<p>When the train enters a cell, it writes the Symbol into the cell, then moves Left or Right to read out the Symbol in the adjacent cell.</p>
+				<p>Below the tape, connected by a single track bridge, is the main layout. On the left are the State points. Outputs A0 and C0 set both Symbol and Move values. On the right, the train is routed back to select the next State.</p>
+				<h3>Operation</h3>
+				<p>Reset all points (click train on start circle) before each new run. The train leaves the station and sets the State Switch to A. It proceeds to the tape where the passive points guide the train to read the value from the central cell. </p>
+				<p>On returning to the central State Switch the train updates Symbol and Move values before updating the State Switch with the new State.</p>
+				<p>The yellow lazy points can be clicked to switch, although Turing Machines just run until the train returns to the station and halts.</p>
+				<h4>Max Steps</h4>
+				<p>This similar layout produces five 1's in 21 steps, which is a maximum run. The right most cell is unused. From the web, the six instructions (for each combination of State and Symbol) are:<br>
+(A0: 1 R B) (A1: 1 R <strong>h</strong>) (B0: 1 L B) (B1: 0 R C) (C0: 1 L C) (C1: 1 L A)</p>
+				<p>If we run the machine, we find 2 (out of 12) lazy points never alter a value. They are redundant and can be removed. 	Also, we will not define Move for the halt state. So we end up saving 3 points:<br>
+					(A0: 1 R B) (A1: - - <strong>h</strong>) (B0: 1 L B) (B1: 0 R C) (C0: 1 L C) (C1: - L A)<br>
+					where '-' denotes 'undefined'.</p>
+				<table cellpadding="0" cellspacing="0" class="play" id="u_bg">
+					<tr>
+						<td><img src="grab/turing5.png" alt="Turing Machine layout" width="576" height="704" onclick="swit('u_999')">
+							<div class="sprites">
+								<img src="loco/10s.gif" alt="" width="32" height="32" id="u_0" onclick="swit(this.id)">
+								<img src="point_/14s_0.gif" alt="" width="32" height="32" id="u_1">
+								<img src="point_/14s_0.gif" alt="" width="32" height="32" id="u_2">
+								<img src="point_/14s_0.gif" alt="" width="32" height="32" id="u_3">
+								<img src="point_/14s_0.gif" alt="" width="32" height="32" id="u_4">
+								<img src="point_/14s_0.gif" alt="" width="32" height="32" id="u_5">
+								<img src="point_/14s_0.gif" alt="" width="32" height="32" id="u_6">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="u_7" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="u_8" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="u_9" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="u_10" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="u_11" onclick="swit(this.id)">
+								<img src="point_/11y_1.gif" alt="" width="32" height="52" id="u_12" onclick="swit(this.id)">
+								<img src="point_/14s_0.gif" alt="" width="32" height="32" id="u_13">
+								<img src="point_/14s_0.gif" alt="" width="32" height="32" id="u_14">
+								<img src="point_/14s_0.gif" alt="" width="32" height="32" id="u_15">
+								<img src="point_/14s_0.gif" alt="" width="32" height="32" id="u_16">
+								<img src="point_/14s_0.gif" alt="" width="32" height="32" id="u_17">
+								<img src="point_/14s_0.gif" alt="" width="32" height="32" id="u_18">
+								<!--<img src="point_/7q_1.gif" alt="" width="32" height="32" id="u_19">-->
+								<img src="point_/14q_1.gif" alt="" width="32" height="32" id="u_19">
+								<!--bridge-->
+								<img src="point_/13q_1.gif" alt="" width="32" height="32" id="u_20">
+								<img src="point_/13q_1.gif" alt="" width="32" height="32" id="u_21">
+								<img src="point_/13q_1.gif" alt="" width="32" height="32" id="u_22">
+								<img src="point_/13q_1.gif" alt="" width="32" height="32" id="u_23">
+								<!--<img src="point_/13q_1.gif" alt="" width="32" height="32" id="u_24">-->
+								<img src="point_/11q_1.gif" alt="" width="32" height="32" id="u_24">
+								<!--A-->
+								<img src="point_/11q_1.gif" alt="" width="32" height="32" id="u_25">
+								<!--B-->
+								<img src="point_/11q_1.gif" alt="" width="32" height="32" id="u_26">
+								<!--C-->
+								<img src="point_/13b_1.gif" alt="" width="32" height="32" id="u_27">
+								<img src="point_/13b_1.gif" alt="" width="32" height="32" id="u_28">
+								<img src="point_/13b_1.gif" alt="" width="32" height="32" id="u_29">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="u_30" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="u_31" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="u_32" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="u_33" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="u_34" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="u_35" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="u_36" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="u_37" onclick="swit(this.id)">
+								<img src="point_/7y_1.gif" alt="" width="32" height="32" id="u_38" onclick="swit(this.id)">
+								<img src="loco/12.gif" alt="" width="32" height="32" id="u_loco">
+								<img src="loco/over.gif" alt="" width="36" height="36" id="u_over">
+						</div></td>
+					</tr>
+				</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/points.lbi" --><table cellpadding="0" cellspacing="0" class="ji">
+	<tr>
+		<td><img src="extra/7y_0.gif" alt="lazy point" width="32" height="32"></td>
+		<td>Lazy points switch between upper <strong>0</strong> or lower <strong>1</strong> branch lines<br>
+			Trains arriving on a branch line switch the point to that line</td>
+	</tr>
+	<tr>
+		<td><img src="track/11a.gif" alt="sprung point" width="32" height="32"></td>
+		<td>Sprung points allow branch line trains to join the main line<br>
+			All main line trains go straight ahead and never 'branch off'</td>
+	</tr>
+</table><!-- #EndLibraryItem --><!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

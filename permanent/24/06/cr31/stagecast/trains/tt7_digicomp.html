@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/trains.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>DigiComp Emulator</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- #BeginEditable "Meta" -->
+<link rel="stylesheet" href="../trains/text.css" type="text/css">
+<script src="../js/trains.js" type="text/JavaScript"></script>
+<script src="../js/trains_digicomp.js" type="text/JavaScript"></script>
+<meta name="description" content="Turing trains, computational, traintrack layouts">
+<meta name="keywords" content="Turing, computational, logic, mechanical computer, mechanical logic, traintrack, layout, Duplo points, logic gates, plans">
+<!-- #EndEditable -->
+</head>
+
+<body>
+<table class="tabs">
+	<tr>
+		<td>
+			<p>
+				⚠️This site is a mirror of <a href="http://www.cr31.co.uk/stagecast">Guy Walker's Stagecast</a>⚠️
+			</p>
+		</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="tabs">
+	<tr>
+		<td class="main"><p>Turing Trains | <a href="../../iso/iso.html">Isometric</a> | <a href="../wang/intro.html">Wang Tiles</a> | <a href="../wang/stage.html">Maze Arrays</a> | <a href="../../logojs/logo.html">i Logo</a></p></td>
+		<td class="side"><p><a href="../../index.html">HOME</a></p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="head">
+	<tr>
+		<td class="main"><h1>Turing Trains</h1></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="strap">
+	<tr>
+		<td class="main"><p>computational train track layouts</p></td>
+		<td class="side"><p>menu</p></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="cont">
+	<tr>
+		<td class="main"><div class="content"><!-- InstanceBeginEditable name="contents" -->
+				<h2>Digi-Comp Emulator</h2>
+				<table cellpadding="0" cellspacing="0" class="lout">
+					<tr>
+						<td><p> The Digi-Comp1 is a small mechanical computer. It acts as a 'finite state machine' with 3 boolean variables, <strong>A</strong>, <strong>B</strong> and <strong>C</strong>. It can be programmed to compute different logic operations, such as addition, subtraction, count up or down and logic gate simulation.</p>
+						<p>You can get a kit to build one yourself from <a href="http://www.mindsontoys.com/kits.htm?dc1_main.htm">Minds On Toys</a>. </p></td>
+						<td><div class="picap"><img src="art/digicomp.jpg" alt="Digi-Comp 1" width="290" height="150"><br>The Digi-Comp1</div></td>
+					</tr>
+				</table>
+				<p>Here is a train track layout that emulates the Digi-Comp finite state machine. It can be included in a train track layout as any other function. The layout can be extended 'left' to accommodate more values and 'down' for additional sections. </p>
+				<h3>How it works</h3>
+				<p>The Digi-Comp has a main register with 3 Boolean values labelled <strong>A</strong> (x1), <strong>B</strong> (x2) and <strong>C</strong> (x4). Each value is held as a group of vertically linked lazy points. These correspond to the original Digi-Comps horizontal flip-flops. They can be set as inputs or read as outputs depending on the program. </p>
+				<p>A second group of vertically linked lazy points hold 3 'internal' values which the Digi-Comp works with. These are labelled <strong>a</strong>, <strong>b</strong> and <strong>c</strong> (small letters). They are copied into <strong>A</strong>, <strong>B</strong> and <strong>C</strong> at the end of each cycle. </p>
+				<p>To begin, all lazy points are reset to <strong>0</strong>. Manual points begin in their 'don't care' position. Some are set by the operator to program the layout (blue border).</p>
+				<p>The train first updates the internal values with the values of <strong>A</strong>, <strong>B</strong> and <strong>C</strong> (usually to reset all to <strong>0</strong>). This is necessary as an internal value which is not used, may update a main value incorrectly.</p>
+				<p> The train then passes down through three identical horizontal sections <strong>Z</strong>, <strong>Y</strong> and <strong>X</strong>. Each section tests the values of <strong>A</strong>, <strong>B</strong> and <strong>C</strong>, according to the settings of the manual points. If a test fails, the train returns back along the same line. If all tests pass, the train updates internal values to either <strong>0</strong> (upper half of each section) or <strong>1</strong> (lower half of each section).</p>
+				<p>When all sections have been traversed, the train returns via the right hand track to update <strong>A</strong>, <strong>B</strong> and <strong>C</strong> with the newly calculated internal values. Note that two manual points, at the end of section <strong>Z1</strong> and <strong>Y1</strong>, can be used to bypass lower sections.</p>
+				<h3>Programs</h3>
+				<p>Each program is a list of manual points to be 'set'. They appear with a blue outline. All other manual points are set to their default positions. Start the train to run the program.</p>
+				<p>
+					<input type="button" onclick="loadprog([45,80,83,98,101,116])" value="Load">
+					<strong>Blinker B</strong>. Toggles <strong>B</strong> between <strong>0</strong> and <strong>1</strong>. Section <strong>Z</strong> only. </p>
+				<p>
+					<input type="button" onclick="loadprog([79,80,99,82,49,83,102,85,55,86,57,105,88,89,63,108,117,118])" value="Load">
+					<strong>XOR gate</strong>. Set gate inputs <strong>A</strong> and <strong>B</strong> and read output on <strong>C</strong>. Uses 'one shot' halt. See <a href="tt2_func_gates.html#XOR">Logic Gates</a> for more info and truth table.</p>
+				<p>
+					<input type="button" onclick="loadprog([79,43,97,82,100,85,55,86,57,104,88,61,89,107,91,67,92,69,93,71,111,94,73,95,75,96,114])" value="Load">
+					<strong>Count Up</strong> and rollover from 111 to 000.
+					Runs forever... or use 'one shot' halt to increment the counter.</p>
+				<p>
+					<input type="button" onclick="loadprog([79,43,80,45,81,47,115,82,49,83,51,84,102,85,55,86,57,104,88,61,89,107,91,67,109,94,112])" value="Load">
+					<strong>Count Up to 7</strong> and halt (return train).
+					Z0 detects '111' as a halt condition.</p>
+						<table cellpadding="0" cellspacing="0" class="play" id="t_bg">
+							<tr>
+								<td><img src="grab/digicomp.png" alt="Digi-Comp emulator layout" width="768" height="1248" onclick="swit('t_999')">
+									<div class="sprites">
+										<img src="loco/2re.gif" alt="" width="32" height="32" id="t_0" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_1">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_2">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_3">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_4">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_5">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_6">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_7">
+										<img src="point_/13y_1.gif" alt="" width="32" height="32" id="t_8" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_9">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_10">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_11">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_12">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_13">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_14">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_15">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_16">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_17">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_18">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_19">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_20">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_21">
+										<img src="point_/13y_1.gif" alt="" width="32" height="32" id="t_22" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_23">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_24">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_25">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_26">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_27">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_28">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_29">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_30">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_31">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_32">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_33">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_34">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_35">
+										<img src="point_/13y_1.gif" alt="" width="32" height="32" id="t_36" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_37">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_38">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_39">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_40">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_41">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_42">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_43" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_44">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_45" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_46">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_47" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_48">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_49" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_50">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_51" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_52">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_53" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_54">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_55" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_56">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_57" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_58">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_59" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_60">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_61" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_62">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_63" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_64">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_65" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_66">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_67" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_68">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_69" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_70">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_71" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_72">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_73" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_74">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_75" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_76">
+										<img src="point_/7y_1.gif" alt="" width="32" height="32" id="t_77" onclick="swit(this.id)">
+										<img src="point_/7b_1.gif" alt="" width="32" height="32" id="t_78">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_79" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_80" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_81" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_82" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_83" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_84" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_85" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_86" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_87" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_88" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_89" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_90" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_91" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_92" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_93" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_94" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_95" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_96" onclick="swit(this.id)">
+										<img src="point_/13w_0.gif" alt="" width="32" height="32" id="t_97" onclick="swit(this.id)">
+										<img src="point_/13w_0.gif" alt="" width="32" height="32" id="t_98" onclick="swit(this.id)">
+										<img src="point_/13w_0.gif" alt="" width="32" height="32" id="t_99" onclick="swit(this.id)">
+										<img src="point_/13w_1.gif" alt="" width="32" height="32" id="t_100" onclick="swit(this.id)">
+										<img src="point_/13w_1.gif" alt="" width="32" height="32" id="t_101" onclick="swit(this.id)">
+										<img src="point_/13w_1.gif" alt="" width="32" height="32" id="t_102" onclick="swit(this.id)">
+										<img src="point_/13w_0.gif" alt="" width="32" height="32" id="t_103" onclick="swit(this.id)">
+										<img src="point_/13w_0.gif" alt="" width="32" height="32" id="t_104" onclick="swit(this.id)">
+										<img src="point_/13w_0.gif" alt="" width="32" height="32" id="t_105" onclick="swit(this.id)">
+										<img src="point_/13w_1.gif" alt="" width="32" height="32" id="t_106" onclick="swit(this.id)">
+										<img src="point_/13w_1.gif" alt="" width="32" height="32" id="t_107" onclick="swit(this.id)">
+										<img src="point_/13w_1.gif" alt="" width="32" height="32" id="t_108" onclick="swit(this.id)">
+										<img src="point_/13w_0.gif" alt="" width="32" height="32" id="t_109" onclick="swit(this.id)">
+										<img src="point_/13w_0.gif" alt="" width="32" height="32" id="t_110" onclick="swit(this.id)">
+										<img src="point_/13w_0.gif" alt="" width="32" height="32" id="t_111" onclick="swit(this.id)">
+										<img src="point_/13w_1.gif" alt="" width="32" height="32" id="t_112" onclick="swit(this.id)">
+										<img src="point_/13w_1.gif" alt="" width="32" height="32" id="t_113" onclick="swit(this.id)">
+										<img src="point_/13w_1.gif" alt="" width="32" height="32" id="t_114" onclick="swit(this.id)">
+										<img src="point_/7w_0.gif" alt="" width="32" height="32" id="t_115" onclick="swit(this.id)">
+										<img src="point_/11w_1.gif" alt="" width="32" height="32" id="t_116" onclick="swit(this.id)">
+										<img src="point_/11w_1.gif" alt="" width="32" height="32" id="t_117" onclick="swit(this.id)">
+										<img src="point_/7w_1.gif" alt="" width="32" height="32" id="t_118" onclick="swit(this.id)">
+										<img src="loco/4.gif" alt="" width="32" height="32" id="t_loco">
+										<img src="loco/over.gif" alt="" width="36" height="36" id="t_over">
+									</div></td>
+							</tr>
+						</table><!-- #BeginLibraryItem "/Library/interactive.lbi" --><table cellpadding="0" cellspacing="0" class="ii">
+	<tr>
+		<td>Click layout to pause/run train</td>
+		<td>Click points to switch 0/1</td>
+		<td>Click start circle to reset train/points</td>
+	</tr>
+</table>
+<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/points.lbi" --><table cellpadding="0" cellspacing="0" class="ji">
+	<tr>
+		<td><img src="extra/7y_0.gif" alt="lazy point" width="32" height="32"></td>
+		<td>Lazy points switch between upper <strong>0</strong> or lower <strong>1</strong> branch lines<br>
+			Trains arriving on a branch line switch the point to that line</td>
+	</tr>
+	<tr>
+		<td><img src="track/11a.gif" alt="sprung point" width="32" height="32"></td>
+		<td>Sprung points allow branch line trains to join the main line<br>
+			All main line trains go straight ahead and never 'branch off'</td>
+	</tr>
+</table><!-- #EndLibraryItem --><h3>Extra manual points</h3>
+				<p>It is important that computational layouts avoid infinite loops, which prevent the train returning to its start position. Especially if the layout is called as a function from a larger circuit (a computer maybe). Therefore, this layout provides a couple of manual 'halt' points not present on the original Digi-Comp. If left in their default positions, they have no effect and can be ignored.</p>
+				<p>The first can be used to return the train after a single cycle of the Digi-Comp. This is useful for simulating logic gates or testing circuits one cycle at a time. It can also be used to pause the train to allow main values to be manually changed without possible data glitches. </p>
+				<p>The second halt point allows section <strong>Z0</strong> to detect a specific halting condition.</p>
+				<h3>Synchronous v Asynchronous				</h3>
+				<p> If an internal value is updated more than once, then in an asynchronous train track layout it's the last (lower) update that prevails. The original Digi-Comp is synchronous, so this would represent a lock-up condition where a value is set to both <strong>0</strong> and <strong>1</strong> at the same time. The asynchronous nature of train layouts can be used to simplify some programs.</p>
+				<p>Also see <a href="tt7_fsm.html">Finite State Machine</a> (image only).</p>
+		<!-- InstanceEndEditable --><!-- end .content --></div></td>
+		<td class="side"><ul>
+				<li><strong><a href="tt0_int.html">Intro</a></strong></li>
+				<li><a href="tt0_intro.html">Train &amp; Track</a></li>
+				<li><a href="tt1_points.html">Lazy Points</a></li>
+				<li><a href="tt1_subs.html">Sprung Points</a></li>
+				<li><strong><a href="tt2_func.html">Functions</a></strong></li>
+				<li><a href="tt2_func_single.html">Single Point</a></li>
+				<li><a href="tt2_func_linked.html">Linked Points</a></li>
+				<li><a href="tt2_func_compo.html">Compound</a></li>
+				<li><a href="tt2_func_shift.html">Shift &amp; Rotate</a></li>
+				<li><a href="tt2_func_flipflop.html">Flip-flops</a></li>
+				<li><a href="tt2_func_gates.html">Logic Gates</a></li>
+				<li><strong><a href="tt9_lout.html">Layouts</a></strong></li>
+				<li><a href="tt9_ramp.html">Count Up/Down</a></li>
+				<li><a href="tt9_follower.html">Input Follower</a></li>
+				<li><a href="tt9_ham.html">Hamming Weight</a></li>
+				<li><a href="tt9_addsub.html">Add/Subtract</a></li>
+				<li><a href="tt9_tri_num.html">Triangle Num</a></li>
+				<li><a href="tt9_tri_seq.html">Triangle Seq</a></li>
+				<li><a href="tt9_multi.html">Multiply</a></li>
+				<li><a href="tt9_divide.html">Divide</a></li>
+				<li><a href="tt9_multi_shift.html">Multiply (shift)</a></li>
+				<li><a href="tt9_divide_shift.html">Divide (shift)</a></li>
+				<li><a href="tt9_aver.html">Average</a></li>
+				<li><a href="tt9_subtract.html">2's Compliment</a></li>
+				<li><a href="tt9_mem.html">Memory Cell</a></li>
+				<li><a href="tt9_pascal.html">Pascal's Triangle</a></li>
+				<li><a href="tt9_lang.html">Langton's Ant</a></li>
+				<li><a href="tt9_rng.html">Random Number</a></li>
+				<li><a href="tt7_digicomp.html">Digi-Comp</a></li>
+				<li><a href="tt7_turing.html">Busy Beaver</a></li>
+				<li><a href="tt7_turing_mc.html">Turing Machine</a></li>
+				<li><strong><a href="tt3_univ.html">Computer</a></strong></li>
+				<li><a href="tt3_ham.html">Hamming Weight</a></li>
+				<li><a href="tt3_tri_basic.html">Triangular Seq</a></li>
+				<li><a href="tt3_fibonacci.html">Fibonacci Seq</a></li>
+				<!--<li><a href="../stagecast/trains/tu4_multiplier.html">Multiplier</a></li>-->
+				<li><a href="tt3_syard.html">Switching Yard</a></li>
+				<!--<li><strong>Info</strong></li>-->
+				<!--<li><strong><a href="#.html">Info</a></strong></li>-->
+				<li><strong><a href="tt8_info.html">Projects</a></strong></li>
+				<li><a href="tt8_equiv.html">Equiv Circuits</a></li>
+				<li><a href="tt8_auto_run.html">Auto Switching</a></li>
+				<li><a href="tt8_duplo_lout.html">Duplo Layouts</a></li>
+				<li><a href="tt8_duplo_comp.html">Duplo Computer</a></li>
+				<li><a href="tt8_mech_logic.html">Mechanical Logic</a></li>
+				<li><strong>&nbsp;</strong></li>
+			</ul></td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="foot">
+	<tr>
+		<td class="main"><p>cr31.co.uk</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="base">
+	<tr>
+		<td class="main"><p> zoom in to enlarge layouts</p></td>
+		<td class="side">&nbsp;</td>
+	</tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>
